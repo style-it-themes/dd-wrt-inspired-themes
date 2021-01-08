@@ -3,7 +3,16 @@
   "title": "DD-WRT Inspired Themes",
   "description": "An inspired configurable theme for DD-WRT routers",
   "version": "1.0.0",
-  "author": "Style-it themes",
+  "author": {
+    "name": "Style-it themes",
+    "url": "https://github.com/style-it-themes"
+  },
+  "contributors": [
+     {
+       "name": "The Community Contributors",
+       "url": "https://github.com/style-it-themes/dd-wrt-inspired-themes/graphs/contributors"
+     }
+   ],
   "repository": "style-it-themes/dd-wrt-inspired-themes",
   "homepage": "https://github.com/style-it-themes/dd-wrt-inspired-themes",
   "bugs": {
