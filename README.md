@@ -227,6 +227,7 @@ Please expand the section below:
 
 ### Development Scripts
 
+* `npm run authors`: Regenerate the AUTHORS file based on Git history
 * `npm run ecfix`: Run editorconfig via ECLint with `--fix` on the styl file.
 
 ### For internal use Only

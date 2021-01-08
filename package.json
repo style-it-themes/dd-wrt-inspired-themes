@@ -29,6 +29,7 @@
     "versions": "^8.4.4"
   },
   "scripts": {
+    "authors": "bash tools/authors.sh",
     "patch": "versions -p -C patch dd-wrt-inspired-themes.user.styl",
     "minor": "versions -p -C minor dd-wrt-inspired-themes.user.styl",
     "major": "versions -p -C major dd-wrt-inspired-themes.user.styl",
