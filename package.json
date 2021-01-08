@@ -1,0 +1,29 @@
+{
+  "name": "dd-wrt-inspired-themes",
+  "title": "DD-WRT Inspired Themes",
+  "description": "An inspired configurable theme for DD-WRT routers",
+  "version": "0.0.0",
+  "author": "Style-it themes",
+  "repository": "style-it-themes/dd-wrt-inspired-themes",
+  "homepage": "https://github.com/style-it-themes/dd-wrt-inspired-themes",
+  "bugs": {
+    "url": "https://github.com/style-it-themes/dd-wrt-inspired-themes/issues"
+  },
+  "main": "dd-wrt-inspired-themes.user.styl",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "eclint": "^2.8.1",
+    "updates": "^11.4.2",
+    "versions": "^8.4.4"
+  },
+  "scripts": {
+    "patch": "versions -p -C patch dd-wrt-inspired-themes.user.styl",
+    "minor": "versions -p -C minor dd-wrt-inspired-themes.user.styl",
+    "major": "versions -p -C major dd-wrt-inspired-themes.user.styl",
+    "fix": "eclint fix dd-wrt-inspired-themes.user.styl && eclint fix *.md",
+    "update": "updates -cuU && npm install"
+  }
+}
