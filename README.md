@@ -4,8 +4,8 @@
 <br>
 <h1 align="center"><strong>DD-WRT Inspired Themes</strong></h1>
 <p align="center">
-  <a href="LICENCE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg?longCache=true&style=for-the-badge" alt="Style-It Themes (sit) Discord Channel">
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?longCache=true&style=for-the-badge" alt="LICENCE">
   </a>
 </p>
 <p align="center">
