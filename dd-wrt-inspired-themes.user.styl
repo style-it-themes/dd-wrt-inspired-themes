@@ -20,6 +20,7 @@
     'Twilight         ': 'twilight',
     'Ubuntu           ': 'ubuntu',
     'Solarized Dark   ': 'solarized-dark',
+    'Solarized Light  ': 'solarized-light',
 }
 @var color    cg_bg        'Base background' #1f232a
 @var color    cg_fg        'Base foreground' #eeeeee
@@ -112,6 +113,7 @@ ColorSchemes = {
     'twilight':        { BG: #141414, FG: #f7f7f7, AC: #8f9d6a }
     'ubuntu':          { BG: #2c071a, FG: #f2f1ef, AC: #ef7847 }
     'solarized-dark':  { BG: #002b36, FG: #fdf6e3, AC: #268bd2 }
+    'solarized-light': { BG: #fdf6e3, FG: #002b36, AC: #268bd2 }
 }
 
 // Generator -> Active color-scheme.
@@ -310,6 +312,72 @@ SA = cg_sc_a
         }
         pre, textarea {
             font-family: var(--f-mono)
+        }
+    }
+
+    // Syntax themes overrides
+    if (cg_theme == 'solarized-light') {
+        body {
+            input {
+                /.button {
+                    &[name*="apply"] {
+                        background: v44
+                        border-color: v44
+                        color: bg1
+                        text-shadow: 0 1px 0 fg0 i
+                        &:hover, &:focus-within {
+                            background: v45 i
+                            border-color: v45 i
+                            color: bg0 i
+                        }
+                    }
+                    &[name*="refresh"][style*="background"] {
+                        c: 0 0 bg1
+                        text-shadow: 0 1px 0 fg0
+                    }
+                    &[name*="reboot"] {
+                        background: none repeat scroll 0 0 v16
+                        border-color: v15
+                        color: bg1
+                        text-shadow: 0 1px 0 fg0
+                        &:hover, &:focus-within {
+                            color: bg0
+                        }
+                    }
+                    &[name*="reset"] {
+                        text-shadow: 0 1px 0 lighten(FG, 90%)
+                        &:hover, &:focus-within {
+                            text-shadow: 0 1px 0 lighten(FG, 90%)
+                        }
+                    }
+                }
+            }
+        }
+        .warning {
+            background-color: v18 i
+            border-color: v17 i
+            color: bg4
+        }
+        // Images
+        #header {
+            // DDWRT logo
+            #logo {
+                filter: hue-rotate(180deg) contrast(1.2) i
+                mix-blend-mode: exclusion i
+            }
+            .logo {
+                filter: none
+                mix-blend-mode: exclusion i
+            }
+        }
+        div.note {
+            background-color: v78 i
+            color: bg5
+        }
+        // DD-WRT logo in about dialog
+        [src*='dd-logo.png'] {
+            filter: none
+            mix-blend-mode: exclusion i
         }
     }
 
