@@ -11,6 +11,7 @@
 @preprocessor stylus
 
 @var checkbox cg_debug     'Color generator debug' 0
+@var checkbox sdetails     'Show style details' 1
 @var select   cg_theme     'Base color-scheme toggle' {
     'Custom colors   *': 'custom',
     'Dark blue (old)  ': 'old-colors',
@@ -310,6 +311,20 @@ SA = cg_sc_a
         }
         pre, textarea {
             font-family: var(--f-mono)
+        }
+    }
+
+    // Show style details
+    if (sdetails) {
+        #ipinfo {
+            &::after {
+                r       = unquote
+                cbreak  = '\A\A '
+                stinfo  = 'DD-WRT Inspired Themes v1.0.0'
+
+                content: '' + r(cbreak) + r(stinfo)
+                white-space: pre-wrap
+            }
         }
     }
 
