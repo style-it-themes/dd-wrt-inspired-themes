@@ -38,6 +38,7 @@
 @var checkbox custom_font  'Enable custom font overrides' 1
 @var checkbox invert_nav   'Invert navigation colors' 0
 @var checkbox router_style 'Enable built in styles' 1
+@var checkbox new_401      'Enable new 401 page' 1
 
 ==/UserStyle== */
 
@@ -488,82 +489,99 @@ SA = cg_sc_a
             border-bottom: .123rem dotted bg5
         }
 
-        // 401 Unauthorized page redesign make optional?
-        @keyframes color_change {
-            0% {
+        // 401 Unauthorized page redesign
+        if (new_401) {
+            &[bgcolor="#cc9999"] {
+                background-color: v11
                 color: fg2
-                text-shadow: 0 0 0 v15, 1px -8px 3px rgba(BG, .4)
-            }
-            100% {
-                color: v16
-                text-shadow: 0 0 5px v16, 0 5px 3px rgba(BG, 2)
-            }
-        }
-        @keyframes shake-it {
-            from {
-                transform: scale3d(1, 1, 1)
-            }
-            10%, 20% {
-                transform: scale3d(.8, .8, .8) rotate3d(0, 0, 1, -2deg)
-            }
-            30%, 50% ,70% ,90% {
-                transform: scale3d(1.1 ,1.1 ,1.1) rotate3d(0, 0, 1, 2deg)
-            }
-            40%, 60%, 80% {
-                transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -2deg)
-            }
-            to {
-                transform: scale3d(1.1, 1.1 ,1.1) rotate3d(0, 0, 1, 3deg)
-            }
-        }
-        &[bgcolor="#cc9999"] {
-            background-color: v11
-            color: fg2
 
-            font-size: 0
-            font-family: Verdana, Helvetica
-            text-align: center
-            cursor: auto
-            // Reposition & shorten text
-            h4 {
-                &:hover {
-                    animation: shake-it 1s ease
-                    cursor: not-allowed
-                }
-                margin-top: 3rem
                 font-size: 0
-                &::before {
-                    content: '401\a'
-                    font-size: 7rem
+                font-family: Verdana, Helvetica
+                text-align: center
+                cursor: auto
+                overflow: hidden i
+                // Reposition & shorten text
+                h4 {
+                    &:hover {
+                        animation: move-it 1.2s ease-in-out
+                        cursor: not-allowed
+                    }
+                    margin-top: 3rem
+                    font-size: 0
+                    &::before {
+                        content: '401\A'
 
-                    white-space: pre-wrap
-                    text-shadow: 0 -1px 0 v16,
-                                 0 1px 0 v14,
-                                 0 2px 0 v14,
-                                 0 3px 0 v14,
-                                 0 4px 0 v14,
-                                 0 5px 0 v14,
-                                 0 6px 0 v14,
-                                 0 7px 0 v14,
-                                 0 8px 0 v14,
-                                 1px 16px 6px rgba(BG, .4),
-                                 1px 20px 10px rgba(BG, .2)
+                        font-size: 7rem
+                        line-height: 10rem
+                        text-shadow: 0 -1px 0 v99, 0 1px 0 v94,
+                                     0 2px 0 v94,  0 3px 0 v94,
+                                     0 4px 0 v94,  0 5px 0 v94,
+                                     0 6px 0 v94,  0 7px 0 v94,
+                                     0 8px 0 v94,  0 10px 5px rgba(BG, .4),
+                                     0 20px 10px rgba(BG, .4)
+                        white-space: pre-wrap
+                    }
+                    &::after {
+                        content: 'UNAUTHORIZED'
+
+                        animation: color_change 1s ease-in-out infinite alternate
+                        font-variant: small-caps
+                        font-size: 1.8rem
+                        letter-spacing: 1px
+                        line-height: 2rem
+                    }
                 }
                 &::after {
-                    content: 'Unauthorized'
-                    font-size: 2rem
-                    animation: color_change 850ms ease infinite alternate
+                    r       = unquote
+                    cbreak  = '\A '
+                    isicon  = '🛈 '
+                    isnote  = 'Note that the default username is "root" in all newer releases'
+
+                    content: '' + r(cbreak) + r(isicon) + r(isnote)
+                    color: v99
+
+                    font-size: 1rem
+                    line-height: 1.3rem
+                    text-shadow: 0 1px 0 v11
+                    white-space: pre
                 }
             }
-            &::after {
-                content: '\A \1F6C8  Note that the default username is "root" in all newer releases'
-                font-size: 1.3rem
-                margin-top: 4rem
-                text-shadow: 0 1px 0 v11
-                white-space: pre
-                padding: 0rem 0rem
+        }
+        else {
+            &[bgcolor="#cc9999"] {
+                background-color: v11
             }
         }
+    }
+
+    // Animations
+    @keyframes color_change {
+        0% {
+            color: v10
+            text-shadow: 0 1px 0 v12,
+                         0 -1px 0 v12,
+                         1px 0 0 v12,
+                         -1px 0 0 v12,
+                         0 -5px 5px v10,
+                         0 5px 5px v10
+        }
+        50%, 100% {
+            color: v12
+            text-shadow: 0 1px 0 v16,
+                         0 -1px 0 v16,
+                         1px 0 0 v16,
+                         -1px 0 0 v16,
+                         0 -5px 5px v11,
+                         0 5px 5px v11
+        }
+    }
+
+    @keyframes move-it {
+        0%   { transform: scale(1, 1)    translateY(0) }
+        10%  { transform: scale(1.1, .9) translateY(0) }
+        30%  { transform: scale(.9, 1.1) translateY(-10px) }
+        50%  { transform: scale(1, 1)    translateY(0) }
+        100% { transform: scale(1, 1)    translateY(0) }
     }
 
     // WDS alignments
