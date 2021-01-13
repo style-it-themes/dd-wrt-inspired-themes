@@ -302,6 +302,8 @@ SA = cg_sc_a
             }
         }
     }
+
+    // Use custom font
     if custom_font {
         * {
           font-family: var(--f-ui)
@@ -317,17 +319,6 @@ SA = cg_sc_a
         #contents > form[name="setup"][autocomplete="new-password"] > br:nth-child(20) {
             display: none
         }
-    }
-
-    // WDS alignments
-    form[name="wds"] {
-        .label { margin-right: 20px }
-        select { margin-right: 6px }
-    }
-
-    // Wol execution in progress box
-    pre {
-        background-color: bg0
     }
 
     // Body
@@ -558,6 +549,17 @@ SA = cg_sc_a
                 padding: 0rem 0rem
             }
         }
+    }
+
+    // WDS alignments
+    form[name="wds"] {
+        .label { margin-right: 20px }
+        select { margin-right: 6px }
+    }
+
+    // Wol execution in progress box
+    pre {
+        background-color: bg0
     }
 
     #wrapper #content { background-color: bg1 }
