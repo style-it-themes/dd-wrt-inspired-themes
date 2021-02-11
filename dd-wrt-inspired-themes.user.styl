@@ -1235,7 +1235,7 @@ b() { box-shadow: arguments }
             // fix border radius at https://github.com/settings/profile Emoji color
             border-radius: 50%
             &:checked {
-                path = '<circle cx="256" cy="256" r="128" fill="' + to_svg(fg-0) + '"/>'
+                path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v98) + '"/>'
 
                 background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
                 c: 0 ac3 ac4
@@ -1254,7 +1254,7 @@ b() { box-shadow: arguments }
         /[type='checkbox'] {
             border-radius: 2px
             &:checked {
-                path ='<path fill="' + to_svg(fg-0) + '" '
+                path ='<path fill="' + to_svg($v98) + '" '
                 path += 'd="M99 213l-1 89 104 102 205-201v-91L203 315 99 213z"/>'
 
                 background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
@@ -1267,7 +1267,7 @@ b() { box-shadow: arguments }
             }
             &:hover { c: 0 ac1 bg2 }
             &:indeterminate {
-                path = '<rect x="128" y="128" width="256" height="256" fill="' + to_svg(fg-0) + '"/>'
+                path = '<rect x="128" y="128" width="256" height="256" fill="' + to_svg($v98) + '"/>'
 
                 background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
                 c: 0 v16 v14
@@ -1331,7 +1331,7 @@ b() { box-shadow: arguments }
         // Custom select dropdown icon.
         r       = unquote
         prefix  = 'data:image/svg+xml;utf8,'
-        prefix += '<svg width="16" height="16" fill="' + to_svg(fg-3) + '" '
+        prefix += '<svg width="16" height="16" fill="' + to_svg($v97) + '" '
         prefix += 'xmlns="http://www.w3.org/2000/svg">'
         path    = '<path d="M4.427 9.427l3.396 3.396a.251.251 0 00.354 '
         path   += '0l3.396-3.396A.25.25 0 0011.396 9H4.604a.25.25 0 '
@@ -1362,7 +1362,7 @@ b() { box-shadow: arguments }
         &:focus-within  { c: 0 ac1 bg1 }
         &:hover {
             prefix  = 'data:image/svg+xml;utf8,'
-            prefix += '<svg width="16" height="16" fill="' + to_svg(fg-1) + '" '
+            prefix += '<svg width="16" height="16" fill="' + to_svg($v99) + '" '
             prefix += 'xmlns="http://www.w3.org/2000/svg">'
             path    = '<path d="M4.427 9.427l3.396 3.396a.251.251 0 00.354 '
             path   += '0l3.396-3.396A.25.25 0 0011.396 9H4.604a.25.25 0 '
@@ -1380,7 +1380,7 @@ b() { box-shadow: arguments }
         &[disabled] {
             r       = unquote
             prefix  = 'data:image/svg+xml;utf8,'
-            prefix += '<svg width="16" height="16" fill="' + to_svg(bg-5) + '" '
+            prefix += '<svg width="16" height="16" fill="' + to_svg($v93) + '" '
             prefix += 'xmlns="http://www.w3.org/2000/svg">'
             path    = '<path d="M4.427 9.427l3.396 3.396a.251.251 0 00.354 '
             path   += '0l3.396-3.396A.25.25 0 0011.396 9H4.604a.25.25 0 '
