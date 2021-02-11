@@ -10,7 +10,6 @@
 @license        MIT
 @preprocessor stylus
 
-@var checkbox cg_debug     'Color generator debug' 0
 @var checkbox sdetails     'Show style details'          1
 
 @var select   cg_theme     'Base color-scheme toggle'    {
@@ -203,32 +202,6 @@ b() { box-shadow: arguments }
 @-moz-document domain('192.168.1.1'),
 /*           */regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?'),
 /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
-
-    // Show debug.
-    if (cg_debug) {
-        body > div:first-child {
-            &::before {
-                P: -2rem 0 calc(100vh - 3rem) 0, 0
-                content: \
-                    '  ⭐ BG: ' + luminosity(BG) + \
-                    '  ⭐ FG: ' + luminosity(FG) + \
-                    '  🌟 v00: ' + v00 + \
-                    '  🌟 v50: ' + v50 + \
-                    '  🌟 v90: ' + v90
-                c: fg1 0 bg4
-                b: 0 1px bg5
-
-                text-align: center
-                line-height: 2rem
-            }
-            #content {
-                margin-top: 2rem
-            }
-            .logo {
-                margin-top: 2.5rem
-            }
-        }
-    }
 
     // Userstyle variables.
     :root {
