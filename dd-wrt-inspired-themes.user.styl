@@ -286,6 +286,12 @@ b() { box-shadow: arguments }
             r: 4px
         }
     }
+
+    // syslog apparently and we darken it due to unable to style iframe
+    body > fieldset:first-child {
+        background-color: bg0
+    }
+
     // Body
     body {
         background-color: bg1
