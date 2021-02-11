@@ -216,7 +216,7 @@ b() { box-shadow: arguments }
         --f-ui: f_ui, Tahoma, Arial, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, \
                 Helvetica, Apple Color Emoji, Segoe UI Emoji
 
-        /// Generate CSS color variables.
+        // Generate CSS color variables.
         colors = (bg fg v0 v1 v2 v3 v4 v5 v6 v7 v8 v9)
         for color in colors[0..1] {
             for tone in 0..5 {
@@ -296,10 +296,8 @@ b() { box-shadow: arguments }
             height: 180% i
             background-color: bg0
             td[width="70"] {
-                input {
-                    /[type="checkbox"][name*="sum"] {
-                        margin-bottom: -2px
-                    }
+                input[type="checkbox"][name*="sum"] {
+                    margin-bottom: -2px
                 }
             }
             h2 { background: bg5 }
@@ -341,11 +339,9 @@ b() { box-shadow: arguments }
             // Main header
             #header { background: bg0 }
         }
-        #main {
-            #contents {
-                background: bg1
-                color: fg3
-            }
+        #main #contents {
+            background: bg1
+            color: v97
         }
         input {
             background-color: bg0
@@ -425,13 +421,11 @@ b() { box-shadow: arguments }
                 }
             }
         }
-        div {
-            &.progressbar {
-                background-color: bg4
-                border: 1px solid bg5
+        div.progressbar {
+            background-color: bg4
+            border: 1px solid bg5
 
-                r: 4px
-            }
+            r: 4px
         }
         dd {
             border-bottom: .123rem dotted bg5
@@ -572,11 +566,9 @@ b() { box-shadow: arguments }
 
     // Fix specific button margins caused by styling
     div.center {
-        input {
-            &.button {
-                &[name='add_button']:not([onclick*='_add']) {
-                    margin: 0 0 .8em 0
-                }
+        input.button {
+            &[name='add_button']:not([onclick*='_add']) {
+                margin: 0 0 .8em 0
             }
         }
     }
@@ -645,11 +637,7 @@ b() { box-shadow: arguments }
                         outline: 0
                     }
                 }
-                &.current {
-                    span {
-                        background: bg2 i
-                    }
-                }
+                &.current span { background: bg2 i }
             }
         }
         #menuSub {
@@ -724,7 +712,7 @@ b() { box-shadow: arguments }
                     color: fg1
                 }
             }
-            & a {
+            a {
                 background: bg1
                 border-color: bg5
                 color: fg2
@@ -994,7 +982,43 @@ b() { box-shadow: arguments }
         &[src*="hotspotsystem"] {
             r       = unquote
             prefix  = 'data:image/png;base64,'
-            path    = 'iVBORw0KGgoAAAANSUhEUgAAAKoAAAAYCAMAAABdqpbOAAAAk1BMVEVMaXFlaGhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmh5q195q195q195q195q195q195q195q195q19kZmh5q19poUv///97rGGNt3dzp1dfmz+BsWnH3Lyxz6KhxI7t9OnR4si61KxjNDtqAAAAInRSTlMABYk87xdJ5xH4Mcymf1jWKMKyZQsg4HKW69Z0sidjGaJOUN6puAAABA5JREFUeF7Vl2l3qzgMhl8bYzC72dOmyyhJ1+Xe///rJhKmSXtmzunH9P2CEZL8IGQDCLq53l5tNlfb6xtctm7ud6s293e4YN1udmfa/IOL1fXum24vtqa73cNuv396eHhYWS+0rnfMtn9/fXnaP6+4m8vs1+2xqPuXw+HP8+P70+5pL6z3EPVxrPiYxj3kmEUNH1WcstgsxkGcFyNC6NGVY1UaXFMxiuvAJ5J2SIEhylI5CZ6SXZJzyjh4xiludoz6eDi87j8Ob89PO2ENZZ2c6QDEtfMKSPVI5HwFWJOIjIfSCZFrqx6tGMeZYfqyJiLfAVESXHOFUuI71TozAbCjGfuhcETJHMW1CZ79tIzMjNklpgTQjMbUuF5R/74ccZ8/Ph6ZNawsTTQxqqNRYahp0YyKggyKMKqQh1ESI13HBSytgg6DriGiAaiJKpWERA2tSqcwyCV5oiCRDttP1IfD4U0a4dQBJSMAfUI14InGqePoKtVlQVSXuoqIfNW1VMfw5OaSC1+iJTJlNxPR1Gs9O0q0ZsDcVgUlDect0BG1DDHbKSfdl1on5GZ9HBG1xzNdCSpZqJGRcfUd9VVQr85Q2bXm8iQDgImjgJhng8zXA1kDeDIAIqJiIDIZwMV3PdAb8ourT4EogxTU1lxaT9QpwMpayCUz40cQFWdPJsHmf1BVQB197nNHOWaiDqxcMmVcEyEjqgsLRnU2HjSR7riyrJZrgsZQDkAe8VhUWMNokhnI5TPjQ9Vk4gU1L9q27VCQ8eQwU57/APXUN+FembkKqHIm8twA5IwjoiY8DEDLIKAi9GA9hLBc4bOrZ/UFVdSioCRKqMupmn/QAHJ/UtUwPyPZEyqyYmS+gu0sV0KvD6D4gopsFtd86SnKwKq8rKzuC2rtva8njm8Kzjm0lPxoWUmvVssciByZ9IRqB2CYHI1oyempnDKwa91DGGk4oWYDEHeOHPP4BQtW7pao+IJqP3s1s1xfxQ3wfbM6vJ9tVuVSnpR3AN5W2qjpDJHGJ+rgXNnElm+jJdND1I9EPmqqUQhW1HgkncWRW9xyco2svLoaUm7wL6g6stZmggqz7ITJ+SvgiHt8tQrp7g6s8CRjQ7WCdbTIqxOqpqCOJ8+wKDPBmqeM6ig/b/wSJ9SRRHLSf+tVz6gWMxmFmgywFdSzFyuj3uPbKyBRgM0l6dyHNez5kpZOM6VsQCsqIi+uRYxl6dcA0nJc4sEK3lErBajtsn27sORELVouqKWCW9BByrrbv/15/I/PlcFankxFdoGIuqkaIOoj24AV22DMbNTjU9nR2gTXNTy1wXju3VRTZ/vVpmTWiGUbNDZKAZvKpdNH4P78I/DXfFpf/5oflltcsG62J9KL/Q38RT/X/wKcGag52EipmgAAAABJRU5ErkJggg=='
+            path    = 'iVBORw0KGgoAAAANSUhEUgAAAKoAAAAYCAMAAABdqpbOAAA'
+            path   += 'Ak1BMVEVMaXFlaGhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZm'
+            path   += 'hkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZmhkZ'
+            path   += 'mhkZmhkZmhkZmh5q195q195q195q195q195q195q195q195'
+            path   += 'q19kZmh5q19poUv///97rGGNt3dzp1dfmz+BsWnH3Lyxz6K'
+            path   += 'hxI7t9OnR4si61KxjNDtqAAAAInRSTlMABYk87xdJ5xH4Mc'
+            path   += 'ymf1jWKMKyZQsg4HKW69Z0sidjGaJOUN6puAAABA5JREFUe'
+            path   += 'F7Vl2l3qzgMhl8bYzC72dOmyyhJ1+Xe///rJhKmSXtmzunH'
+            path   += '9P2CEZL8IGQDCLq53l5tNlfb6xtctm7ud6s293e4YN1udmf'
+            path   += 'a/IOL1fXum24vtqa73cNuv396eHhYWS+0rnfMtn9/fXnaP6'
+            path   += '+4m8vs1+2xqPuXw+HP8+P70+5pL6z3EPVxrPiYxj3kmEUNH'
+            path   += '1WcstgsxkGcFyNC6NGVY1UaXFMxiuvAJ5J2SIEhylI5CZ6S'
+            path   += 'XZJzyjh4xiludoz6eDi87j8Ob89PO2ENZZ2c6QDEtfMKSPV'
+            path   += 'I5HwFWJOIjIfSCZFrqx6tGMeZYfqyJiLfAVESXHOFUuI71T'
+            path   += 'ozAbCjGfuhcETJHMW1CZ79tIzMjNklpgTQjMbUuF5R/74cc'
+            path   += 'Z8/Ph6ZNawsTTQxqqNRYahp0YyKggyKMKqQh1ESI13HBSyt'
+            path   += 'gg6DriGiAaiJKpWERA2tSqcwyCV5oiCRDttP1IfD4U0a4dQ'
+            path   += 'BJSMAfUI14InGqePoKtVlQVSXuoqIfNW1VMfw5OaSC1+iJT'
+            path   += 'JlNxPR1Gs9O0q0ZsDcVgUlDect0BG1DDHbKSfdl1on5GZ9H'
+            path   += 'BG1xzNdCSpZqJGRcfUd9VVQr85Q2bXm8iQDgImjgJhng8zX'
+            path   += 'A1kDeDIAIqJiIDIZwMV3PdAb8ourT4EogxTU1lxaT9QpwMp'
+            path   += 'ayCUz40cQFWdPJsHmf1BVQB197nNHOWaiDqxcMmVcEyEjqg'
+            path   += 'sLRnU2HjSR7riyrJZrgsZQDkAe8VhUWMNokhnI5TPjQ9Vk4'
+            path   += 'gU1L9q27VCQ8eQwU57/APXUN+FembkKqHIm8twA5IwjoiY8'
+            path   += 'DEDLIKAi9GA9hLBc4bOrZ/UFVdSioCRKqMupmn/QAHJ/UtU'
+            path   += 'wPyPZEyqyYmS+gu0sV0KvD6D4gopsFtd86SnKwKq8rKzuC2'
+            path   += 'rtva8njm8Kzjm0lPxoWUmvVssciByZ9IRqB2CYHI1oyempn'
+            path   += 'DKwa91DGGk4oWYDEHeOHPP4BQtW7pao+IJqP3s1s1xfxQ3w'
+            path   += 'fbM6vJ9tVuVSnpR3AN5W2qjpDJHGJ+rgXNnElm+jJdND1I9'
+            path   += 'EPmqqUQhW1HgkncWRW9xyco2svLoaUm7wL6g6stZmggqz7I'
+            path   += 'TJ+SvgiHt8tQrp7g6s8CRjQ7WCdbTIqxOqpqCOJ8+wKDPBm'
+            path   += 'qeM6ig/b/wSJ9SRRHLSf+tVz6gWMxmFmgywFdSzFyuj3uPb'
+            path   += 'KyBRgM0l6dyHNez5kpZOM6VsQCsqIi+uRYxl6dcA0nJc4sE'
+            path   += 'K3lErBajtsn27sORELVouqKWCW9BByrrbv/15/I/PlcFank'
+            path   += 'xFdoGIuqkaIOoj24AV22DMbNTjU9nR2gTXNTy1wXju3VRTZ'
+            path   += '/vVpmTWiGUbNDZKAZvKpdNH4P78I/DXfFpf/5oflltcsG62'
+            path   += 'J9KL/Q38RT/X/wKcGag52EipmgAAAABJRU5ErkJggg=='
             ry      = 'no-repeat'
 
             background: s("url('%s%s') %s", r(prefix), r(path), r(ry))
@@ -1280,10 +1304,8 @@ b() { box-shadow: arguments }
         -webkit-box-shadow: inset 0 1px 2px rgba(BG, .1)
 
         r: 4px
-        &-bar {
-            &.odd {
-                background-color: ac1
-            }
+        &-bar.odd {
+            background-color: v08
         }
     }
 
