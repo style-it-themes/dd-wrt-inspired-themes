@@ -204,7 +204,7 @@ b() { box-shadow: arguments }
 /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?'),
 /*           */regexp('https?://iplookup.flagfox?.net(/.*)?') {
 
-    // Userstyle variables.
+    // global section triggers and variables
     :root {
         // Userstyle info.
         --note = 'DD-WRT Inspired Themes - 2.0.0'
@@ -1433,6 +1433,7 @@ b() { box-shadow: arguments }
     }
 }
 @-moz-document regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?') {
+    // oidsearch.s.dd-wrt.com
     body {
         background: bg0
         color: fg3
@@ -1460,6 +1461,7 @@ b() { box-shadow: arguments }
 }
 @-moz-document domain('192.168.1.1'),
 /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
+    // speedchecker.dd-wrt.com
     body {
         background: bg2
         color: v96
@@ -1594,6 +1596,7 @@ b() { box-shadow: arguments }
     }
 }
 @-moz-document regexp('https?://iplookup.flagfox?.net(/.*)?') {
+    // iplookup.flagfox.net
     body {
         background: bg0
         input {
