@@ -295,7 +295,7 @@ b() { box-shadow: arguments }
     // Body
     body {
         background-color: bg1
-        color: fg3
+        color: v96
 
         text-rendering: optimizeLegibility
         // fix filters popup
@@ -311,21 +311,21 @@ b() { box-shadow: arguments }
         }
         &.gui {
             background: bg0
-            color: fg3
+            color: v96
         }
         fieldset {
             background: bg2
             border-color: bg4
-            color: fg3
+            color: v98
             /.off {
                 background: bg2
                 border-color: bg4
-                color: fg3
+                color: v96
                 input { c: fg5 bg3 bg0; opacity: .8; &[disabled]:hover { c: fg5 bg3 bg0; opacity: .8 } }
             }
             legend {
                 background: t
-                color: ac0
+                color: v09
                 text-shadow: 0 1px 0 bg0
             }
         }
@@ -333,7 +333,7 @@ b() { box-shadow: arguments }
             // Help bg
             background: t
             border: 1px solid bg0
-            color: fg2
+            color: v98
             #help {
                 background: bg1
             }
@@ -353,40 +353,40 @@ b() { box-shadow: arguments }
         input {
             background-color: bg0
             border-color: bg4
-            color: fg1
+            color: v98
 
             outline: 0
             &:focus, &.focus {
-                border-color: ac0
-                b: 0 0 5px 1px ac1
+                border-color: v09
+                b: 0 0 5px 1px v08
             }
             &[disabled] {
                 background-color: bg0
                 border-color: bg2
-                color: fg5
+                color: v94
                 &:hover {
-                    color: fg5
+                    color: v99
                     c: 0 bg2 bg0
                 }
             }
             &.button {
-                background: ac2
-                border-color: ac3
+                background: v06
+                border-color: v04
                 box-shadow: 0 1px 0 bg0
-                color: fg1
+                color: v98
                 text-shadow: 0 1px 0 bg0
 
                 outline: 0
                 transition: transition
                 &:hover, &:focus-within {
-                    background: ac1 i
-                    border-color: ac1
-                    box-shadow: 0 0 10px 0 ac3
-                    color: fg0
+                    background: v08 i
+                    border-color: v08
+                    box-shadow: 0 0 10px 0 v04
+                    color: v99
                 }
                 &[disabled] {
                     c: 0 bg3 bg1
-                    color: fg5
+                    color: v95
 
                     box-shadow: none
                     opacity: .5
@@ -400,7 +400,7 @@ b() { box-shadow: arguments }
                     background: none repeat scroll 0 0 v43 i
                     border-color: v43 i
                     box-shadow: 0 0 10px 0 v43
-                    color: fg0 i
+                    color: v99 i
                 }
             }
             &[name*="reset"] {
@@ -411,7 +411,7 @@ b() { box-shadow: arguments }
                     background: none repeat scroll 0 0 bg5 i
                     border-color: bg5 i
                     box-shadow: 0 0 10px 0 bg5
-                    color: fg0 i
+                    color: v99 i
                 }
             }
             &[name*="refresh"][style*="background"] {
@@ -420,7 +420,7 @@ b() { box-shadow: arguments }
             &[name*="reboot"] {
                 background: none repeat scroll 0 0 v14
                 border-color: v15
-                color: fg1
+                color: v98
                 &:hover, &:focus-within {
                     background: none repeat scroll 0 0 v16 i
                     border-color: v17 i
@@ -559,15 +559,13 @@ b() { box-shadow: arguments }
         border-color: bg3
     }
 
-    .setting .default { color: fg5 }
+    .setting .default { color: fg4 }
 
     #statusInfo {
-        color: ac0
+        color: v09
         a {
-            color ac0
-            &:hover {
-                color: fg1
-            }
+            color v09
+            &:hover { color: v99 }
         }
     }
 
@@ -637,10 +635,10 @@ b() { box-shadow: arguments }
                             text-shadow: 0 1px 0 bg0
                         }
                     }
-                    & a {
-                        background: ac3
+                    a {
+                        background: v04
                         color: fg1
-                        border-color: ac2
+                        border-color: v06
                         outline: 0
                     }
                 }
@@ -655,9 +653,9 @@ b() { box-shadow: arguments }
     }
 
     #menuSub {
-        background: ac3
+        background: v04
         color: fg1
-        border-color: ac2
+        border-color: v06
         text-shadow: 0 1px 0 bg0
 
         outline: 0
@@ -670,9 +668,9 @@ b() { box-shadow: arguments }
             }
         }
         h2 {
-            background: ac3
+            background: v04
             color: fg1
-            border-color: ac2
+            border-color: v06
             text-shadow: 0 1px 0 bg0
 
             outline: 0
@@ -684,20 +682,20 @@ b() { box-shadow: arguments }
 
     #menuSubList {
         li {
-            & a {
-                background: ac2
-                border-color: ac1
+            a {
+                background: v06
+                border-color: v08
                 color: fg1
                 &:hover {
-                    background: ac1
-                    border-color: ac0
+                    background: v08
+                    border-color: v09
                     color: fg0
                 }
             }
             span {
                 &hover, &:focus-within {
-                    background: ac2
-                    border-color: ac0
+                    background: v06
+                    border-color: v09
                     color: fg1
                 }
             }
@@ -707,15 +705,15 @@ b() { box-shadow: arguments }
     #menuMainList {
         li {
             span {
-                background: ac3
-                border-color: ac1
+                background: v04
+                border-color: v08
                 color: fg1
                 strong { text-shadow: 0 1px 0 bg0 }
 
                 outline: 0
                 &hover, &:focus-within {
-                    background: ac2
-                    border-color: ac0
+                    background: v06
+                    border-color: v09
                     color: fg1
                 }
             }
@@ -746,8 +744,8 @@ b() { box-shadow: arguments }
         border-color: bg4
         color: fg0
         &:focus, &.focus {
-            border-color: ac0
-            b: 0 0 5px 1px ac1
+            border-color: v09
+            b: 0 0 5px 1px v08
 
             outline: 0
         }
@@ -917,8 +915,8 @@ b() { box-shadow: arguments }
     }
 
     a {
-        color: ac1
-        &:hover, &:focus-within { color: ac0 }
+        color: v08
+        &:hover, &:focus-within { color: v09 }
     }
 
     h2, h3 {
@@ -943,7 +941,8 @@ b() { box-shadow: arguments }
             color: fg0
             text-shadow: 0 1px 0 bg0
         }
-        .bar { background-color: ac1 }
+        .bar { background-color: v08 }
+    }
 
     // DD_WRT bottom link spacing
     .center a[href="http://www.dd-wrt.com/"] {
@@ -1073,7 +1072,7 @@ b() { box-shadow: arguments }
         mix-blend-mode: exclusion
         &:hover {
             background: fg1
-            border-color: ac0
+            border-color: v09
         }
     }
 
@@ -1181,7 +1180,7 @@ b() { box-shadow: arguments }
 
     // Progress bar when e.g reboot
     .progressbarblock {
-        background-color: ac0
+        background-color: v09
     }
 
     .overlay_ddwrt {
@@ -1198,7 +1197,7 @@ b() { box-shadow: arguments }
         padding: 7px
 
         &:hover, &:focus-within  {
-            border-color: ac1
+            border-color: v08
             background-color: bg1
         }
 
@@ -1238,7 +1237,7 @@ b() { box-shadow: arguments }
                 path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v98) + '"/>'
 
                 background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
-                c: 0 ac3 ac4
+                c: 0 v04 v02
 
                 padding: 7px
                 &[disabled] {
@@ -1248,7 +1247,7 @@ b() { box-shadow: arguments }
                 }
             }
             &:focus { border-radius: 50% }
-            &:hover { c: 0 ac1 bg2 }
+            &:hover { c: 0 v08 bg2 }
         }
 
         /[type='checkbox'] {
@@ -1258,14 +1257,14 @@ b() { box-shadow: arguments }
                 path += 'd="M99 213l-1 89 104 102 205-201v-91L203 315 99 213z"/>'
 
                 background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
-                c: 0 ac3 ac4
+                c: 0 v04 v02
                 &[disabled] {
                     c: fg1 bg5 bg4
 
                     opacity: .7
                 }
             }
-            &:hover { c: 0 ac1 bg2 }
+            &:hover { c: 0 v08 bg2 }
             &:indeterminate {
                 path = '<rect x="128" y="128" width="256" height="256" fill="' + to_svg($v98) + '"/>'
 
@@ -1286,9 +1285,9 @@ b() { box-shadow: arguments }
                 transition: transition
                 cursor: pointer
                 &:hover {
-                    background-color: ac2
-                    border: 2px solid ac2
-                    box-shadow: 0 0 10px 0 ac4
+                    background-color: v06
+                    border: 2px solid v06
+                    box-shadow: 0 0 10px 0 v02
                     color: fg1
                 }
             }
@@ -1302,9 +1301,9 @@ b() { box-shadow: arguments }
                 transition: transition
                 cursor: pointer
                 &:hover {
-                    background-color: ac2
-                    border: 2px solid ac2
-                    box-shadow: 0 0 10px 0 ac4
+                    background-color: v06
+                    border: 2px solid v06
+                    box-shadow: 0 0 10px 0 v02
                     color: fg1
                 }
             }
@@ -1343,7 +1342,7 @@ b() { box-shadow: arguments }
         background-color: bg0 i
         border: 1px solid bg4
         b: 0px 1px 1px rgba(BG, .075)
-        color: fg2
+        color: v98
 
         appearance: none
         -moz-appearance: none
@@ -1357,9 +1356,9 @@ b() { box-shadow: arguments }
         transition: transition
         option {
             background: bg0
-            &:hover { background-color: ac3 }
+            &:hover { background-color: v04 }
         }
-        &:focus-within  { c: 0 ac1 bg1 }
+        &:focus-within  { c: 0 v08 bg1 }
         &:hover {
             prefix  = 'data:image/svg+xml;utf8,'
             prefix += '<svg width="16" height="16" fill="' + to_svg($v99) + '" '
@@ -1371,7 +1370,7 @@ b() { box-shadow: arguments }
             xy      = 'no-repeat right/20px'
 
             background: s("url('%s%s</svg>') %s", r(prefix), r(path), r(xy) i)
-            c: 0 ac1 bg1
+            c: 0 v08 bg1
 
             background-position: right 3px center i
             background-size: 16px i
@@ -1389,7 +1388,7 @@ b() { box-shadow: arguments }
             xy      = 'no-repeat right/20px'
 
             background: s("url('%s%s</svg>') %s", r(prefix), r(path), r(xy) i)
-            c: fg5 bg4 bg0
+            c: v94 bg4 bg0
 
             background-position: right 3px center i
             background-size: 16px i
@@ -1463,10 +1462,10 @@ b() { box-shadow: arguments }
 /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
     body {
         background: bg2
-        color: fg3
+        color: v96
         &.gui {
             background: bg0
-            color: fg3
+            color: v96
         }
     }
 
@@ -1495,7 +1494,7 @@ b() { box-shadow: arguments }
                 }
             }
             &:focus {
-                border-color: ac3
+                border-color: v04
                 box-shadow: inset 0 1px 1px rgba(BG, .075), 0 0 8px rgba(AC, .6)
                 -webkit-box-shadow: inset 0 1px 1px rgba(BG, .075), 0 0 8px rgba(AC, .6)
 
