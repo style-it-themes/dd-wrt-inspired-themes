@@ -1571,13 +1571,11 @@ b() { box-shadow: arguments }
     select {
         // Custom select dropdown icon.
         prefix  = 'data:image/svg+xml;utf8,'
-        prefix += '<svg width="16" height="16" fill="' + to_svg($v97) + '" '
+        prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_svg($v97) + '" '
         prefix += 'xmlns="http://www.w3.org/2000/svg">'
-        path    = '<path d="M4.427 9.427l3.396 3.396a.251.251 0 00.354 '
-        path   += '0l3.396-3.396A.25.25 0 0011.396 9H4.604a.25.25 0 '
-        path   += '00-.177.427zM4.423 6.47L7.82 3.072a.25.25 0 01.354 0L11.57 '
-        path   += '6.47a.25.25 0 01-.177.427H4.6a.25.25 0 01-.177-.427z"/>'
-        xy      = 'no-repeat right/20px'
+        path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6'
+        path   += ' 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
+        xy      = 'no-repeat right 3px center'
 
         background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
         background-color: bg0 i
@@ -1588,13 +1586,10 @@ b() { box-shadow: arguments }
         appearance: none
         -moz-appearance: none
         -webkit-appearance: none
-        background-position: right 3px center i
-        background-size: 16px i
         height: 1.7rem
         max-width: 100%
         outline: 0
-        padding-right: 1.2rem
-        transition: transition
+        padding-right: 1.3rem
         option {
             background: bg0
             &:hover { background-color: v04 }
@@ -1602,36 +1597,29 @@ b() { box-shadow: arguments }
         &:focus-within  { c: 0 v08 bg1 }
         &:hover {
             prefix  = 'data:image/svg+xml;utf8,'
-            prefix += '<svg width="16" height="16" fill="' + to_svg($v99) + '" '
+            prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_svg($v99) + '" '
             prefix += 'xmlns="http://www.w3.org/2000/svg">'
-            path    = '<path d="M4.427 9.427l3.396 3.396a.251.251 0 00.354 '
-            path   += '0l3.396-3.396A.25.25 0 0011.396 9H4.604a.25.25 0 '
-            path   += '00-.177.427zM4.423 6.47L7.82 3.072a.25.25 0 01.354 0L11.57 '
-            path   += '6.47a.25.25 0 01-.177.427H4.6a.25.25 0 01-.177-.427z"/>'
-            xy      = 'no-repeat right/20px'
+            path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6'
+            path   += ' 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
+            xy      = 'no-repeat right 3px center'
 
             background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
             c: 0 v08 bg1
 
-            background-position: right 3px center i
-            background-size: 16px i
+            transition: transition
         }
 
         &[disabled] {
             prefix  = 'data:image/svg+xml;utf8,'
-            prefix += '<svg width="16" height="16" fill="' + to_svg($v93) + '" '
+            prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_svg($v93) + '" '
             prefix += 'xmlns="http://www.w3.org/2000/svg">'
-            path    = '<path d="M4.427 9.427l3.396 3.396a.251.251 0 00.354 '
-            path   += '0l3.396-3.396A.25.25 0 0011.396 9H4.604a.25.25 0 '
-            path   += '00-.177.427zM4.423 6.47L7.82 3.072a.25.25 0 01.354 0L11.57 '
-            path   += '6.47a.25.25 0 01-.177.427H4.6a.25.25 0 01-.177-.427z"/>'
-            xy      = 'no-repeat right/20px'
+            path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6'
+            path   += ' 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
+            xy      = 'no-repeat right 3px center'
 
             background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
             c: v94 bg4 bg0
 
-            background-position: right 3px center i
-            background-size: 16px i
             opacity: .5
         }
 
