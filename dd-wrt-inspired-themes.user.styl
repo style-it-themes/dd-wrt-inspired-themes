@@ -235,8 +235,8 @@ b() { box-shadow: arguments }
 
     // Use custom font
     if custom_font {
-        * {
-          font-family: var(--f-ui)
+        .label, .setting, select[name] {
+            font-family: var(--f-ui)
         }
         pre, textarea {
             font-family: var(--f-mono)
