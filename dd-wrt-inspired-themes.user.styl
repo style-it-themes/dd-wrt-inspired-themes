@@ -192,9 +192,9 @@ b() { box-shadow: arguments }
     }
 }
 @-moz-document domain('192.168.1.1'),
-/*           */regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?'),
-/*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?'),
-/*           */regexp('https?://iplookup.flagfox?.net(/.*)?') {
+/*-----------*/regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?'),
+/*-----------*/regexp('https?://speedchecker.dd-wrt?.com(/.*)?'),
+/*-----------*/regexp('https?://iplookup.flagfox?.net(/.*)?') {
 
     // global section triggers and variables
     :root {
@@ -282,7 +282,7 @@ b() { box-shadow: arguments }
             height: 180% i
             background-color: bg0
             td[width="70"] {
-                input[type="checkbox"][name*="sum"] {
+                input[type='checkbox' i][name*='sum'] {
                     margin-bottom: -2px
                 }
             }
@@ -300,7 +300,10 @@ b() { box-shadow: arguments }
                 background: bg2
                 border-color: bg4
                 color: v96
-                input { c: fg5 bg3 bg0; opacity: .8; &[disabled]:hover { c: fg5 bg3 bg0; opacity: .8 } }
+                input { c: fg5 bg3 bg0
+                    opacity: .8
+                    &[disabled]:hover { c: fg5 bg3 bg0; opacity: .8 }
+                }
             }
             legend {
                 background: t
@@ -372,8 +375,8 @@ b() { box-shadow: arguments }
                 }
             }
             &[name*="apply"] {
-                background: none repeat scroll 0 0 v41
-                border-color: v41
+                background: none repeat scroll 0 0 v42
+                border-color: v42
                 color: fg1
                 &:hover, &:focus-within {
                     background: none repeat scroll 0 0 v43 i
@@ -421,7 +424,7 @@ b() { box-shadow: arguments }
         if (new_401) {
             &[bgcolor="#cc9999"] {
                 background-color: v11
-                color: fg2
+                color: v98
 
                 font-size: 0
                 font-family: Verdana, Helvetica
@@ -481,7 +484,7 @@ b() { box-shadow: arguments }
             }
         }
         else {
-            &[bgcolor="#cc9999"] {
+            &[bgcolor='#cc9999' i] {
                 background-color: v11
             }
         }
@@ -518,7 +521,7 @@ b() { box-shadow: arguments }
     }
 
     // WDS alignments
-    form[name="wds"] {
+    form[name='wds'] {
         .label { margin-right: 20px }
         select { margin-right: 6px }
     }
@@ -532,7 +535,7 @@ b() { box-shadow: arguments }
 
     .popup {
         background: bg1
-        color: fg3
+        color: v97
     }
 
     hr { c: bg5 0 bg5 }
@@ -542,8 +545,6 @@ b() { box-shadow: arguments }
         background: bg1
         border-color: bg3
     }
-
-    .setting .default { color: fg4 }
 
     #statusInfo {
         color: v09
@@ -570,7 +571,7 @@ b() { box-shadow: arguments }
             &[onclick*='vifs_add'] {
                 margin: .4em 0 0 0
             }
-            &[onclick*="delete"] {
+            &[onclick*='delete'] {
                 margin: 0 .4em 0 .4em
             }
 
@@ -581,26 +582,30 @@ b() { box-shadow: arguments }
             &[onclick*='add_peer'] {
                margin: 0 0 -6px -35%
             }
+            // better padding for preview style button
+            &[onclick*="previewStyle"] {
+                padding: .362em 1.087em
+            }
         }
 
         // Fix specific checkbox margin wifi security unmask checkbox
-        &[type="checkbox"] {
+        &[type='checkbox' i] {
             &[onclick*='setElementMask'] {
                 margin-top: 6px
             }
             // QoS - TCP-Packet Priority / Services nvram client DB
-            &[name*="svqos_"], &[name="_dhcpd_usenvram"] {
+            &[name*='svqos_'], &[name='_dhcpd_usenvram'] {
                 margin-bottom: -1px
                 margin-left: 0
             }
         }
 
         // Acess restrictions - Fix time all radio alignment
-        &[type='radio'][onclick*='timeall'][value='0'] {
+        &[type='radio' i][onclick*='timeall'][value='0'] {
             margin-top: 4px
         }
         // Acess restrictions - Align checkbox with filter dropdown
-        /[name="_filter_p2p"] {
+        /[name='_filter_p2p'] {
             margin-left: calc(2% - .3rem)
         }
     }
@@ -745,13 +750,13 @@ b() { box-shadow: arguments }
                 border-color: bg4
                 color: fg1
             }
-            /[bgcolor="#FFFF00"] {
+            /[bgcolor='#FFFF00'] {
                 background-color: v33
                 &:hover {
                     background-color: v34
                 }
             }
-            /[bgcolor="#FF0000"] {
+            /[bgcolor='#FF0000'] {
                 background-color: v14
                 &:hover {
                     background-color: v15
@@ -760,17 +765,17 @@ b() { box-shadow: arguments }
         }
         /#wireless_table {
             td {
-                /[title*="Search"],
-                /[title*="Monitoring"] {
+                /[title*='Search'],
+                /[title*='Monitoring'] {
                     &:hover {
-                        color: fg1
+                        color: v08
                         transition: transition
                     }
                 }
             }
         }
         // Access restrictons - fix center align to weekdays table
-        /[summary="week days table"] {
+        /[summary='week days table'] {
             margin-left: -1.3rem
         }
         & td {
@@ -780,19 +785,19 @@ b() { box-shadow: arguments }
             /[style*='background-color: rgb(205\, 0\, 0)'] {
                 c: 0 0 v15
             }
-            /[bgcolor="#C0C0C0"] {
+            /[bgcolor='#C0C0C0'] {
                 background-color: bg2
                 &:hover { background-color: bg3 }
             }
-            /[bgcolor="#FFFFFF"] { background-color: bg0 }
-            /[bordercolor="#000000"] { border-color: bg4 }
+            /[bgcolor='#FFFFFF'] { background-color: bg0 }
+            /[bordercolor='#000000'] { border-color: bg4 }
         }
-        tr[bgcolor="#CCCCCC"] {
+        tr[bgcolor='#CCCCCC'] {
             background-color: bg2
             &:hover, &:focus-within { background-color: bg3 }
         }
         // syslog color
-        tr[bgcolor="#7CFC00"] {
+        tr[bgcolor='#7CFC00'] {
             background-color: v42
             color: v99
         }
@@ -800,23 +805,22 @@ b() { box-shadow: arguments }
         /#drives {
             margin-bottom: 6px
         }
-        /[summary="packet-type priority table"] {
-            td[colspan="5"] {
+        /[summary='packet-type priority table'] {
+            td[colspan='5'] {
                 padding-bottom: 6px
             }
         }
         /#conntrack_table {
-            a:link { color: fg2 }
+            a:link {
+                color: v97
+                &:hover { color: v08 }
+            }
         }
 
-        .bulle {
-            border-color: bg5
-        }
+        .bulle { border-color: bg5 }
     }
 
-    .odd {
-        background-color: bg2
-    }
+    .odd { background-color: bg2 }
 
     .status {
         &_red {
@@ -853,6 +857,10 @@ b() { box-shadow: arguments }
             background: bg2
             border-color: bg4
         }
+        .bulle {
+            background-color: bg5
+            color: v99
+        }
         // Purple note
         .note {
             background: v71
@@ -861,9 +869,8 @@ b() { box-shadow: arguments }
             margin-top: .5rem
         }
         // Wi-vis
-        &.gridpoint {
-            background-color: fg1
-        }
+        &.gridpoint { background-color: fg1 }
+
         &.slidingheader {
             background-color: bg2
             background-image: none
@@ -871,17 +878,10 @@ b() { box-shadow: arguments }
         }
         &.slidingbodyshow {
             background-color: bg2
-            center {
-                border-color: bg4
-            }
+
+            center { border-color: bg4 }
         }
-        &.slidingbody {
-            background-color: bg5
-        }
-        .bulle {
-            background-color: bg5
-            color: v99
-        }
+        &.slidingbody { background-color: bg5 }
     }
 
     // Wi-viz client MAC bg
@@ -889,13 +889,14 @@ b() { box-shadow: arguments }
         background-color: bg0
     }
 
-    // Setting label (inline style)
+    // Setting labels
     .setting {
+        // inline style
         span {
-            &[style*="color:#999999"] {
-                c: fg3
-            }
+            &[style*='color:#999999'] { c: v96 }
         }
+
+        .default { color: v96 }
     }
 
     a {
@@ -906,7 +907,7 @@ b() { box-shadow: arguments }
     h2, h3 {
         background: bg5
         border-color: bg5
-        color: fg2
+        color: fg1
     }
 
     // Submit options button footer
@@ -921,15 +922,17 @@ b() { box-shadow: arguments }
     .meter {
         background-color: bg4
         border-color: bg5
+
         .text {
-            color: fg0
+            if (light(convert($v08))) { color: v98 } else { color: v90 }
             text-shadow: 0 1px 0 bg0
         }
+
         .bar { background-color: v08 }
     }
 
     // DD_WRT bottom link spacing
-    .center a[href="http://www.dd-wrt.com/"] {
+    .center a[href='http://www.dd-wrt.com/'] {
         line-height: 2.2rem
     }
 
@@ -1306,13 +1309,15 @@ b() { box-shadow: arguments }
             width: 0
         }
     }
+
     // Paypal logo inversion
-    [type="image"][src*="paypal"] {
+    [type='image' i][src*='paypal'] {
         background: fg0
         border-color: fg3
         filter: invert(.9) hue-rotate(180deg)
         margin-bottom: -.5rem
         mix-blend-mode: exclusion
+
         &:hover {
             background: fg1
             border-color: v09
@@ -1324,6 +1329,7 @@ b() { box-shadow: arguments }
         filter: invert(.95) hue-rotate(180deg) contrast(1.6)
         mix-blend-mode: lighten
     }
+
     .controls {
         /img {
             /[src*='wiviz'] {
@@ -1340,25 +1346,28 @@ b() { box-shadow: arguments }
             }
         }
     }
+
     svg { shape-rendering: geometricPrecision }
+
     // Bandwidth graph
     /#graph {
         width: clamp(200px, 50% + 20px, 800px)
         text {
-            /[fill="green"] { g: v44 }
-            /[fill="red"] { g: v16 }
-            /[fill="#435370"] { g: fg2 0 }
-            /[fill="blue"] { g: v65 }
-            /[fill="gray"] { g: fg5 }
+            /[fill='green'] { g: v44 }
+            /[fill='red'] { g: v16 }
+            /[fill='#435370'] { g: v68 0 }
+            /[fill='blue'] { g: v65 }
+            /[fill='gray'] { g: v96 }
         }
         path {
-            /[stroke="red"] { g: 0 v16 }
-            /[stroke="green"] { g: 0 v44}
+            /[stroke='red'] { g: 0 v16 }
+            /[stroke='green'] { g: 0 v44}
             /[stroke='gray'] { g: 0 bg5; stroke-opacity: 1 }
         }
         rect {
-            /#bg[fill="white"] { g: bg2; fill-opacity: 1 }
+            /#bg[fill='white'] { g: bg2; fill-opacity: 1 }
         }
+        line[stroke="black"] { g: 0 bg2 }
     }
 
     // Traffic graph
@@ -1366,31 +1375,30 @@ b() { box-shadow: arguments }
         background: bg0
         border: 1px solid bg5
         color: fg3
-        #ticks .tick { border-bottom: 1px solid bg5 }
+
         li {
             &.day {
                 border-right: 1px dotted bg5; color: fg3
+
                 &_sun { border-right: 1px dotted bg5; color: v16 }
             }
+
             .rcvd { background: v43; outline: 1px ridge v44; outline-offset: -2px }
             .sent { background: v15; outline: 1px ridge v17; outline-offset: -2px }
             .bar { color: rgba(BG, .5); outline: 0 }
         }
+        #ticks .tick { border-bottom: 1px solid bg5 }
     }
 
     .overlay {
-        &_dialog {
-            c: 0 0 bg4
-        }
-        &___invisible__ {
-            background-color: bg4 i
-        }
+        &_dialog { c: 0 0 bg4 }
+
+        &___invisible__ { background-color: bg4 i }
     }
 
     .dialog {
-        &_ {
-            filter: invert(1)
-        }
+        &_ { filter: invert(1) }
+
         &_content {
             color: fg1
             background-color: bg0
@@ -1399,26 +1407,24 @@ b() { box-shadow: arguments }
 
     // Progress dialog popup when applying settings
     .ddwrt {
-        &_progress {
-            filter: invert(1) grayscale(1)
-        }
-        &_wired_frame {
-            background: bg4
-        }
-        &_window {
-            background: bg0
-            border:1px solid v16
-        }
         &_content {
             background: bg1
             color: fg1
         }
-        &_title {
-            color: v65
+
+        &_progress { filter: invert(1) grayscale(1) }
+
+        &_wired_frame { background: bg4 }
+
+        &_window {
+            background: bg0
+            border: 1px solid v16
         }
-        &_nw, &_n, &_e, &_sw, &_ne, &_w, &_s, &_se, &_sizer {
-            background: bg1
-        }
+
+        &_title { color: v65 }
+
+        &_nw, &_n, &_e, &_sw, &_ne,
+        &_w, &_s, &_se, &_sizer { background: bg1 }
     }
 
     // Progress bar when e.g reboot
@@ -1432,13 +1438,13 @@ b() { box-shadow: arguments }
     }
 
     // Better checkbox/radio inputs.
-    input {
+    /input {
         border: 1px solid bg4
         b: 0 1px 1px rgba(BG, .075)
 
         transition: transition
         padding: 7px
-
+        line-height: 1.2em
         &:hover, &:focus-within  {
             border-color: v08
             background-color: bg1
@@ -1447,10 +1453,10 @@ b() { box-shadow: arguments }
         prefix  = 'data:image/svg+xml;utf8,'
         prefix += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'
 
-        /[type='radio'],
-        /[type='checkbox'] {
+        /[type='radio' i],
+        /[type='checkbox' i] {
             &, &:focus, &:hover:active {
-                c: fg1 bg5 bg1
+                c: v95 bg5 bg1
 
                 appearance: none
                 -moz-appearance: none
@@ -1465,25 +1471,25 @@ b() { box-shadow: arguments }
                 vertical-align: middle
             }
             &:disabled, &:hover:active:disabled, &:disabled:hover {
-                c: fg1 bg5 bg4
+                c: v95 bg5 bg4
 
                 opacity: .7
                 cursor: default
             }
         }
 
-        /[type='radio'] {
+        /[type='radio' i] {
             // fix border radius at https://github.com/settings/profile Emoji color
             border-radius: 50%
             &:checked {
-                path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v98) + '"/>'
+                path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v09) + '"/>'
 
-                background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
-                c: 0 v04 v02
+                background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
+                c: 0 v05 v02
 
                 padding: 7px
                 &[disabled] {
-                    c: fg1 bg5 bg4
+                    c: v06 bg5 bg4
 
                     opacity: .7
                 }
@@ -1492,35 +1498,35 @@ b() { box-shadow: arguments }
             &:hover { c: 0 v08 bg2 }
         }
 
-        /[type='checkbox'] {
+        /[type='checkbox' i] {
             border-radius: 2px
             &:checked {
-                path ='<path fill="' + to_svg($v98) + '" '
+                path ='<path fill="' + to_svg($v09) + '" '
                 path += 'd="M99 213l-1 89 104 102 205-201v-91L203 315 99 213z"/>'
 
-                background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
-                c: 0 v04 v02
+                background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
+                c: 0 v05 bg1
                 &[disabled] {
-                    c: fg1 bg5 bg4
+                    c: v05 bg5 bg4
 
                     opacity: .7
                 }
             }
             &:hover { c: 0 v08 bg2 }
             &:indeterminate {
-                path = '<rect x="128" y="128" width="256" height="256" fill="' + to_svg($v98) + '"/>'
+                path = '<rect x="128" y="128" width="256" height="256" fill="' + to_svg($v09) + '"/>'
 
-                background-image: s("url('%s%s</svg>') %s", r(prefix), r(path), i)
+                background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
                 c: 0 v16 v14
             }
         }
-        /[type="number"] { } // TODO: style spinbox
+        /[type='number' i] { } // TODO: style spinbox
         // Style file browse button
-        /[type='file'] {
+        /[type='file' i] {
             &::file-selector-button {
                 background-color: bg5
                 border: 2px solid bg5
-                color: fg1
+                color: v98
 
                 border-radius: .32em
                 padding: .2rem .4rem
@@ -1530,13 +1536,13 @@ b() { box-shadow: arguments }
                     background-color: v06
                     border: 2px solid v06
                     box-shadow: 0 0 10px 0 v02
-                    color: fg1
+                    color: v98
                 }
             }
             &::-webkit-file-upload-button {
                 background-color: bg5
                 border: 2px solid bg5
-                color: fg1
+                color: v98
 
                 border-radius: .32em
                 padding: .2rem .4rem
@@ -1546,7 +1552,7 @@ b() { box-shadow: arguments }
                     background-color: v06
                     border: 2px solid v06
                     box-shadow: 0 0 10px 0 v02
-                    color: fg1
+                    color: 98
                 }
             }
         }
@@ -1624,7 +1630,7 @@ b() { box-shadow: arguments }
         }
 
         // QoS fix service name table width due to custom select menus.
-        &[name="ServiceTable"] {
+        &[name='ServiceTable'] {
             background-color: bg0
             border: 1px solid bg4
             color: fg3
@@ -1634,7 +1640,7 @@ b() { box-shadow: arguments }
         }
     }
 
-    // fix bin
+    // improve trash bin
     .bin {
         prefix  = 'data:image/svg+xml;utf8,'
         prefix += '<svg viewBox="0 0 16 16" width="16" height="16" fill="' + to_svg(fg-5) + '" '
@@ -1648,6 +1654,7 @@ b() { box-shadow: arguments }
         xy      = 'no-repeat center/15px'
 
         background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
+
         &:hover {
            filter: brightness(.5) sepia(1) hue-rotate(300deg) saturate(40) brightness(1.1);
         }
@@ -1655,7 +1662,7 @@ b() { box-shadow: arguments }
 
     // Increase speedchecker iframe height to fix a bug
     // where the city/town dropdown is cut off with max entries showing
-    iframe[height="250"][src*="speedchecker"] {
+    iframe[height='250'][src*='speedchecker'] {
         height: 293px
     }
 }
@@ -1687,7 +1694,7 @@ b() { box-shadow: arguments }
     }
 }
 @-moz-document domain('192.168.1.1'),
-/*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
+/*-----------*/regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
     // speedchecker.dd-wrt.com
     body {
         background: bg2
@@ -1698,7 +1705,7 @@ b() { box-shadow: arguments }
         }
     }
 
-    .help-block { color: fg5 }
+    .help-block { color: v69 }
 
     // Remove BG from h2 on speedchecker only.
     .row h2 { background: t }
@@ -1710,14 +1717,12 @@ b() { box-shadow: arguments }
         box-shadow: inset 0 1px 1px rgba(BG, .075)
         &-control {
             border-color: bg4
-            color: fg2
+            color: v96
             &::placeholder {
-                color: fg5
-
-                opacity: .9
+                color: v93
             }
             /input {
-                &[type="search"] {
+                &[type='search' i] {
                     background-color: bg1
                     border-color: bg4
                 }
@@ -1741,9 +1746,9 @@ b() { box-shadow: arguments }
         }
         &-item {
             border-top: 1px solid bg4
-            color: fg2
+            color: v96
             &:hover { background-color: bg3 }
-            &-query { color: fg1 }
+            &-query { color: v98 }
             &-selected, &-selected:hover { background-color: bg4 }
         }
         &-logo {
@@ -1756,20 +1761,16 @@ b() { box-shadow: arguments }
 
     .jumbotron {
         background-color: bg3
-        color: fg2
-        > hr {
-            border-top-color: bg5
-        }
-        h1, .h1 {
-            color: fg2
-        }
+        color: v98
+        > hr { border-top-color: bg5 }
+        h1, .h1 { color: v98 }
     }
 
     .input-group {
         &-addon {
             background-color: bg1
             border-color: bg4
-            color: fg3
+            color: v97
 
             height: 3.1rem
             input {
@@ -1779,15 +1780,15 @@ b() { box-shadow: arguments }
                 }
             }
         }
-        /.help-block[style*="red"] { c: v16 0 0 }
+        /.help-block[style*='red'] { c: v16 0 0 }
     }
 
     // Speedchecker - checkbox tweaks dues to custom checkboxes
     input {
-        &[type="checkbox"] {
+        &[type='checkbox' i] {
 
-            &[name="internetSpeed"],
-            &[name="wifiSpeed"] {
+            &[name='internetSpeed'],
+            &[name='wifiSpeed'] {
                 padding: 7px
                 position: absolute i
                 bottom: .45rem i
@@ -1994,7 +1995,7 @@ b() { box-shadow: arguments }
         background: bg0
         input {
             r: 4px
-            &[type="submit"] {
+            &[type='submit' i] {
                 background-color: bg4
                 border-color: bg4
                 color: v99
@@ -2006,33 +2007,37 @@ b() { box-shadow: arguments }
             }
         }
     }
+
     table {
         tr:hover { background-color: bg0 i }
         &[class="table-heading"] {
-            td[align="center"] h1 a[href="/"] { color: v65 }
+            td[align='center'] h1 a[href='/'] { color: v65 }
             &:not(:focus) { c: 0 0 bg0 }
         }
     }
+
     a {
         &:link, &:visited { color: v06 }
         &:hover, &:focus-within { color: v09 }
     }
-    iframe[src*="https://www.google.com/maps/embed"] {
+
+    iframe[src*='https://www.google.com/maps/embed'] {
         filter: invert(1) hue-rotate(180deg) contrast(.9)
         &:hover { filter: invert(1) hue-rotate(180deg) contrast(.9) }
     }
+
     .hr2, hr {
         border-top: 1px solid bg4 //#ccc;
         border-bottom: 1px solid bg4 //#efefef;
     }
+
     .gm-inset-dark {
 	    background-color: bg2
 	    border-color: bg4
     }
+
     select {
         r: 4px
-        option {
-	        color: v99
-        }
+        option { color: v99 }
     }
 }
