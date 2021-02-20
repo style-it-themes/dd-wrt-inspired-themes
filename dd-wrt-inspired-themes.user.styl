@@ -41,6 +41,7 @@
 ==/UserStyle== */
 // Helpers.
 rq      = unquote
+stinfo  = 'DD-WRT Inspired Themes v3.0.0'
 t       = transparent
 i       = !important
 vendors = official
@@ -197,9 +198,6 @@ b() { box-shadow: arguments }
 
     // global section triggers and variables
     :root {
-        // Userstyle info.
-        --note = 'DD-WRT Inspired Themes - 3.0.0'
-
         // Feat -> Custom monospace font.
         --f-mono: f_mono, Cascadia Code, Fira Code, SFMono-Regular, Consolas, \
                 Liberation Mono, Menlo, monospace
@@ -250,7 +248,6 @@ b() { box-shadow: arguments }
         #ipinfo {
             &::after {
                 cbreak  = '\A\A '
-                stinfo  = 'DD-WRT Inspired Themes v3.0.0'
 
                 content: '' + rq(cbreak) + rq(stinfo)
                 white-space: pre-wrap
