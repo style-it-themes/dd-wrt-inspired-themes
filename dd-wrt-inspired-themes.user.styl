@@ -471,6 +471,12 @@ b() { box-shadow: arguments }
                     line-height: 1.3rem
                     text-shadow: 0 1px 0 v11
                     white-space: pre
+                    if (sdetails) {
+                        dbreak  = '\A\A '
+
+                        content: '' + rq(sbreak) + rq(isicon) + rq(isnote) + rq(dbreak) + rq(stinfo)
+                        white-space: pre-wrap
+                    }
                 }
             }
         }
