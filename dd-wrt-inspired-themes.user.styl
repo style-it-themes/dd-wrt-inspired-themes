@@ -35,7 +35,6 @@
 
 @var checkbox custom_font  'Enable custom font overrides' 1
 @var checkbox invert_nav   'Invert navigation colors'     0
-@var checkbox router_style 'Enable built in styles'       1
 @var checkbox new_401      'Enable new 401 page'          1
 
 ==/UserStyle== */
@@ -265,14 +264,6 @@ b() { box-shadow: arguments }
                 content: '' + r(cbreak) + r(stinfo)
                 white-space: pre-wrap
             }
-        }
-    }
-
-    // Try to hide default styles as not all are compatible and shouldnt be used together with style
-    if (!(router_style)) {
-        #contents > form[name="setup"][autocomplete="new-password"] > fieldset:nth-child(20),
-        #contents > form[name="setup"][autocomplete="new-password"] > br:nth-child(21) {
-            display: none
         }
     }
 
