@@ -42,16 +42,6 @@
 // Helpers.
 t       = transparent
 i       = !important
-// Pseudo-element builder.
-pseud(a, _z = 0, _c = '', _p = absolute) {
-    z-index:  _z
-    content:  _c
-    position: _p
-    if a[0] is a 'call' or a[0] is a 'unit' {    top: a[0] }
-    if a[1] is a 'call' or a[1] is a 'unit' {  right: a[1] }
-    if a[2] is a 'call' or a[2] is a 'unit' { bottom: a[2] }
-    if a[3] is a 'call' or a[3] is a 'unit' {   left: a[3] }
-}
 vendors = official
 
 // Convert colors to HSLA format.
