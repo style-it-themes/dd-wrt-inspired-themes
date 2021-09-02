@@ -19,7 +19,7 @@
     "url": "https://github.com/style-it-themes/dd-wrt-inspired-themes/issues/choose"
   },
   "main": "dd-wrt-inspired-themes.user.styl",
-  "license": "MIT",
+  "license": "© 2021 the-j0k3r - MIT",
   "engines": {
     "node": ">=12"
   },
