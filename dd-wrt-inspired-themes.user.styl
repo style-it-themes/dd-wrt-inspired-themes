@@ -597,6 +597,15 @@ b() { box-shadow: arguments }
             &[onclick*="previewStyle"] {
                 padding: .362em 1.087em
             }
+            //vlan add button tweaks
+            &[onclick*="vlan_add"],
+            &[onclick*="bridge_add"],
+            &[onclick*="bridgeif_add"],
+            &[onclick*="ipvs_add"],
+            &[onclick*="bond_add"],
+            &[onclick*="mdhcp_add"] {
+                padding: .2em .95em
+            }
         }
 
         // Fix specific checkbox margin wifi security unmask checkbox
