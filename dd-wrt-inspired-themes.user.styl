@@ -238,6 +238,9 @@ b() { box-shadow: arguments }
         --v0-9: mix(shade(BG, 50%), AC, 0%)
     }
 
+    // Style selection bg/fg with accent color
+    ::selection { background-color: v06; color: v99 }
+
     // Use custom font
     if custom_font {
         .label, .setting, select[name] {
