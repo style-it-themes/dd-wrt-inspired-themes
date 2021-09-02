@@ -34,6 +34,7 @@
 @var checkbox custom_font  'Enable  font overrides  ' 1
 @var checkbox invert_nav   'Invert navigation style ' 0
 @var checkbox new_401      'Enable new 401 page     ' 1
+@var checkbox hide_hsl     'Show hotspot logos      ' 1
 
 @var text     f_ui         'UI font                 ' ''font_name''
 @var text     f_mono       'Monospace font          ' ''font_name''
@@ -1311,6 +1312,18 @@ b() { box-shadow: arguments }
             margin-top: -8px
             height: 0
             width: 0
+        }
+    }
+
+    // Hide hotspot logos, this doesnt fix the top margins,
+    // its impossible to pick .center for these without picking all unrelated .centers
+    if (!(hide_hsl)) {
+        /img {
+            &[src*='sputnik'],
+            &[src*='hotspotsystem'],
+            &[src*='wifidog'] {
+                display: none
+            }
         }
     }
 
