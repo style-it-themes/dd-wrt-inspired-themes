@@ -636,22 +636,24 @@ b() { box-shadow: arguments }
                 li {
                     span {
                         background: bg1 i
-                        color: fg3
                         border-color: bg5
+
                         outline: 0
                         strong {
-                            color: fg1
+                            color: v99
                             text-shadow: 0 1px 0 bg0
                         }
                     }
                     a {
                         background: v04
-                        color: fg1
                         border-color: v06
+                        color: v98
+
                         outline: 0
                     }
+                    &.current span { background: bg1 i }
                 }
-                &.current span { background: bg2 i }
+
             }
         }
         #menuSub {
@@ -672,9 +674,7 @@ b() { box-shadow: arguments }
     #help {
         a {
             color: fg2
-            &:hover {
-                color: fg1
-            }
+            &:hover { color: fg1 }
         }
         h2 {
             background: v04
@@ -716,20 +716,20 @@ b() { box-shadow: arguments }
             span {
                 background: v04
                 border-color: v08
-                color: fg1
+                color: v99
                 strong { text-shadow: 0 1px 0 bg0 }
 
                 outline: 0
                 &hover, &:focus-within {
                     background: v06
                     border-color: v09
-                    color: fg1
+                    color: v98
                 }
             }
             a {
                 background: bg1
                 border-color: bg5
-                color: fg2
+                color: v98
                 text-shadow: 0 1px 0 bg0
 
                 transition: transition
@@ -737,12 +737,12 @@ b() { box-shadow: arguments }
                 &:hover {
                     background: bg2
                     border-color: bg5
-                    color: fg1
+                    color: v98
                 }
                 &:focus-within {
                     background: bg3
                     border-color: bg5
-                    color: fg1
+                    color: v98
                 }
             }
         }
@@ -751,7 +751,7 @@ b() { box-shadow: arguments }
     textarea {
         background-color: bg0
         border-color: bg4
-        color: fg0
+        color: v98
         &:focus, &.focus {
             border-color: v09
             b: 0 0 5px 1px v08
@@ -798,7 +798,7 @@ b() { box-shadow: arguments }
         /[summary='week days table'] {
             margin-left: -1.3rem
         }
-        & td {
+        td {
             /[style*='background-color: rgb(34\, 139\, 34)'] {
                 c: 0 0 v43
             }
@@ -822,13 +822,9 @@ b() { box-shadow: arguments }
             color: v99
         }
         // Nas - add margin before submitFooter
-        /#drives {
-            margin-bottom: 6px
-        }
+        /#drives { margin-bottom: 6px }
         /[summary='packet-type priority table'] {
-            td[colspan='5'] {
-                padding-bottom: 6px
-            }
+            td[colspan='5'] { padding-bottom: 6px }
         }
         /#conntrack_table {
             a:link {
@@ -845,22 +841,26 @@ b() { box-shadow: arguments }
     .status {
         &_red {
             background: v16
-            color: fg1
+            color: v99
 
-            // also assigns to _green
+            // padding spreads to all below
             padding 2px
+            r: 2px
         }
         &_green {
             background: v42
-            color: fg0
+            color: v99
+            r: 2px
         }
         &_yellow {
-            background: v35
-            color: fg0
+            background: v34
+            color: v99
+            r: 2px
         }
         &_orange {
-            background: v25
-            color: fg0
+            background: v26
+            color: v99
+            r: 2px
         }
     }
 
@@ -868,6 +868,12 @@ b() { box-shadow: arguments }
         background: v11
         border: 2px dashed v15
         text-shadow: 0 1px 0 v10
+        #warning_text, p b {
+            font-size: 1rem
+            letter-spacing: .15rem
+            margin-top: -.6rem
+            margin-bottom: -.8rem
+        }
     }
 
     // Help / Wi-viz / bulle aka tooltip
@@ -945,11 +951,17 @@ b() { box-shadow: arguments }
         border-color: bg5
 
         .text {
-            if (light(convert($v08))) { color: v98 } else { color: v90 }
-            text-shadow: 0 1px 0 bg0
+            if (light(AC)) {
+                color: v98
+                text-shadow: 0 1px 0 v90
+            }
+            else {
+                color: v93
+                text-shadow: 0 1px 0 v90
+            }
         }
 
-        .bar { background-color: v08 }
+        .bar { background-color: v05 }
     }
 
     // DD_WRT bottom link spacing
@@ -1345,15 +1357,15 @@ b() { box-shadow: arguments }
 
     // Paypal logo inversion
     [type='image' i][src*='paypal'] {
-        background: fg0
-        border-color: fg3
+        background: t
+        border-color: t
         filter: invert(.9) hue-rotate(180deg)
         margin-bottom: -.5rem
         mix-blend-mode: exclusion
 
         &:hover {
             background: fg1
-            border-color: v09
+            border-color: t
         }
     }
 
@@ -1395,12 +1407,12 @@ b() { box-shadow: arguments }
         path {
             /[stroke='red'] { g: 0 v16 }
             /[stroke='green'] { g: 0 v44}
-            /[stroke='gray'] { g: 0 bg5; stroke-opacity: 1 }
+            /[stroke='gray'] { g: 0 bg5; stroke-opacity: .5 }
         }
         rect {
             /#bg[fill='white'] { g: bg2; fill-opacity: 1 }
         }
-        line[stroke="black"] { g: 0 bg2 }
+        line[stroke="black"] { g: 0 bg5 }
     }
 
     // Traffic graph
@@ -1445,7 +1457,10 @@ b() { box-shadow: arguments }
             color: fg1
         }
 
-        &_progress { filter: invert(1) grayscale(1) }
+        &_progress {
+            filter: invert(1) grayscale(1)
+            mix-blend-mode: exclusion
+        }
 
         &_wired_frame { background: bg4 }
 
@@ -1460,7 +1475,7 @@ b() { box-shadow: arguments }
         &_w, &_s, &_se, &_sizer { background: bg1 }
     }
 
-    // Progress bar when e.g reboot
+    // Progress bar when e.g. reboot
     .progressbarblock {
         background-color: v09
     }
@@ -1515,14 +1530,14 @@ b() { box-shadow: arguments }
             // fix border radius at https://github.com/settings/profile Emoji color
             border-radius: 50%
             &:checked {
-                path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v09) + '"/>'
+                path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v99) + '"/>'
 
                 background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
-                c: 0 v05 v02
+                c: 0 v05 v09
 
                 padding: 7px
                 &[disabled] {
-                    c: v06 bg5 bg4
+                    c: v06 bg5 v09
 
                     opacity: .7
                 }
@@ -1534,13 +1549,14 @@ b() { box-shadow: arguments }
         /[type='checkbox' i] {
             border-radius: 2px
             &:checked {
-                path ='<path fill="' + to_svg($v09) + '" '
+                path ='<path fill="' + to_svg($v99) + '" '
                 path += 'd="M99 213l-1 89 104 102 205-201v-91L203 315 99 213z"/>'
 
                 background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
-                c: 0 v05 bg1
+                c: 0 v05 v09
+                border-radius: 3px
                 &[disabled] {
-                    c: v05 bg5 bg4
+                    c: v05 bg5 v09
 
                     opacity: .7
                 }
@@ -1590,7 +1606,7 @@ b() { box-shadow: arguments }
             }
         }
         /[disabled] {
-            opacity: .5
+            opacity: .7
         }
     }
 
@@ -1666,7 +1682,7 @@ b() { box-shadow: arguments }
         &[name='ServiceTable'] {
             background-color: bg0
             border: 1px solid bg4
-            color: fg3
+            color: #f3f //fg3
 
             width: inherit
             height: @width
@@ -1676,7 +1692,7 @@ b() { box-shadow: arguments }
     // improve trash bin
     .bin {
         prefix  = 'data:image/svg+xml;utf8,'
-        prefix += '<svg viewBox="0 0 16 16" width="16" height="16" fill="' + to_svg(fg-5) + '" '
+        prefix += '<svg viewBox="0 0 16 16" width="16" height="16" fill="' + to_svg($v97) + '" '
         prefix += 'xmlns="http://www.w3.org/2000/svg">'
         path    = '<path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25'
         path   += '.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 '
@@ -1686,10 +1702,10 @@ b() { box-shadow: arguments }
         path   += '49-.225l-.66-6.6z"></path>'
         xy      = 'no-repeat center/15px'
 
-        background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
+        background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy))
 
         &:hover {
-           filter: brightness(.5) sepia(1) hue-rotate(300deg) saturate(40) brightness(1.1);
+           filter: brightness(.5) sepia(1) hue-rotate(300deg) saturate(40) brightness(1.1)
         }
     }
 
@@ -1703,25 +1719,23 @@ b() { box-shadow: arguments }
     // oidsearch.s.dd-wrt.com
     body {
         background: bg0
-        color: fg3
 
         // Hide overflow, cant imagine this being needed here
         overflow: hidden
         &.gui {
             background: bg0
-            color: fg3
         }
         fieldset {
-            background: bg2
-            border-color: bg4
-            color: fg3
+            //background: bg2
+            //border-color: bg4
+            //color: v98
             // Theres missing margin here add it
-            h2 { color: fg0; margin-top: .5rem }
+            h2 { color: fg1; margin-top: .5rem }
         }
         #content {
             background: t i
             border: 1px solid bg0
-            color: fg2
+            color: v98
         }
         #main #contents { background: bg0 }
     }
