@@ -261,6 +261,11 @@ b() { box-shadow: arguments }
                 white-space: pre-wrap
             }
         }
+        // fixes a Chromium bug which the width of status info overlaps the status button
+        // causing the Status button to be only partially clickable.
+        #statusInfo {
+            width: auto
+        }
     }
 
     // Password score
