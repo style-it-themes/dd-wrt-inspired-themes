@@ -203,14 +203,6 @@ b() { box-shadow: arguments }
 
     // global section triggers and variables
     :root {
-        // Feat -> Custom monospace font.
-        --f-mono: f_mono, Cascadia Code, Fira Code, SFMono-Regular, Consolas, \
-                Liberation Mono, Menlo, monospace
-
-        // Feat -> Custom user interface font.
-        --f-ui: f_ui, Tahoma, Arial, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, \
-                Helvetica, Apple Color Emoji, Segoe UI Emoji
-
         // Generate CSS color variables.
         colors = (bg fg v0 v1 v2 v3 v4 v5 v6 v7 v8 v9)
         for color in colors[0..1] {
@@ -242,12 +234,21 @@ b() { box-shadow: arguments }
     ::selection { background-color: v06; color: v99 }
 
     // Use custom font
-    if custom_font {
+    if (custom_font) {
         .label, .setting, select[name] {
             font-family: var(--f-ui)
         }
         pre, textarea {
             font-family: var(--f-mono)
+        }
+        :root {
+            // Feat -> Custom monospace font.
+            --f-mono: f_mono, Cascadia Code, Fira Code, SFMono-Regular, Consolas, \
+                    Liberation Mono, Menlo, monospace
+
+            // Feat -> Custom user interface font.
+            --f-ui: f_ui, Tahoma, Arial, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, \
+                    Helvetica, Apple Color Emoji, Segoe UI Emoji
         }
     }
 
