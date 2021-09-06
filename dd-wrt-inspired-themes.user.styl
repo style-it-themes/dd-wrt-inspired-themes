@@ -43,11 +43,13 @@
 
 ==/UserStyle== */
 // Helpers.
-rq      = unquote
-stinfo  = 'DD-WRT Inspired Themes v3.2.0'
-t       = transparent
-i       = !important
-vendors = official
+rq        = unquote
+stinfo    = 'DD-WRT Inspired Themes v3.2.0'
+copyright = '© 2021 Style-it-themes: the-j0k3r'
+homeURL   = 'https://github.com/style-it-themes/dd-wrt-inspired-themes'
+t         = transparent
+i         = !important
+vendors   = official
 
 // Convert colors to HSLA format.
 // NOTE: This is done just for consistency of generated colors.
@@ -203,6 +205,11 @@ b() { box-shadow: arguments }
 
     // global section triggers and variables
     :root {
+        // show style name/version/copyright
+        // when inspecting the code or using compiled CSS this info is auto added now.
+        --style-name: stinfo
+        --copyright: copyright
+        --home-url : homeURL
         // Generate CSS color variables.
         colors = (bg fg v0 v1 v2 v3 v4 v5 v6 v7 v8 v9)
         for color in colors[0..1] {
@@ -242,6 +249,9 @@ b() { box-shadow: arguments }
             font-family: var(--f-mono)
         }
         :root {
+            --style-name: stinfo
+            --copyright: copyright
+            --home-url : homeURL
             // Feat -> Custom monospace font.
             --f-mono: f_mono, Cascadia Code, Fira Code, SFMono-Regular, Consolas, \
                     Liberation Mono, Menlo, monospace
