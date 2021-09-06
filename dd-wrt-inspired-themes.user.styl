@@ -509,7 +509,19 @@ b() { box-shadow: arguments }
         }
         else {
             &[bgcolor='#cc9999' i] {
+                text-align: center
                 background-color: v11
+                line-height: 1rem
+                padding-top: 4rem
+                font-size: 1.1em
+            }
+            h4 {
+                font-size: 3em
+                text-shadow: 0 -1px 0 v99, 0 1px 0 v94,
+                             0 2px 0 v94,  0 3px 0 v94,
+                             0 3px 0 v94,  0 4px 0 v94,
+                             0 4px 0 v94,  0 5px 5px rgba(BG, .4),
+                             0 20px 10px rgba(BG, .4)
             }
         }
     }
@@ -604,10 +616,10 @@ b() { box-shadow: arguments }
 
             // Tunnels - generate key button position
             &[onclick*='gen_wg_key'] {
-               margin: 0 0 6px -32%
+                margin: 0 0 6px -32%
             }
             &[onclick*='add_peer'] {
-               margin: 0 0 -6px -35%
+                margin: 0 0 -6px -35%
             }
             // better padding for preview style button
             &[onclick*="previewStyle"] {
@@ -935,10 +947,10 @@ b() { box-shadow: arguments }
     .setting {
         // inline style
         span {
-            &[style*='color:#999999'] { c: v96 }
+            &[style*='color:#999999'] { c: v96 0 0 }
         }
 
-        .default { color: v96 }
+        .default { color: v96 0 0 }
     }
 
     a {
@@ -1014,6 +1026,8 @@ b() { box-shadow: arguments }
 
     // Fix Hotspot images these are outdated and bad quality
     /img {
+        // sputnik hotspot been dropped upstream https://svn.dd-wrt.com/changeset/47356
+        // We keep it in d-wrt-inspired-themes because not everyone uses such new builds immediatly
         &[src*='sputnik'] {
             prefix = 'data:image/png;base64,'
             path   = 'iVBORw0KGgoAAAANSUhEUgAAAZAAAACfCAMAAADgQH+fAAA'
@@ -1661,10 +1675,18 @@ b() { box-shadow: arguments }
         max-width: 100%
         outline: 0
         padding-right: 1.3rem
-        option {
-            background: bg0
-            &:hover { background-color: v04 }
+        > option {
+            background-color: bg0 i
+            &:hover {
+                background: v04 i
+                box-shadow: 0 0 10px 100px v06 inset i
+            }
+            /[selected] {
+                background-color: v06 i
+                box-shadow: 0 0 10px 100px v06 inset i
+            }
         }
+        &:focus > option:hover
         &:focus-within  { c: 0 v08 bg1 }
         &:hover {
             prefix  = 'data:image/svg+xml;utf8,'
@@ -1695,13 +1717,28 @@ b() { box-shadow: arguments }
         }
 
         // QoS fix service name table width due to custom select menus.
-        &[name='ServiceTable'] {
-            background-color: bg0
+        /[name='ServiceTable'] {
+            // dont show arrow select arrow in this dialog
+            background: none i
+            background-color: bg0 i
             border: 1px solid bg4
-            color: #f3f //fg3
 
             width: inherit
             height: @width
+            option {
+                width: 200%
+                &:hover { background-color: v02 i }
+                &:checked {
+                    background-color: v05 i
+                    box-shadow: 0 0 10px 100px v06 inset
+                }
+            }
+            &:hover {
+              // dont show arrow select arrow in this dialog
+              background: none i
+              background-color: bg0 i
+
+            }
         }
     }
 
