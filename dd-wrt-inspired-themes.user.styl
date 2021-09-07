@@ -464,10 +464,10 @@ b() { box-shadow: arguments }
                         font-size: 7rem
                         line-height: 10rem
                         text-shadow: 0 -1px 0 v99, 0 1px 0 v94,
-                                     0 2px 0 v94,  0 3px 0 v94,
-                                     0 4px 0 v94,  0 5px 0 v94,
-                                     0 6px 0 v94,  0 7px 0 v94,
-                                     0 8px 0 v94,  0 10px 5px rgba(BG, .4),
+                                     0  2px 0 v94, 0 3px 0 v94,
+                                     0  4px 0 v94, 0 5px 0 v94,
+                                     0  6px 0 v94, 0 7px 0 v94,
+                                     0  8px 0 v94, 0 10px 5px rgba(BG, .4),
                                      0 20px 10px rgba(BG, .4)
                         white-space: pre-wrap
                     }
@@ -555,10 +555,12 @@ b() { box-shadow: arguments }
         100% { transform: scale(1, 1)    translateY(0) }
     }
 
-    // WDS alignments
-    form[name='wds'] {
-        .label { margin-right: 20px }
-        select { margin-right: 6px }
+    form {
+        // WDS alignments
+        &[name='wds'] {
+            .label { margin-right: 20px }
+            select { margin-right: 6px }
+        }
     }
 
     // Wol execution in progress box
@@ -650,7 +652,7 @@ b() { box-shadow: arguments }
             margin-top: 4px
         }
         // Acess restrictions - Align checkbox with filter dropdown
-        /[name='_filter_p2p'] {
+        &[name='_filter_p2p'] {
             margin-left: calc(2% - .3rem)
         }
     }
@@ -1525,19 +1527,20 @@ b() { box-shadow: arguments }
             background-color: bg1
         }
 
+        appearance: none
+        -moz-appearance: none
+        -webkit-appearance: none
+
         prefix  = 'data:image/svg+xml;utf8,'
         prefix += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'
 
-        /[type='radio' i],
-        /[type='checkbox' i] {
+        &[type='radio' i],
+        &[type='checkbox' i] {
             &, &:focus, &:hover:active {
                 c: v95 bg5 bg1
 
-                appearance: none
-                -moz-appearance: none
-                -webkit-appearance: none
-                background-size: cover
                 bottom: .15rem
+                background-size: cover
                 cursor: pointer
                 position: relative
                 height: b_hgwd
@@ -1553,7 +1556,7 @@ b() { box-shadow: arguments }
             }
         }
 
-        /[type='radio' i] {
+        &[type='radio' i] {
             // fix border radius at https://github.com/settings/profile Emoji color
             border-radius: 50%
             &:checked {
@@ -1563,17 +1566,12 @@ b() { box-shadow: arguments }
                 c: 0 v05 v09
 
                 padding: 7px
-                &[disabled] {
-                    c: v06 bg5 v09
-
-                    opacity: .7
-                }
             }
             &:focus { border-radius: 50% }
             &:hover { c: 0 v08 bg2 }
         }
 
-        /[type='checkbox' i] {
+        &[type='checkbox' i] {
             border-radius: 2px
             &:checked {
                 path ='<path fill="' + to_svg($v99) + '" '
@@ -1582,11 +1580,6 @@ b() { box-shadow: arguments }
                 background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
                 c: 0 v05 v09
                 border-radius: 3px
-                &[disabled] {
-                    c: v05 bg5 v09
-
-                    opacity: .7
-                }
             }
             &:hover { c: 0 v08 bg2 }
             &:indeterminate {
@@ -1596,9 +1589,9 @@ b() { box-shadow: arguments }
                 c: 0 v16 v14
             }
         }
-        /[type='number' i] { } // TODO: style spinbox
+        &[type='number' i] { } // TODO: style spinbox
         // Style file browse button
-        /[type='file' i] {
+        &[type='file' i] {
             &::file-selector-button {
                 background-color: bg5
                 border: 2px solid bg5
@@ -1632,7 +1625,7 @@ b() { box-shadow: arguments }
                 }
             }
         }
-        /[disabled] {
+        &[disabled] {
             opacity: .7
         }
         /.off {
