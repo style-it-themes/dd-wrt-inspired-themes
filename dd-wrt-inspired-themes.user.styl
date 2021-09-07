@@ -508,20 +508,22 @@ b() { box-shadow: arguments }
             }
         }
         else {
+            // fugly redesign but doesnt kill 404 pages
+            // need to see how upstream handles these now.
             &[bgcolor='#cc9999' i] {
                 text-align: center
                 background-color: v11
                 line-height: 1rem
                 padding-top: 4rem
                 font-size: 1.1em
-            }
-            h4 {
+                h4 {
                 font-size: 3em
                 text-shadow: 0 -1px 0 v99, 0 1px 0 v94,
-                             0 2px 0 v94,  0 3px 0 v94,
-                             0 3px 0 v94,  0 4px 0 v94,
-                             0 4px 0 v94,  0 5px 5px rgba(BG, .4),
+                             0  2px 0 v94, 0 3px 0 v94,
+                             0  3px 0 v94, 0 4px 0 v94,
+                             0  4px 0 v94, 0 5px 5px rgba(BG, .4),
                              0 20px 10px rgba(BG, .4)
+                }
             }
         }
     }
