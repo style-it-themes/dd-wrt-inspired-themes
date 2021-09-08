@@ -40,11 +40,21 @@
 
 The *DD-WRT Inspired Themes* style is designed for routers flashed with DD-WRT type firmware.
 
-This style leverages the _awesome_ v2 [stylus color generator](https://github.com/vednoc/stylus-color-generator) by @vednoc
+This style leverages the _awesome_ v2 [stylus lang color generator](https://github.com/vednoc/stylus-color-generator) by @vednoc
 
 The default built in themes are great, but even the best dark built in theme doesn't darken all areas and many aspects could be further polished. Instead of waiting...
 
 It's made for my personal use only, and shared because... Why not.
+
+## Can you include these themes in DD-WRT?
+
+From DD-WRT builds 09-07-2021-r47377 and newer, static CSS, non user customizable versions of this project are included by default.
+
+If your router has enough memory these will be included.
+
+>Note that some sections of external DD_WRT sites cannot be targeted via CSS at this time. BrainSlayer may add support for these at some later stage.
+
+In any case you can not customize the built in styles and you may notice styling inconsistencies. If that bothers you DO use this project instead.
 
 ## Router Model Compatibility
 
@@ -62,13 +72,13 @@ if you wish to view complete list click below.
  ### Preset styles
 
  * Custom colors
- * Dark blue (old)
- * Dark gray (new)
- * GitHub Dark
- * Breeze Dark
- * Twilight
- * Ubuntu
+ * Dracula
+ * Material
+ * Material Darker
  * Solarized Dark
+ * Twilight
+ * The Matrix
+ * Ubuntu
 
  ### Color Adjustments
 
@@ -77,12 +87,15 @@ if you wish to view complete list click below.
  ### Navigation
 
  * Optionally invert navigation colors
+ 
+ Default is inverted.
 
  ### Redesigned Inputs
 
  * Redesigned input styling for checkboxes, radio, dropdown and other interactable elements.
  
  You can optionally choose the checkbox size, however not all sizes will look or align well.
+ There seems to be some issue with sizes less than `1rem` using DD-WRT web interface, this has unknown cause, works on other website I use same custom checkboxes/radios code.
 
  ### Image updates
 
@@ -95,16 +108,19 @@ if you wish to view complete list click below.
  The following will match seamlessly your chosen color scheme.
 
  * Help pages
- * Popups
- * Progress bars
- * Speedchecker
- * Speedchecker image replacement
+ * Popups e.g. Access restrictions edit list etc.
+ * Progress bars/Signal quality bars etc.
+ * Speedchecker dialog
+ * Speedchecker logo image replacement
  * OID search
- * Redesigned 401 page
  * Optional transition effects
-
  * Experimental font replacements
- 
+ * Redesigned 401 page (disabled per default due to DD-WRT design limitation)
+    > If you enable the 401 redesign, 40x pages are also targeted.
+    This is a limitation of DD-WRT since it uses generic code that is reused for other error pages.
+    BrainSlayer is aware of this and I've requested unique strings to be used, in key areas.
+
+
 </details> 
 
 ## Installing
@@ -118,22 +134,40 @@ if you wish to view complete list click below.
 [![CLICK TO INSTALL WITH - STYLUS](https://img.shields.io/badge/Install_directly_with-Stylus-21d1d0.svg?longCache=true&style=for-the-badge)](https://github.com/style-it-themes/dd-wrt-inspired-themes/raw/main/dd-wrt-inspired-themes.user.styl)  
 *Click to install directly from this repository*.
 
+### Limitations of This project
+
+Existing Internal Themes + DD-WRT Inspired Themes via Stylus at same time will not work together well.
+
+Please select the blue light style, no need to enable dark styles.
+
+Any other built in styles like Brainslayer and possibly others will show many styling inconsistencies.
+
+For best results stick to the blue style + this project.
+
+Internal DD-WRT older themes will be reworked some day when Santa has time.
+
 #### Router IP Setting
 
-There is no way to add an option to handle this better, so manual edits are 
-required if the router IP differs or you have more than one router.
+:warning: Be aware that manual editing the style, blocks auto-updates from being pushed,
+ and if you force update style any edits you made are lost and will need to be re-added.
 
-:warning: Be aware that manual editing the style, blocks auto-updates,
- and if you force update style the edits are lost and will need to be re-added.
+From version 4.0, a regex matching valid IPV4 blocks is used.
+This is a better setup with 0 user edits required and also auto-updates of style are served automatically.
 
-If your router IP is anything other than `192.168.1.1` you will need to edit the
-style and find two entries and replace the default IP and/or if you have 
-more routers add another domain entry after the previous, **exactly** like so:
+This method introduces some quirks in some setups. Please expand relevant solution.
+
+1) You run a server accessible via an IP and this theme is installed, all IP's will be matched even if it's not DD-WRT web interface.
+
+If you encounter such issues and your page is styled by this theme manually reverting to previous method is the only way.
+as follows:
+
+<details>
+  <summary>Click to Expand</summary>
 
 **Section 1**
 
 ```diff
--   @-moz-document domain('192.168.1.1'),
+-   @-moz-document regexp('^https?://(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}(\/.*)?$'),
 +   @-moz-document domain('your.actual.router.ip'), domain('your.other.router.ip'),
     /*           */regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?'),
     /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
@@ -141,12 +175,38 @@ more routers add another domain entry after the previous, **exactly** like so:
 **Section 2**
 
 ```diff
--   @-moz-document domain('192.168.1.1'),
+-   @-moz-document regexp('^https?://(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}(\/.*)?$'),
 +   @-moz-document domain('your.actual.router.ip'), domain('your.other.router.ip'),
 /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
 ```
 
-Don't change the order of the regexp/domain entries. Keep it strictly as examples show.
+</details> 
+
+2) If you access your router via a LAN domain like router.local this design choice won't work and to make it work via regex all sites on the web will be matched.
+
+If you encounter such issues please edit style like this.
+
+<details>
+  <summary>Click to Expand</summary>
+
+**Section 1**
+
+```diff
+-   @-moz-document regexp('^https?://(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}(\/.*)?$'),
++   @-moz-document domain('your.actual.router.ip'), domain('your.other.router.ip'),
+    /*           */regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?'),
+    /*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
+```
+**Section 2**
+
+```diff
+-   @-moz-document regexp('^https?://(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}(\/.*)?$'),
++   @-moz-document domain('your.actual.router.domain'), domain('your.other.router.domain'),
+/*           */regexp('https?://speedchecker.dd-wrt?.com(/.*)?') {
+```
+
+</details> 
+
 
 ### Additional Userstyles
   Style-It Themes recommends the Global Overlay Scrollbars
@@ -255,4 +315,4 @@ More screenshots available in [screens directory](/screens) for your perusal.
 
 [Openstyles](https://github.com/openstyles/stylus) for developing Stylus. The best userstyle extension on all the web.
 
-[:arrow_up: UP :arrow_up:](#file-readme-md)
+[:arrow_up: UP :arrow_up:](#readme)
