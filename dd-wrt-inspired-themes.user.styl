@@ -33,7 +33,7 @@
 
 @var checkbox custom_font  'Enable  font overrides  ' 0
 @var checkbox invert_nav   'Invert navigation style ' 1
-@var checkbox new_401      'Enable new 401 page     ' 1
+
 @var checkbox hide_hsl     'Show hotspot logos      ' 1
 
 @var text     f_ui         'UI font                 ' ''font_name''
@@ -42,6 +42,7 @@
 @var text     transition   'Define transition value ' 'all 0.2s cubic-bezier( 0.3, 0, 0.5, 1)'
 
 ==/UserStyle== */
+//@var checkbox new_401      'Enable new 401 page     ' 0
 // Helpers.
 rq        = unquote
 stinfo    = 'DD-WRT Inspired Themes v4.0.0'
@@ -437,7 +438,7 @@ b() { box-shadow: arguments }
         dd {
             border-bottom: .123rem dotted bg5
         }
-
+        /*
         // 401 Unauthorized page redesign
         if (new_401) {
             &[bgcolor="#cc9999"] {
@@ -519,7 +520,7 @@ b() { box-shadow: arguments }
                              0 20px 10px rgba(BG, .4)
                 }
             }
-        }
+        }*/
     }
 
     // Animations
