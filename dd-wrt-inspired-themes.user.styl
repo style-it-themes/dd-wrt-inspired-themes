@@ -894,6 +894,8 @@ b() { box-shadow: arguments }
         background: v11
         border: 2px dashed v15
         text-shadow: 0 1px 0 v10
+
+        r: 4px
         #warning_text, p b {
             font-size: 1rem
             letter-spacing: .15rem
@@ -969,6 +971,8 @@ b() { box-shadow: arguments }
         background-color: rgba(BG, .5)
         border: 1px solid bg4
         color: fg1
+
+        r: 4px
     }
 
     // Meter
@@ -1530,6 +1534,8 @@ b() { box-shadow: arguments }
         -moz-appearance: none
         -webkit-appearance: none
 
+        r: 4px
+
         prefix  = 'data:image/svg+xml;utf8,'
         prefix += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'
 
@@ -1791,6 +1797,13 @@ b() { box-shadow: arguments }
             color: v98
         }
         #main #contents { background: bg0 }
+
+        // If you navigate to https://oidsearch.s.dd-wrt.com/ you will see this
+        // design tweaks because it looks better in this use case.
+        .warning {
+            padding: 0 0 5px 0
+            #warning_text { font-size: .8rem }
+        }
     }
 }
 @-moz-document domain('192.168.1.1'),
@@ -1864,6 +1877,8 @@ b() { box-shadow: arguments }
         color: v98
         > hr { border-top-color: bg5 }
         h1, .h1 { color: v98 }
+        // visist https://speedchecker.dd-wrt.com/
+        h1 { text-align: center; margin: .17em 0 }
     }
 
     .input-group {
@@ -1886,7 +1901,7 @@ b() { box-shadow: arguments }
     // Speedchecker - checkbox tweaks dues to custom checkboxes
     input {
         &[type='checkbox' i] {
-
+            &:checked { r: 3px i }
             &[name='internetSpeed'],
             &[name='wifiSpeed'] {
                 padding: 7px
@@ -1902,6 +1917,26 @@ b() { box-shadow: arguments }
             /#formConnection {
                height: inherit
                width: 100%
+            }
+        }
+    }
+
+    // place this better within dd-wrt
+    .row {
+        &[role="results"] {
+            margin-top: 35px
+            margin-left: auto
+            margin-right: auto
+            [role="title"] { font-size: 1.5rem }
+            [role="internetSpeed"] { margin-right: 40px }
+            [role="value"] {
+                font-size: 2rem
+                margin-left: -40px
+            }
+            [role="unit"] {
+                font-size: 1.5rem
+                margin-left: -1rem
+                margin-top: 6px
             }
         }
     }
