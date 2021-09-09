@@ -503,6 +503,10 @@ b() { box-shadow: arguments }
             &[onclick*='gen_wg_key'] {
                 margin: 0 0 6px -32%
             }
+            // add tunnel/import config tunnel buttons are too close by default
+            &[name*='import_tunnel'] {
+                margin-left: 6px
+            }
             &[onclick*='add_peer'] {
                 margin: 0 0 -6px -35%
             }
