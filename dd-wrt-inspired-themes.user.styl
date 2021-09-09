@@ -237,6 +237,13 @@ b() { box-shadow: arguments }
         --v0-7: mix(shade(BG, 50%), AC, 20%)
         --v0-8: mix(shade(BG, 50%), AC, 10%)
         --v0-9: mix(shade(BG, 50%), AC, 0%)
+
+        // rgba BG/AC vars
+        --rgba-bg-01: rgba(BG, .1)
+        --rgba-bg-03: rgba(BG, .3)
+        --rgba-bg-05: rgba(BG, .5)
+        --rgba-bg-075: rgba(BG, .075)
+        --rgba-ac-06: rgba(AC, .6)
     }
 
     // Style selection bg/fg with accent color
@@ -859,7 +866,7 @@ b() { box-shadow: arguments }
     // Submit options button footer
     .submitFooter {
         // BG color was decided to increase contrast in NAS tab placement of submitFooter bg over bg
-        background-color: rgba(BG, .5)
+        background: var(--rgba-bg-05)
         border: 1px solid bg4
         color: fg1
 
@@ -1356,7 +1363,7 @@ b() { box-shadow: arguments }
 
             .rcvd { background: v43; outline: 1px ridge v44; outline-offset: -2px }
             .sent { background: v15; outline: 1px ridge v17; outline-offset: -2px }
-            .bar { color: rgba(BG, .5); outline: 0 }
+            .bar { color: var(--rgba-bg-05); outline: 0 }
         }
         #ticks .tick { border-bottom: 1px solid bg5 }
     }
@@ -1414,7 +1421,7 @@ b() { box-shadow: arguments }
     // Better checkbox/radio inputs.
     /input {
         border: 1px solid bg4
-        b: 0 1px 1px rgba(BG, .075)
+        b: 0 1px 1px var(--rgba-bg-075)
 
         transition: transition
         padding: 7px
@@ -1543,8 +1550,8 @@ b() { box-shadow: arguments }
     .row[role="controls"] { border-color: bg4 }
     .progress {
         background-color: bg4
-        box-shadow: inset 0 1px 2px rgba(BG, .1)
-        -webkit-box-shadow: inset 0 1px 2px rgba(BG, .1)
+        box-shadow: inset 0 1px 2px var(--rgba-bg-01)
+        -webkit-box-shadow: inset 0 1px 2px var(--rgba-bg-01)
 
         r: 4px
         &-bar.odd {
@@ -1565,7 +1572,7 @@ b() { box-shadow: arguments }
         background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
         background-color: bg0 i
         border: 1px solid bg4
-        b: 0px 1px 1px rgba(BG, .075)
+        b: 0px 1px 1px var(--rgba-bg-075)
         color: v98
 
         appearance: none
@@ -1718,7 +1725,7 @@ b() { box-shadow: arguments }
     .form {
         background-color: bg1
         border-color: bg4
-        box-shadow: inset 0 1px 1px rgba(BG, .075)
+        box-shadow: inset 0 1px 1px var(--rgba-bg-075)
         &-control {
             border-color: bg4
             color: v96
@@ -1733,8 +1740,8 @@ b() { box-shadow: arguments }
             }
             &:focus {
                 border-color: v04
-                box-shadow: inset 0 1px 1px rgba(BG, .075), 0 0 8px rgba(AC, .6)
-                -webkit-box-shadow: inset 0 1px 1px rgba(BG, .075), 0 0 8px rgba(AC, .6)
+                box-shadow: inset 0 1px 1px var(--rgba-bg-075), 0 0 8px var(--rgba-ac-06)
+                -webkit-box-shadow: inset 0 1px 1px var(--rgba-bg-075), 0 0 8px var(--rgba-ac-06)
 
                 outline: 0
             }
@@ -1745,7 +1752,7 @@ b() { box-shadow: arguments }
         &-container {
             background-color: bg3
             border-top: 1px solid bg4
-            box-shadow: 0 2px 6px rgba(BG, .3)
+            box-shadow: 0 2px 6px var(--rgba-bg-03)
             filter: none
         }
         &-item {
