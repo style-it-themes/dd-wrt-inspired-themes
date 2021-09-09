@@ -46,6 +46,7 @@
 rq        = unquote
 stinfo    = 'DD-WRT Inspired Themes v4.0.3'
 copyright = '© 2021 Style-it-themes: the-j0k3r'
+license   = 'MIT'
 homeURL   = 'https://github.com/style-it-themes/dd-wrt-inspired-themes'
 t         = transparent
 i         = !important
@@ -207,9 +208,10 @@ b() { box-shadow: arguments }
     :root {
         // show style name/version/copyright
         // when inspecting the code or using compiled CSS this info is auto added now.
-        --style-name: stinfo
-        --copyright: copyright
-        --home-url : homeURL
+        --style-name: rq(stinfo)
+        --copyright: rq(copyright)
+        --license: rq(license)
+        --home-url : rq(homeURL)
         // Generate CSS color variables.
         colors = (bg fg v0 v1 v2 v3 v4 v5 v6 v7 v8 v9)
         for color in colors[0..1] {
@@ -249,9 +251,10 @@ b() { box-shadow: arguments }
             font-family: var(--f-mono)
         }
         :root {
-            --style-name: stinfo
-            --copyright: copyright
-            --home-url : homeURL
+            --style-name: rq(stinfo)
+            --copyright: rq(copyright)
+            --license: rq(license)
+            --home-url : rq(homeURL)
             // Feat -> Custom monospace font.
             --f-mono: f_mono, Cascadia Code, Fira Code, SFMono-Regular, Consolas, \
                     Liberation Mono, Menlo, monospace
