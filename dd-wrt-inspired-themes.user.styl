@@ -42,7 +42,6 @@
 @var text     transition   'Define transition value ' 'all 0.2s cubic-bezier( 0.3, 0, 0.5, 1)'
 
 ==/UserStyle== */
-//@var checkbox new_401      'Enable new 401 page     ' 0
 // Helpers.
 rq        = unquote
 stinfo    = 'DD-WRT Inspired Themes v4.0.1'
@@ -438,89 +437,6 @@ b() { box-shadow: arguments }
         dd {
             border-bottom: .123rem dotted bg5
         }
-        /*
-        // 401 Unauthorized page redesign
-        if (new_401) {
-            &[bgcolor="#cc9999"] {
-                background-color: v11
-                color: v98
-
-                font-size: 0
-                font-family: Verdana, Helvetica
-                text-align: center
-                cursor: auto
-                overflow: hidden i
-                // Reposition & shorten text
-                h4 {
-                    &:hover {
-                        animation: move-it 1.2s ease-in-out
-                        cursor: not-allowed
-                    }
-                    margin-top: 3rem
-                    font-size: 0
-                    &::before {
-                        content: '401\A'
-
-                        font-size: 7rem
-                        line-height: 10rem
-                        text-shadow: 0 -1px 0 v99, 0 1px 0 v94,
-                                     0  2px 0 v94, 0 3px 0 v94,
-                                     0  4px 0 v94, 0 5px 0 v94,
-                                     0  6px 0 v94, 0 7px 0 v94,
-                                     0  8px 0 v94, 0 10px 5px rgba(BG, .4),
-                                     0 20px 10px rgba(BG, .4)
-                        white-space: pre-wrap
-                    }
-                    &::after {
-                        content: 'UNAUTHORIZED'
-
-                        animation: color_change 1s ease-in-out infinite alternate
-                        font-variant: small-caps
-                        font-size: 1.8rem
-                        letter-spacing: 1px
-                        line-height: 2rem
-                    }
-                }
-                &::after {
-                    sbreak  = '\A '
-                    isicon  = '\24D8 '
-                    isnote  = ' A correct password/username is required.'
-
-                    content: '' + rq(sbreak) + rq(isicon) + rq(isnote)
-                    color: v99
-
-                    font-size: 1rem
-                    line-height: 1.3rem
-                    text-shadow: 0 1px 0 v11
-                    white-space: pre
-                    if (sdetails) {
-                        dbreak  = '\A\A '
-
-                        content: '' + rq(sbreak) + rq(isicon) + rq(isnote) + rq(dbreak) + rq(stinfo)
-                        white-space: pre-wrap
-                    }
-                }
-            }
-        }
-        else {
-            // fugly redesign but doesnt kill 404 pages
-            // need to see how upstream handles these now.
-            &[bgcolor='#cc9999' i] {
-                text-align: center
-                background-color: v11
-                line-height: 1rem
-                padding-top: 4rem
-                font-size: 1.1em
-                h4 {
-                font-size: 3em
-                text-shadow: 0 -1px 0 v99, 0 1px 0 v94,
-                             0  2px 0 v94, 0 3px 0 v94,
-                             0  3px 0 v94, 0 4px 0 v94,
-                             0  4px 0 v94, 0 5px 5px rgba(BG, .4),
-                             0 20px 10px rgba(BG, .4)
-                }
-            }
-        }*/
     }
 
     // Animations

@@ -107,7 +107,7 @@ if you wish to view complete list click below.
 
  The following will match seamlessly your chosen color scheme.
 
- * Help pages
+ * Help, About, Wi pages
  * Popups e.g. Access restrictions edit list etc.
  * Progress bars/Signal quality bars etc.
  * Speedchecker dialog
@@ -115,12 +115,7 @@ if you wish to view complete list click below.
  * OID search
  * Optional transition effects
  * Experimental font replacements
- * Redesigned 401 page (disabled per default due to DD-WRT design limitation)
-    > If you enable the 401 redesign, 40x pages are also targeted.
-    This is a limitation of DD-WRT since it uses generic code that is reused for other error pages.
-    BrainSlayer is aware of this and I've requested unique strings to be used, in key areas.
-
-
+ 
 </details> 
 
 ## Installing
