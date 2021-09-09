@@ -71,7 +71,7 @@ if you wish to view complete list click below.
  
  ### Preset styles
 
- * Custom colors
+ * Custom colors (within reason and sane choices users can make up own color schemes)
  * Dracula
  * Material
  * Material Darker
@@ -107,7 +107,7 @@ if you wish to view complete list click below.
 
  The following will match seamlessly your chosen color scheme.
 
- * Help, About, Wi pages
+ * Help, About, Wiviz pages
  * Popups e.g. Access restrictions edit list etc.
  * Progress bars/Signal quality bars etc.
  * Speedchecker dialog
@@ -131,13 +131,13 @@ if you wish to view complete list click below.
 
 ### Limitations of This project
 
-Existing Internal Themes + DD-WRT Inspired Themes via Stylus at same time will not work together well.
+Existing old gui-style themes + DD-WRT Inspired Themes via Stylus at same time will not work together well with all cases..
 
-Please select the blue light style, no need to enable dark styles.
+Please select the blue/yellow/red/orange/cyan/elegant light styles, or the included DD-WRT Inspired Themes, do not enable dark styles.
 
-Any other built in styles like Brainslayer and possibly others will show many styling inconsistencies.
+Any other built in styles like Brainslayer/kromo/vikar/xirian and possibly others will show many styling inconsistencies and breakages.
 
-For best results stick to the blue style + this project.
+For best results stick to the approved list of styles + this project. Everything will be overridden nicely in a consistent way.
 
 Internal DD-WRT older themes will be reworked some day when Santa has time.
 
@@ -204,9 +204,13 @@ If you encounter such issues please edit style like this.
 
 
 ### Additional Userstyles
-  Style-It Themes recommends the Global Overlay Scrollbars
+  Style-It Themes recommends Stylus Wardrobe and the Global Overlay Scrollbars can be used all together without issues.
+  These add unapparelled consistent experience and extend customizations options for other areas of your browsing live.
+  
+  Save your retinas from the burn!
 
 * [Overlay Scrollbars](https://github.com/StylishThemes/Overlay-Scrollbars)
+* [Stylus Wardrobe](https://github.com/style-it-themes/stylus-wardrobe)
 
 ## I Found a Bug
 
@@ -221,14 +225,14 @@ You will need to be familiar with browser development tools.
 
 ## Engaging with the Project
 
-There are many ways to engage with the project, all contributions types are most welcome and encouraged, e.g. typo(s), documentation, prettification of any included portions, or even to provide feedback or ask a question, or help out with support/questions from other users, to name just a few ways you can engage with this project.
+There are many ways to engage with the project, all contributions types are most welcome and encouraged, e.g. ask for your fav color schemes, fix some typo(s), add documentation, prettify any included portions, provide feedback or ask a question, even help out with support/questions from other users, to name just a few ways you can engage with this project.
 
 Open a pull request or [ticket](https://github.com/style-it-themes/dd-wrt-inspired-themes/issues/new/choose) to start the ball rolling.
 
 For Git related contributions you will need:
 
 1. [Fork](https://github.com/style-it-themes/dd-wrt-inspired-themes/fork) the project.
-2. Install devdependencies `npm i --only-dev`
+2. Install dev-dependencies `npm i --only-dev`
 3. Edit the desired files according to current requirement below, commit changes, run fix script `npm run fix` and push changes.
 4. Open a pull request
 
