@@ -9,7 +9,7 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://discord.gg/MhwZjV">
+  <a href="https://discord.gg/EpdGSfH">
     <img src="https://img.shields.io/badge/style--it--themes-discord%20channel-blue.svg?style=for-the-badge" alt="Style-It Themes (sit) Discord Channel">
   </a>
   <a href="https://github.com/style-it-themes/dd-wrt-inspired-themes/releases">
