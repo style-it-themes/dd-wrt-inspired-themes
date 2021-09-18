@@ -131,13 +131,12 @@ if you wish to view complete list click below.
 
 ### Limitations of This project
 
-Existing old gui-style themes + DD-WRT Inspired Themes via Stylus at same time will not work together well with all cases..
+Some classic gui-style themes + DD-WRT Inspired Themes via Stylus at same time will not work together well with all cases.
 
-Please select the blue/yellow/red/orange/cyan/elegant light styles, or the included DD-WRT Inspired Themes, do not enable dark styles.
+For best results at this time, if you use a DD-WRT FW version that includes built in *DD-WRT Inspired Themes* please select and enable one of them.
 
-Any other built in styles like Brainslayer/kromo/vikar/xirian and possibly others will show many styling inconsistencies and breakages.
-
-For best results stick to the approved list of styles + this project. Everything will be overridden nicely in a consistent way.
+*Works together with* blue/yellow/red/orange/cyan/elegant light styles, or the included *DD-WRT Inspired Themes*, do not enable dark styles.
+*Does not work well together with* Brainslayer/kromo/vikar/xirian and possibly others will show many styling inconsistencies and breakages.
 
 Internal DD-WRT older themes will be reworked some day when Santa has time.
 
@@ -238,56 +237,21 @@ For Git related contributions you will need:
 
 ## Contribution Guidelines
 
-Please expand the section below:
+After any changes and before opening a PR please run both development scripts below.
+Then push your changes and open a PR.
 
-<details>
-  <summary>Click to Expand</summary>
+If your contribution includes dependencies updates, ensure this is done as a separate commit.
 
-* Limit to the [K&R (KNF variation style)](https://en.wikipedia.org/wiki/Indentation_style#Variant:_BSD_KNF), and **2 SPACE INDENTATION** (no tabs, and no less than 2 spaces).
-
-* K&R - KNF Variation Example:
-  ```css
-  element[attr='value'] {
-  ··property: value;
-  }
-  ```
-
-* **Not Allman**
-  ```css
-  element[property='value']
-  {
-  ··property: value;
-  }
-  ```
-
-* Strict space between the `selector` and the `{`:
-  ```css
-  /* good */
-  element[attr='value'] { }
-
-  /* bad */
-  element[attr='value']{ }
-  ```
-
-* 4 Space indentation
-  ```css
-  /* good */
-  ····property: value;
-
-  /* bad */
-  ··property: value;
-  --property: value;
-  ·property: value;
-  ```
-
-:asterisk: Try to wrap lines at around 80 characters.
-
-</details>
+Thank you in advance for any contributions.
 
 ### Development Scripts
 
 * `npm run authors`: Regenerate the AUTHORS file based on Git history
-* `npm run ecfix`: Run editorconfig via ECLint with `--fix` on the styl file.
+* `npm run fix`: Runs editorconfig via ECLint with `--fix` on the styl file.
+
+For dependencies updates;
+
+* `npm run update`: Update development dependencies.
 
 ### For internal use Only
 
@@ -296,8 +260,6 @@ Releases are for internal use only, so remember to not include version bumps wit
 * `npm run major`: Creates a semantic major release.
 * `npm run minor`: Creates a semantic minor release.
 * `npm run patch`: Creates a semantic patch release.
-
-* `npm run update`: Update development dependencies.
 
 > Note: Dependencies updates can be submitted as part of any contribution that is a separate commit
 >       from main contribution, or as a standalone contribution.
