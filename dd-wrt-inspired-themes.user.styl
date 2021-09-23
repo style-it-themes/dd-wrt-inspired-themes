@@ -477,6 +477,11 @@ b() { box-shadow: arguments }
     // Wol execution in progress box
     pre {
         background-color: bg0
+        &[style*='height:530px'], &[style*='height:413px'] {
+          border: 1px solid bg4
+          cursor: copy
+          r: 4px
+        }
     }
 
     #wrapper #content { background-color: bg1 }
