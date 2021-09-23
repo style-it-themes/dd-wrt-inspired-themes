@@ -340,7 +340,6 @@ b() { box-shadow: arguments }
                 color: v09
                 text-shadow: 0 1px 0 bg0
             }
-
         }
         #content {
             // Help bg
@@ -364,6 +363,7 @@ b() { box-shadow: arguments }
             background: bg1
             color: v97
         }
+
         input {
             background-color: bg0
             border-color: bg4
@@ -400,12 +400,11 @@ b() { box-shadow: arguments }
                 }
                 &[disabled] {
                     c: v99 bg3 v05
-
                     box-shadow: none
                     opacity: .6
                 }
             }
-            &[name*="apply"] {
+            &[name*='apply'] {
                 background: none repeat scroll 0 0 v42
                 border-color: v42
                 color: fg1
@@ -416,7 +415,7 @@ b() { box-shadow: arguments }
                     color: v99 i
                 }
             }
-            &[name*="reset"] {
+            &[name*='reset'] {
                 background: none repeat scroll 0 0 bg3
                 border-color: bg4
                 color: fg1
@@ -427,10 +426,10 @@ b() { box-shadow: arguments }
                     color: v99 i
                 }
             }
-            &[name*="refresh"][style*="background"] {
+            &[name*='refresh'][style*='background'] {
                 background: v05 i
             }
-            &[name*="reboot"] {
+            &[name*='reboot'] {
                 background: none repeat scroll 0 0 v14
                 border-color: v15
                 color: v98
@@ -444,7 +443,6 @@ b() { box-shadow: arguments }
         div.progressbar {
             background-color: bg4
             border: 1px solid bg5
-
             r: 4px
         }
         dd {
@@ -479,13 +477,6 @@ b() { box-shadow: arguments }
     }
 
     hr { c: bg5 0 bg5 }
-
-    // Reboot message box
-    .message {
-        background: bg1 i
-        border-color: bg3 i
-        r: 4px i
-    }
 
     #statusInfo {
         color: v09
@@ -570,7 +561,6 @@ b() { box-shadow: arguments }
                     span {
                         background: bg1 i
                         border-color: bg5
-
                         outline: 0
                         strong {
                             color: v99
@@ -581,7 +571,6 @@ b() { box-shadow: arguments }
                         background: v04
                         border-color: v06
                         color: v98
-
                         outline: 0
                     }
                     &.current span { background: bg1 i }
@@ -601,7 +590,6 @@ b() { box-shadow: arguments }
         color: fg1
         border-color: v06
         text-shadow: 0 1px 0 bg0
-
         outline: 0
     }
     #help {
@@ -614,7 +602,6 @@ b() { box-shadow: arguments }
             color: fg1
             border-color: v06
             text-shadow: 0 1px 0 bg0
-
             outline: 0
         }
         dd {
@@ -651,7 +638,6 @@ b() { box-shadow: arguments }
                 border-color: v08
                 color: v99
                 strong { text-shadow: 0 1px 0 bg0 }
-
                 outline: 0
                 &hover, &:focus-within {
                     background: v06
@@ -664,7 +650,6 @@ b() { box-shadow: arguments }
                 border-color: bg5
                 color: v98
                 text-shadow: 0 1px 0 bg0
-
                 transition: transition
                 outline: 0
                 &:hover {
@@ -688,7 +673,6 @@ b() { box-shadow: arguments }
         &:focus, &.focus {
             border-color: v09
             b: 0 0 5px 1px v08
-
             outline: 0
         }
     }
@@ -801,7 +785,6 @@ b() { box-shadow: arguments }
         background: v11
         border: 2px dashed v15
         text-shadow: 0 1px 0 v10
-
         r: 4px
         #warning_text, p b {
             font-size: 1rem
@@ -878,7 +861,6 @@ b() { box-shadow: arguments }
         background: var(--rgba-bg-05)
         border: 1px solid bg4
         color: fg1
-
         r: 4px
     }
 
@@ -1551,12 +1533,12 @@ b() { box-shadow: arguments }
         }
     }
 
-    .row[role="controls"] { border-color: bg4 }
+    .row[role='controls'] { border-color: bg4 }
+
     .progress {
         background-color: bg4
         box-shadow: inset 0 1px 2px var(--rgba-bg-01)
         -webkit-box-shadow: inset 0 1px 2px var(--rgba-bg-01)
-
         r: 4px
         &-bar.odd {
             background-color: v08
@@ -1825,17 +1807,17 @@ b() { box-shadow: arguments }
 
     // place this better within dd-wrt
     .row {
-        &[role="results"] {
+        &[role='results'] {
             margin-top: 35px
             margin-left: auto
             margin-right: auto
-            [role="title"] { font-size: 1.5rem }
-            [role="internetSpeed"] { margin-right: 40px }
-            [role="value"] {
+            [role='title'] { font-size: 1.5rem }
+            [role='internetSpeed'] { margin-right: 40px }
+            [role='value'] {
                 font-size: 2rem
                 margin-left: -40px
             }
-            [role="unit"] {
+            [role='unit'] {
                 font-size: 1.5rem
                 margin-left: -1rem
                 margin-top: 6px
@@ -2064,8 +2046,8 @@ b() { box-shadow: arguments }
     }
 
     .hr2, hr {
-        border-top: 1px solid bg4 //#ccc;
-        border-bottom: 1px solid bg4 //#efefef;
+        border-top: 1px solid bg4
+        border-bottom: px solid bg4
     }
 
     .gm-inset-dark {
