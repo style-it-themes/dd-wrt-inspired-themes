@@ -203,13 +203,16 @@ If you encounter such issues please edit style like this.
 
 
 ### Additional Userstyles
-  Style-It Themes recommends Stylus Wardrobe and the Global Overlay Scrollbars can be used all together without issues.
-  These add unapparelled consistent experience and extend customizations options for other areas of your browsing live.
-  
-  Save your retinas from the burn!
 
-* [Overlay Scrollbars](https://github.com/StylishThemes/Overlay-Scrollbars)
+Style-It Themes (and I) recommends the additional styles below which can be used together without issues.
+These add unapparelled consistent experience and extend customizations options for other areas of your browsing life.
+  
+Save your retinas from the burn!
+
+* [DD-WRT Forum Inspired Themes](https://github.com/style-it-themes/dd-wrt-forum-inspired-themes)
+* [DD-WRT Trac Inspired Themes](https://github.com/style-it-themes/dd-wrt-trac-inspired-themes)
 * [Stylus Wardrobe](https://github.com/style-it-themes/stylus-wardrobe)
+* [Overlay Scrollbars](https://github.com/StylishThemes/Overlay-Scrollbars)
 
 ## I Found a Bug
 
