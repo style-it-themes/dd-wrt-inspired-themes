@@ -228,16 +228,16 @@ b() { box-shadow: arguments }
     // remap generated accent colors + keep v09 as 1:1 AC
     shade = (dark(BG)) ? darken : lighten
 
-    --v0-0: mix(shade(BG,  0%), AC, 90%)
-    --v0-1: mix(shade(BG, 40%), AC, 80%)
-    --v0-2: mix(shade(BG, 40%), AC, 70%)
-    --v0-3: mix(shade(BG, 40%), AC, 60%)
-    --v0-4: mix(shade(BG, 65%), AC, 50%)
-    --v0-5: mix(shade(BG, 50%), AC, 40%)
-    --v0-6: mix(shade(BG, 50%), AC, 30%)
-    --v0-7: mix(shade(BG, 50%), AC, 20%)
-    --v0-8: mix(shade(BG, 50%), AC, 10%)
-    --v0-9: mix(shade(BG, 50%), AC, 0%)
+    --v0-0: to_hsla(mix(shade(BG, 90%), AC, 90%))
+    --v0-1: to_hsla(mix(shade(BG, 80%), AC, 80%))
+    --v0-2: to_hsla(mix(shade(BG, 70%), AC, 70%))
+    --v0-3: to_hsla(mix(shade(BG, 60%), AC, 60%))
+    --v0-4: to_hsla(mix(shade(BG, 50%), AC, 50%))
+    --v0-5: to_hsla(mix(shade(BG, 40%), AC, 40%))
+    --v0-6: to_hsla(mix(shade(BG, 30%), AC, 30%))
+    --v0-7: to_hsla(mix(shade(BG, 20%), AC, 20%))
+    --v0-8: to_hsla(mix(shade(BG, 10%), AC, 10%))
+    --v0-9: to_hsla(mix(shade(BG, 0%), AC, 0%))
 
     // rgba BG/AC vars
     --rgba-bg-01: rgba(BG, .1)
