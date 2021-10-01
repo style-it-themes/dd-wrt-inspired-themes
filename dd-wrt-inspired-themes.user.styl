@@ -301,17 +301,16 @@ bsh() { box-shadow: arguments }
     }
   }
 
-  // syslog apparently and we darken it due to unable to style iframe
-  body > fieldset:first-child {
-    background-color: bg0
-  }
-
   // Body
   body {
     background: bg1
     color: v96
 
     text-rendering: optimizeLegibility
+    // syslog apparently and we darken it due to unable to style iframe
+    > fieldset:first-child {
+      background-color: bg0
+    }
     // fix filters popup
     &[onunload*="location.href='Filters.asp'"] {
       height: 180% i
@@ -435,6 +434,7 @@ bsh() { box-shadow: arguments }
         background: none repeat scroll 0 0 v14
         border-color: v15
         color: v98
+        text-shadow: 0 1px 0 bg0
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 v16 i
           border-color: v17 i
@@ -453,6 +453,7 @@ bsh() { box-shadow: arguments }
     // about page targeted styling finally !!!
     &.about-bg {
       background: bg2
+      color: v96
       #content {
         border-color: t
         table.t-border {
@@ -460,11 +461,20 @@ bsh() { box-shadow: arguments }
         }
       }
     }
+    &.help-bg {
+      background: bg2
+      color: v96
+      #content {
+        background: t
+        border-color: t
+        color: v98
+      }
+    }
     // Reboot message box when classic dark styles enabled
     div.message {
       background-color: bg1
       border-color: bg3
-      r: 4px
+      rad: 4px
     }
   }
 
@@ -649,6 +659,7 @@ bsh() { box-shadow: arguments }
   }
 
   #menuMainList {
+    transition: transition
     li {
       span {
         background: v04
@@ -879,8 +890,8 @@ bsh() { box-shadow: arguments }
     // BG color was decided to increase contrast in NAS tab placement of submitFooter bg over bg
     background: var(--rgba-bg-05)
     border: 1px solid bg4
-    color: fg1
-    r: 4px
+    color: v98
+    rad: 4px
   }
 
   // Meter
