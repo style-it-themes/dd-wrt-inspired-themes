@@ -84,10 +84,10 @@ g(x, y = 0, xi = 1, yi = 1) {
 }
 
 // Border radius mixin.
-r() { border-radius: arguments }
+rad() { border-radius: arguments }
 
 // Box-shadow mixin.
-b() { box-shadow: arguments }
+bsh() { box-shadow: arguments }
 
 // Color generator.
 // NOTE: Fix the scope to avoid conflicts.
@@ -164,7 +164,7 @@ b() { box-shadow: arguments }
     define('' + $key, $val, global)
   }
 
-// Generate all other colors.
+  // Generate all other colors.
   for c, i in colors[2..length(colors)] {
     $sel  = colors[i + 2]
 
@@ -297,8 +297,7 @@ b() { box-shadow: arguments }
     &barBorder {
       background: bg0
       border: 1px solid bg4
-
-      r: 4px
+      rad: 4px
     }
   }
 
@@ -333,7 +332,7 @@ b() { box-shadow: arguments }
       border-color: bg4
       color: v98
 
-      border-radius: 4px
+      rad: 4px
       border-width: 1px
       legend {
         background: t
@@ -346,7 +345,7 @@ b() { box-shadow: arguments }
       background: t
       border: 1px solid t
       color: v98
-      r: 0 0 4px 4px
+      rad: 0 0 4px 4px
       #help {
         background: bg1
       }
@@ -372,7 +371,7 @@ b() { box-shadow: arguments }
       outline: 0
       &:focus, &.focus {
         border-color: v09
-        b: 0 0 5px 1px v08
+        bsh: 0 0 5px 1px v08
       }
       &[disabled] {
         background-color: bg0
@@ -407,7 +406,8 @@ b() { box-shadow: arguments }
       &[name*='apply'] {
         background: none repeat scroll 0 0 v42
         border-color: v42
-        color: fg1
+        color: v98
+        text-shadow: 0 1px 0 bg0
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 v43 i
           border-color: v43 i
@@ -418,7 +418,9 @@ b() { box-shadow: arguments }
       &[name*='reset'] {
         background: none repeat scroll 0 0 bg3
         border-color: bg4
-        color: fg1
+        color: v98
+        text-shadow: 0 1px 0 bg0
+
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 bg5 i
           border-color: bg5 i
@@ -443,7 +445,7 @@ b() { box-shadow: arguments }
     div.progressbar {
       background-color: bg4
       border: 1px solid bg5
-      r: 4px
+      rad: 4px
     }
     dd {
       border-bottom: .123rem dotted bg5
@@ -480,7 +482,7 @@ b() { box-shadow: arguments }
     &[style*='height:530px'], &[style*='height:413px'] {
       border: 1px solid bg4
       cursor: copy
-      r: 4px
+      rad: 4px
     }
   }
 
@@ -687,7 +689,7 @@ b() { box-shadow: arguments }
     color: v98
     &:focus, &.focus {
       border-color: v09
-      b: 0 0 5px 1px v08
+      bsh: 0 0 5px 1px v08
       outline: 0
     }
   }
@@ -777,22 +779,22 @@ b() { box-shadow: arguments }
 
       // padding spreads to all below
       padding 2px
-      r: 2px
+      rad: 2px
     }
     &_green {
       background: v42
       color: v99
-      r: 2px
+      rad: 2px
     }
     &_yellow {
       background: v34
       color: v99
-      r: 2px
+      rad: 2px
     }
     &_orange {
       background: v26
       color: v99
-      r: 2px
+      rad: 2px
     }
   }
 
@@ -800,7 +802,7 @@ b() { box-shadow: arguments }
     background: v11
     border: 2px dashed v15
     text-shadow: 0 1px 0 v10
-    r: 4px
+    rad: 4px
     #warning_text, p b {
       font-size: 1rem
       letter-spacing: .15rem
@@ -815,6 +817,7 @@ b() { box-shadow: arguments }
     &.also {
       background: bg2
       border-color: bg4
+      rad: 4px
     }
     .bulle {
       background-color: bg5
@@ -824,8 +827,8 @@ b() { box-shadow: arguments }
     &.note {
       background: v71
       border-color: v75
-
       margin-top: .5rem
+      rad: 4px
     }
     // Wi-vis
     &.gridpoint { background-color: fg1 }
@@ -868,6 +871,7 @@ b() { box-shadow: arguments }
     border-color: bg5
     color: fg1
     letter-spacing: .95px
+    rad: 4px
   }
 
   // Submit options button footer
@@ -1427,7 +1431,7 @@ b() { box-shadow: arguments }
   // Better checkbox/radio inputs.
   /input {
     border: 1px solid bg4
-    b: 0 1px 1px var(--rgba-bg-075)
+    bsh: 0 1px 1px var(--rgba-bg-075)
 
     transition: transition
     padding: 7px
@@ -1441,13 +1445,13 @@ b() { box-shadow: arguments }
     -moz-appearance: none
     -webkit-appearance: none
 
-    r: 4px
+    rad: 4px
 
     prefix  = 'data:image/svg+xml;utf8,'
     prefix += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'
 
-    &[type='radio' i],
-    &[type='checkbox' i] {
+    &[type='radio'],
+    &[type='checkbox'] {
       &, &:focus, &:hover:active {
         c: v95 bg5 bg1
 
@@ -1468,50 +1472,57 @@ b() { box-shadow: arguments }
       }
     }
 
-    &[type='radio' i] {
+    &[type='radio'] {
       // fix border radius at https://github.com/settings/profile Emoji color
-      border-radius: 50%
+     rad: 50%
       &:checked {
         path = '<circle cx="256" cy="256" r="128" fill="' + to_svg($v99) + '"/>'
 
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
-        c: 0 v05 v09
+        c: 0 v07 v07
 
         padding: 7px
       }
-      &:focus { border-radius: 50% }
-      &:hover { c: 0 v08 bg2 }
+      &:focus { rad: 50% }
+      &:hover {
+        c: 0 v08 v03
+        bsh: 0 0 8px 0 v04
+      }
     }
 
-    &[type='checkbox' i] {
-      border-radius: 2px
+    &[type='checkbox'] {
+      rad: 2px
       &:checked {
         path ='<path fill="' + to_svg($v99) + '" '
         path += 'd="M99 213l-1 89 104 102 205-201v-91L203 315 99 213z"/>'
 
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
-        c: 0 v05 v09
-        border-radius: 3px
+        c: 0 v07 v07
+        rad: 3px
       }
-      &:hover { c: 0 v08 bg2 }
+      &:hover {
+        c: 0 v08 v03
+        bsh: 0 0 8px 0 v04
+      }
     }
-    &[type='number' i] { } // TODO: style spinbox
+    &[type='number'] { } // TODO: style spinbox
     &.num[name*='lease'][size='10'] { margin-right: 4px } // TODO: style spinbox
     // Style file browse button
-    &[type='file' i] {
+    &[type='file'] {
       &::file-selector-button {
         background-color: bg5
         border: 2px solid bg5
         color: v98
 
-        border-radius: .32em
+        rad: .32em
         padding: .2rem .4rem
         transition: transition
+        text-shadow: 0 1px 0 bg0
         cursor: pointer
         &:hover {
           background-color: v06
           border: 2px solid v06
-          box-shadow: 0 0 10px 0 v02
+          box-shadow: 0 0 10px 0 v04
           color: v98
         }
       }
@@ -1520,14 +1531,15 @@ b() { box-shadow: arguments }
         border: 2px solid bg5
         color: v98
 
-        border-radius: .32em
+        rad: .32em
         padding: .2rem .4rem
         transition: transition
+        text-shadow: 0 1px 0 bg0
         cursor: pointer
         &:hover {
           background-color: v06
           border: 2px solid v06
-          box-shadow: 0 0 10px 0 v02
+          box-shadow: 0 0 10px 0 v04
           color: 98
         }
       }
@@ -1554,7 +1566,7 @@ b() { box-shadow: arguments }
     background-color: bg4
     box-shadow: inset 0 1px 2px var(--rgba-bg-01)
     -webkit-box-shadow: inset 0 1px 2px var(--rgba-bg-01)
-    r: 4px
+    rad: 4px
     &-bar.odd {
       background-color: v08
     }
@@ -1573,7 +1585,7 @@ b() { box-shadow: arguments }
     background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
     background-color: bg0 i
     border: 1px solid bg4
-    b: 0px 1px 1px var(--rgba-bg-075)
+    bsh: 0px 1px 1px var(--rgba-bg-075)
     color: v98
 
     appearance: none
@@ -1800,7 +1812,7 @@ b() { box-shadow: arguments }
   // Speedchecker - checkbox tweaks dues to custom checkboxes
   input {
     &[type='checkbox' i] {
-      &:checked { r: 3px i }
+      &:checked { rad: 3px i }
       &[name='internetSpeed'],
       &[name='wifiSpeed'] {
         padding: 7px
@@ -1809,7 +1821,7 @@ b() { box-shadow: arguments }
 
         height: b_hgwd
         width: b_hgwd
-        r: 2px
+        rad: 2px
       }
       // Fix speedchecker select
       /#formSpeed,
@@ -2028,7 +2040,7 @@ b() { box-shadow: arguments }
   body {
     background: bg0
     input {
-      r: 4px
+      rad: 4px
       &[type='submit' i] {
         background-color: bg4
         border-color: bg4
@@ -2071,7 +2083,7 @@ b() { box-shadow: arguments }
   }
 
   select {
-    r: 4px
+    rad: 4px
     option { color: v99 }
   }
 }
