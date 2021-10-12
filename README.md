@@ -38,13 +38,13 @@
 
 ## About
 
-The *DD-WRT Inspired Themes* style is designed for routers flashed with DD-WRT type firmware.
+The *DD-WRT Inspired Themes* style is designed for routers flashed with DD-WRT firmware.
 
-This style leverages the _awesome_ v2 [stylus lang color generator](https://github.com/vednoc/stylus-color-generator) by @vednoc
+At the moment the _awesome_ v2 [stylus lang color generator](https://github.com/vednoc/stylus-color-generator) by @vednoc, is being leveraged in areas where its not needed for this style, but it provides a plug & play ability to allow fast development to release in a shorter time. In the future I plan to simplify this method making it maybe marginally more efficient.
 
-The default built in themes are great, but even the best dark built in theme doesn't darken all areas and many aspects could be further polished. Instead of waiting...
+The default built in themes are great, but even the best dark classic fresh-dark theme, doesn't darken all areas and many aspects services could be further polished. Instead of waiting...this was born.
 
-It's made for my personal use only, and shared because... Why not.
+It's made for my personal use only, and shared because... Why not?
 
 ## Can you include these themes in DD-WRT?
 
@@ -54,7 +54,10 @@ If your router has enough memory these will be included.
 
 >Note that some sections of external DD_WRT sites cannot be targeted via CSS at this time. BrainSlayer may add support for these at some later stage.
 
-In any case you can not customize the built in styles and you may notice styling inconsistencies. If that bothers you DO use this project instead.
+In any case you can not customize the built in styles and you may notice styling inconsistencies.
+If that bothers you DO use this project instead in the interim, it's being worked on upstream DD-WRT too.
+
+Report steady and of consequence progress being made upstream with the cooperation of @BrainSlayer. Thank you ;)
 
 ## Router Model Compatibility
 
@@ -99,9 +102,16 @@ if you wish to view complete list click below.
 
  ### Image updates
 
- * Hotspot logos are updated and working with all dark styles.
+ * Hotspot logos are updated and working with all dark styles. (upstream fixes merged for classic light styles)
  * DD-WRT logos use CSS filters to make them compatible with different backgrounds colors.
  * New bin icon
+ 
+ ### Tab navigation compatible
+ 
+ Fully implemented targets to resolve `:focus-within, :focus-visible` and override UA styles.
+ This allows for a more visually responsive feedback to a certain extent.
+ 
+ Equally implemented upstream; after DD-WRT v3.0-r47528 std (10/10/21) builds.
 
  ## The Kitchen Sink
 
@@ -112,7 +122,7 @@ if you wish to view complete list click below.
  * Progress bars/Signal quality bars etc.
  * Speedchecker dialog
  * Speedchecker logo image replacement
- * OID search
+ * OID search (fixed issues with padding on h2 element)
  * Optional transition effects
  * Experimental font replacements
  
@@ -129,16 +139,14 @@ if you wish to view complete list click below.
 [![CLICK TO INSTALL WITH - STYLUS](https://img.shields.io/badge/Install_directly_with-Stylus-21d1d0.svg?longCache=true&style=for-the-badge)](https://github.com/style-it-themes/dd-wrt-inspired-themes/raw/main/dd-wrt-inspired-themes.user.styl)  
 *Click to install directly from this repository*.
 
-### Limitations of This project
+### Limitations of this project
 
 Some classic gui-style themes + DD-WRT Inspired Themes via Stylus at same time will not work together well with all cases.
 
-For best results at this time, if you use a DD-WRT FW version that includes built in *DD-WRT Inspired Themes* please select and enable one of them.
+Equal support side by side usage with built in + this project. See below for what works and is tested;
 
-*Works together with* blue/yellow/red/orange/cyan/elegant light styles, or the included *DD-WRT Inspired Themes*, do not enable dark styles.
-*Does not work well together with* Brainslayer/kromo/vikar/xirian and possibly others will show many styling inconsistencies and breakages.
-
-Internal DD-WRT older themes will be reworked some day when Santa has time.
+*Compatible with* blue/yellow/red/orange/cyan/elegant light/dark styles, or the included *DD-WRT Inspired Themes*, do not enable dark styles.
+*Incompatible/Does not work well together with* styles named; Brainslayer/kromo/vikar/xirian ,many styling inconsistencies and breakages expected and unsupported at this time.
 
 #### Router IP Setting
 
