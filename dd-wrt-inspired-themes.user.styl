@@ -1543,8 +1543,8 @@ tsh() { text-shadow: arguments }
   // improve trash bin
   .bin {
     prefix  = 'data:image/svg+xml;utf8,'
-    prefix += '<svg viewBox="0 0 16 16" width="16" height="16" fill="' + to_hex($v97) + '" '
-    prefix += 'xmlns="http://www.w3.org/2000/svg">'
+    prefix += '<svg viewBox="0 0 16 16" width="16" height="16" '
+    phil    = 'fill="' + to_hex($v97) + '" xmlns="http://www.w3.org/2000/svg">'
     path    = '<path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25'
     path   += '.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 '
     path   += '.784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.'
@@ -1553,10 +1553,12 @@ tsh() { text-shadow: arguments }
     path   += '49-.225l-.66-6.6z"></path>'
     xy      = 'no-repeat center/15px'
 
-    background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy))
+    background: s("url('%s%s</svg>') %s", rq(prefix) rq(phil), rq(path), rq(xy))
 
     &:hover {
-       filter: brightness(.5) sepia(1) hue-rotate(300deg) saturate(40) brightness(1.1)
+       phil    = 'fill="' + to_hex($v19) + '" xmlns="http://www.w3.org/2000/svg">'
+       background: s("url('%s%s</svg>') %s", rq(prefix) rq(phil), rq(path), rq(xy))
+       filter: saturate(4) contrast(2)
     }
   }
 
