@@ -386,23 +386,23 @@ tsh() { text-shadow: arguments }
       &.button {
         background: v04
         border: 1px solid v06
-        box-shadow: 0 1px 0 bg0
+        bsh: 0 1px 0 bg0
         color: v98
         tsh: 0 1px 0 bg0
-        height: 1.7rem
+        height: 1.41rem
         padding: 0 .462rem 0 .462rem
 
         transition: transition
         outline: 0
         &:hover, &:focus-within {
-          background: v07
-          border-color: v07
-          box-shadow: 0 0 10px 0 v04
+          background: v07 i
+          border-color: v07 i
+          bsh: 0 0 10px 0 v04
           color: v99
         }
         &[disabled] {
           c: v99 v06 v05
-          box-shadow: none
+          bsh: none
           opacity: .6
         }
       }
@@ -414,11 +414,11 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 v43 i
           border-color: v43 i
-          box-shadow: 0 0 10px 0 v43
+          bsh: 0 0 10px 0 v43
           color: v99 i
         }
       }
-      &[name*='reset'] {
+      &[name*='reset']:not([type="radio"]) {
         background: none repeat scroll 0 0 bg3
         border-color: bg4
         color: v98
@@ -427,7 +427,7 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 bg5 i
           border-color: bg5 i
-          box-shadow: 0 0 10px 0 bg5
+          bsh: 0 0 10px 0 bg5
           color: v99 i
         }
       }
@@ -442,7 +442,7 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 v16 i
           border-color: v17 i
-          box-shadow: 0 0 10px 0 v16
+          bsh: 0 0 10px 0 v16
         }
       }
     }
@@ -524,11 +524,14 @@ tsh() { text-shadow: arguments }
         margin: 0 0 .8em 0
       }
       &[name='add_button'][onclick*='_add'] {
-        margin: 0 .7em .8em 0
+        margin: 0 .5em 0
       }
     }
   }
   input {
+    &.num {
+      vertical-align: unset
+    }
     &.button {
       &[onclick*='copy'],
       &[onclick*='paste'] {
@@ -537,8 +540,8 @@ tsh() { text-shadow: arguments }
       &[onclick*='vifs_add'] {
         margin: .4em 0 0 0
       }
-      &[onclick*='vifs_add'] {
-        margin: .4em 0 0 0
+      &[onclick*='vifs_remove'] {
+        margin: -.95em .362em 0 0
       }
       &[onclick*='delete'] {
         margin: 0 .4em 0 .4em
@@ -547,7 +550,7 @@ tsh() { text-shadow: arguments }
         vertical-align: .04rem
       }
       &[onclick*='to_delete'] {
-        margin: 0 .5rem 0 .4rem
+        margin: 0 .4rem 0 .362rem
       }
       &[onclick*="filter_remove"] {
         margin: 0 .5rem 0 .3rem
@@ -559,7 +562,8 @@ tsh() { text-shadow: arguments }
       &[onclick*='gen_wg_key'] {
         margin: 0 0 6px -32%
       }
-      &[onclick*='do_show_prev'] {
+      &[onclick*='do_show_prev'],
+      &[onclick*='do_show_next'] {
         margin: .5rem .5rem 0 0
       }
       // add tunnel/import config tunnel buttons are too close by default
@@ -571,7 +575,9 @@ tsh() { text-shadow: arguments }
       }
       // better padding for preview style button
       &[onclick*='previewStyle'] {
-        vertical-align: .04rem
+        vertical-align: middle
+        height: 1.56rem
+        margin-left: .362em
       }
       //vlan add button tweaks
       &[onclick*='vlan_add'],
@@ -613,10 +619,18 @@ tsh() { text-shadow: arguments }
       margin-left: calc(2% - .3rem)
     }
   }
+  /select {
+    &[onchange*='SelRoute'] {
+      margin-top: -.2rem
+    }
+  }
   // ForwardIP.asp checkbox to middle of num inputs
-  .table[summary='ports forwarding table'] {
-    input[type='checkbox'] {
-      margin-top: .4333rem
+  .table {
+    &[summary='ports forwarding table'],
+    &[summary="ports triggering table"] {
+      input[type='checkbox'] {
+        margin-top: .4rem
+      }
     }
   }
 
@@ -625,7 +639,7 @@ tsh() { text-shadow: arguments }
       #menuMainList {
         li {
           span {
-            background: bg1 i
+            background: bg1
             border-color: bg5
             outline: 0
             strong {
@@ -643,15 +657,22 @@ tsh() { text-shadow: arguments }
               border-color: v07
               color: v99
             }
+            &:focus, &:focus-within, &:focus-visible {
+              background: v07
+              border-color: v07
+              outline: 0
+            }
           }
-          &.current span {
-            background: bg1 i
-            transition: transition
-            &:hover {
-              background: v04 i
-              border: 1px solid v06
-              padding-top: .3rem i
-              cursor: default
+          &.current {
+            span {
+              background: bg1
+              transition: transition
+              &:hover {
+                background: v04
+                border: 1px solid v06
+                padding-top: .3rem
+                cursor: default
+              }
             }
           }
         }
@@ -749,10 +770,12 @@ tsh() { text-shadow: arguments }
   textarea {
     background-color: bg0
     border-color: bg4
-    color: v98
-    &:focus, &.focus {
-      border-color: v09
-      bsh: 0 0 5px 1px v08
+    line-height: 1.8em
+    color: v96
+    transition: transition
+    &:hover, &.focus, &:focus, &:focus-within, &:focus-visible {
+      c: v98 v08 bg1
+      bsh: 0 0 10px 0 v04
       outline: 0
     }
   }
@@ -956,6 +979,7 @@ tsh() { text-shadow: arguments }
     padding-bottom: .2333rem
     .button {
       margin-right: .362em
+      height: 1.7rem
     }
   }
 
@@ -1390,9 +1414,11 @@ tsh() { text-shadow: arguments }
     transition: transition
     padding: 7px
     line-height: 1.4em
-    &:hover, &:focus-within  {
-      border-color: v08
-      background-color: bg1
+    height: .7rem
+    &:hover, &:focus, &:focus-within, &:focus-visible {
+        c: 0 v08 v01
+        bsh: 0 0 6px 0 v03
+        outline: 0
     }
 
     appearance: none
@@ -1406,17 +1432,17 @@ tsh() { text-shadow: arguments }
 
     &[type='radio'],
     &[type='checkbox'] {
-      &, &:focus, &:hover:active {
-        c: v95 bg5 bg1
-
-        bottom: .15rem
+      &, &:hover:active {
+        //c: v95 bg5 bg1
+        background-color: bg1
+        border-color: b
+        bottom: .1rem
         background-size: cover
         cursor: pointer
         position: relative
         height: .88rem
         width: .88rem
 
-        vertical-align: middle
       }
       &:disabled, &:hover:active:disabled, &:disabled:hover {
         c: v95 bg5 bg4
@@ -1424,9 +1450,17 @@ tsh() { text-shadow: arguments }
         opacity: .7
         cursor: default
       }
+      &:checked {
+        &:focus, &:focus-within, &:focus-visible {
+          c: 0 v09 v01
+          bsh: 0 0 10px 0 v04
+          outline: 0
+        }
+      }
     }
 
     &[type='radio'] {
+      vertical-align: -.32rem
       // fix border radius at https://github.com/settings/profile Emoji color
       rad: 50%
       &:checked {
@@ -1434,17 +1468,16 @@ tsh() { text-shadow: arguments }
 
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
         c: 0 v07 v07
-
         padding: 7px
       }
-      &:focus { rad: 50% }
-      &:hover {
+      &:hover, {
         c: 0 v08 v03
         bsh: 0 0 8px 0 v04
       }
     }
 
     &[type='checkbox'] {
+      vertical-align: -.488rem
       rad: 2px
       &:checked {
         path ='<path fill="' + to_hex($v99) + '" '
@@ -1545,10 +1578,10 @@ tsh() { text-shadow: arguments }
     appearance: none
     -moz-appearance: none
     -webkit-appearance: none
-    height: 1.7rem
     max-width: 100%
     outline: 0
     padding-right: 1.5rem
+    vertical-align: middle
     > option {
       background-color: bg0 i
       &:hover {
@@ -1560,8 +1593,7 @@ tsh() { text-shadow: arguments }
         bsh: 0 0 10px 100px v06 inset i
       }
     }
-    &:focus > option:hover
-    &:focus-within  { c: 0 v08 bg1 }
+    &:focus, &:focus-within, &:focus-visible { c: 0 v08 v01; bsh: 0 0 10px 0 v04 }
     &:hover {
       prefix  = 'data:image/svg+xml;utf8,'
       prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_hex($v99) + '" '
@@ -1571,7 +1603,7 @@ tsh() { text-shadow: arguments }
       xy      = 'no-repeat right 3px center'
 
       background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
-      c: 0 v08 bg1
+      c: 0 v08 v01
 
       transition: transition
     }
