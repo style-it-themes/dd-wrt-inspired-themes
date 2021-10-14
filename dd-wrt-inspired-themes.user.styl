@@ -1314,9 +1314,9 @@ tsh() { text-shadow: arguments }
         outline: 0
     }
 
-    appearance: none
     -moz-appearance: none
     -webkit-appearance: none
+    appearance: none
 
     rad: 4px
 
@@ -1328,7 +1328,7 @@ tsh() { text-shadow: arguments }
       &, &:hover:active {
         //c: v95 bg5 bg1
         background-color: bg1
-        border-color: b
+        border-color: bg5
         bottom: .1rem
         background-size: cover
         cursor: pointer
@@ -1444,8 +1444,8 @@ tsh() { text-shadow: arguments }
 
   .progress {
     background-color: bg4
-    bsh: inset 0 1px 2px var(--rgba-bg-01)
     -webkit-box-shadow: inset 0 1px 2px var(--rgba-bg-01)
+    bsh: inset 0 1px 2px var(--rgba-bg-01)
     rad: 4px
     &-bar.odd {
       background-color: v08
@@ -1468,9 +1468,9 @@ tsh() { text-shadow: arguments }
     bsh: 0px 1px 1px var(--rgba-bg-075)
     color: v98
 
-    appearance: none
     -moz-appearance: none
     -webkit-appearance: none
+    appearance: none
     max-width: 100%
     outline: 0
     padding-right: 1.5rem
@@ -1603,7 +1603,7 @@ tsh() { text-shadow: arguments }
   // speedchecker.dd-wrt.com
   body {
     background: bg2
-    color: v96
+    color: v97
     &.gui {
       background: bg0
       color: v96
@@ -1634,9 +1634,8 @@ tsh() { text-shadow: arguments }
       }
       &:focus {
         border-color: v04
-        bsh: inset 0 1px 1px var(--rgba-bg-075), 0 0 8px var(--rgba-ac-06)
         -webkit-box-shadow: inset 0 1px 1px var(--rgba-bg-075), 0 0 8px var(--rgba-ac-06)
-
+        bsh: inset 0 1px 1px var(--rgba-bg-075), 0 0 8px var(--rgba-ac-06)
         outline: 0
       }
     }
