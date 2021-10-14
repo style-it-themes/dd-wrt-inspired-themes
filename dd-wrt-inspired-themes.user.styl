@@ -1169,15 +1169,19 @@ tsh() { text-shadow: arguments }
 
   // Paypal logo inversion
   [type='image' i][src*='paypal'] {
-    background: t
-    border-color: t
+    background: t i
+    border-color: t i
     filter: invert(.9) hue-rotate(180deg)
     margin-bottom: -.5rem
-    mix-blend-mode: exclusion
+    height: 54px
+    width: 90px
+    mix-blend-mode: lighten
 
-    &:hover {
-      background: fg1
-      border-color: t
+    &:hover, &:focus, &:focus-within, &:focus-visible {
+      background-color: t i
+      border-color: t i
+      bsh: none i
+      mix-blend-mode: exclusion
     }
   }
 
