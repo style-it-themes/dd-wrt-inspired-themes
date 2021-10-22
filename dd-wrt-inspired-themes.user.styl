@@ -319,7 +319,7 @@ tsh() { text-shadow: arguments }
       background-color: bg0
       td[width='70'] {
         input[type='checkbox'][name*='sum'] {
-          margin-bottom: -2px
+          margin-bottom: 0
         }
       }
       h2 { background: bg5 }
@@ -339,6 +339,8 @@ tsh() { text-shadow: arguments }
         background: t
         color: v09
         tsh: 0 1px 0 bg0
+        // workaround main fresh-dark.css hack for brighter legends non color specific.
+        filter: none
       }
     }
     #content {
@@ -349,6 +351,7 @@ tsh() { text-shadow: arguments }
       rad: 0 0 4px 4px
       #help {
         background: bg1
+        width: 21.333em
       }
       &.infopage {
         #main {
@@ -357,7 +360,7 @@ tsh() { text-shadow: arguments }
         }
       }
       // Main header
-      #header { background: bg0 }
+      #header { background: bg0 i }
     }
     #main #contents {
       background: bg1
@@ -397,13 +400,18 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: v07 i
           border-color: v07 i
-          bsh: 0 0 10px 0 v04
+          bsh: 0 0 10px 0 v04 i
           color: v99
         }
         &[disabled] {
           c: v99 v06 v05
           bsh: none
           opacity: .6
+          &:hover {
+            c: v99 v06 v05
+            bsh: none i
+            opacity: .6
+          }
         }
       }
       &[name*='apply'] {
@@ -414,7 +422,7 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 v43 i
           border-color: v43 i
-          bsh: 0 0 10px 0 v43
+          bsh: 0 0 10px 0 v43 i
           color: v99 i
         }
       }
@@ -427,7 +435,7 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 bg5 i
           border-color: bg5 i
-          bsh: 0 0 10px 0 bg5
+          bsh: 0 0 10px 0 bg5 i
           color: v99 i
         }
       }
@@ -442,7 +450,7 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: none repeat scroll 0 0 v16 i
           border-color: v17 i
-          bsh: 0 0 10px 0 v16
+          bsh: 0 0 10px 0 v16 i
         }
       }
     }
@@ -456,22 +464,44 @@ tsh() { text-shadow: arguments }
     }
     // about page targeted styling finally !!!
     &.about-bg {
-      background: bg2
-      color: v96
+      background: bg2 i
+      color: v96 i
       #content {
         border-color: t
         table.t-border {
-          border-color: bg4
+          border-color: bg4 i
+        }
+        .thc {
+          background-color: bg5 i
+        }
+        .t-border {
+          border-color: bg4 i
+        }
+      }
+      a {
+        color: v09 i
+        &:hover {
+          color: v08 i
         }
       }
     }
     &.help-bg {
-      background: bg2
+      background: bg2 i
       color: v96
       #content {
         background: t
         border-color: t
         color: v98
+        h2 {
+          background: bg5 i
+          color: fg1 i
+        }
+      }
+      a {
+        color: v09 i
+        &:hover {
+          color: v08 i
+        }
       }
     }
     // Reboot message box when classic dark styles enabled
@@ -535,13 +565,13 @@ tsh() { text-shadow: arguments }
     &.button {
       &[onclick*='copy'],
       &[onclick*='paste'] {
-        margin: 0 .362em 1em 0
+        margin: 0 .362em 0 0
       }
       &[onclick*='vifs_add'] {
         margin: .4em 0 0 0
       }
       &[onclick*='vifs_remove'] {
-        margin: -.95em .362em 0 0
+        margin: 0 .362em 0 0
       }
       &[onclick*='delete'] {
         margin: 0 .4em 0 .4em
@@ -595,6 +625,12 @@ tsh() { text-shadow: arguments }
       }
       &[onclick*='release'] {
         margin-right: .5rem
+      }
+      &[onclick*='traffdata.bak'] {
+        margin: 0 .62em 0 0
+      }
+      &[onclick*='ttraff_remove'] {
+        margin: 0 0 0 .362em
       }
     }
 
@@ -775,12 +811,14 @@ tsh() { text-shadow: arguments }
     transition: transition
     &:hover, &.focus, &:focus, &:focus-within, &:focus-visible {
       c: v98 v08 bg1
-      bsh: 0 0 10px 0 v04
-      outline: 0
+      bsh: 0 0 10px 0 v04 i
+      outline: 0 i
     }
   }
 
   table {
+    &[bgcolor='#FFFFFF'] { background-color: bg0 }
+    &[bordercolor='#000000'] { border-color: bg4 }
     tr:not([bgcolor]) {
       &:hover, &:focus-within {
         background: bg2
@@ -791,21 +829,35 @@ tsh() { text-shadow: arguments }
         color: fg1
         padding-bottom: 2px
       }
-      /[bgcolor='#FFFF00'],
-      /[bgcolor='#ffed00'] {
-        background-color: v33
+    }
+    tr {
+      &[bgcolor='#ffff00' i],
+      &[bgcolor='#ffed00'],
+      &[bgcolor='#eec900'] {
+        background-color: v36
         &:hover {
-          background-color: v34
+          background-color: v35
         }
       }
-      /[bgcolor='#FF0000'],
-      /[bgcolor='#ea0707'] {
-        background-color: v14
-        color: v98
+      &[bgcolor='#ff0000' i],
+      &[bgcolor='#ea0707'],
+      &[bgcolor='#ff6666'] {
+        background-color: v19
         &:hover {
-          background-color: v15
+          background-color: v18
         }
       }
+      &[bgcolor='#7cfc00' i],
+      &[bgcolor='#35ee00'] {
+        background-color: v46
+        &:hover {
+          background-color: v45
+        }
+      }
+      td[style='color:#000'] {
+        color: v90 i
+      }
+      td[bgcolor='#FFFFFF'] { background-color: bg0 }
     }
     /#wireless_table {
       td {
@@ -829,12 +881,10 @@ tsh() { text-shadow: arguments }
       /[style*='background-color: rgb(205\, 0\, 0)'] {
         c: 0 0 v15
       }
-      /[bgcolor='#C0C0C0'] {
+      &[bgcolor='#C0C0C0'] {
         background-color: bg2
         &:hover { background-color: bg3 }
       }
-      /[bgcolor='#FFFFFF'] { background-color: bg0 }
-      /[bordercolor='#000000'] { border-color: bg4 }
     }
     tr[bgcolor='#CCCCCC'] {
       background-color: bg2
@@ -905,8 +955,8 @@ tsh() { text-shadow: arguments }
   div {
     // HELP
     &.also {
-      background: bg2
-      border-color: bg4
+      background: bg3 i
+      border-color: bg4 i
       rad: 4px
     }
     .bulle {
@@ -915,8 +965,8 @@ tsh() { text-shadow: arguments }
     }
     // Purple note
     &.note {
-      background: v71
-      border-color: v75
+      background: v71 i
+      border-color: v75 i
       margin-top: .5rem
       rad: 4px
     }
@@ -1011,7 +1061,7 @@ tsh() { text-shadow: arguments }
   // Images + nav
   #header {
     // Help header
-    background: bg2
+    background: bg2 i
     // DDWRT logo
     #logo {
       filter: contrast(1.2)
@@ -1022,9 +1072,12 @@ tsh() { text-shadow: arguments }
       mix-blend-mode: lighten
     }
     .navig {
+      top: 4.737em
       a {
-        color: fg3
-        &:hover, &:focus-within { color: fg1  }
+        color: v09 i
+        &:hover, &:focus, &:focus-within {
+          color: v08 i
+        }
       }
     }
   }
@@ -1313,9 +1366,10 @@ tsh() { text-shadow: arguments }
     line-height: 1.4em
     height: .7rem
     &:hover, &:focus, &:focus-within, &:focus-visible {
-        c: 0 v08 v01
-        bsh: 0 0 6px 0 v03
-        outline: 0
+      background: v01
+      border-color: v08
+      bsh: 0 0 6px 0 v03
+      outline: 0 i
     }
 
     -moz-appearance: none
@@ -1432,7 +1486,7 @@ tsh() { text-shadow: arguments }
       }
     }
     &[disabled] {
-      opacity: .7
+      opacity: .6
     }
     /.off {
       background: bg2
@@ -1545,6 +1599,9 @@ tsh() { text-shadow: arguments }
         background-color: bg0 i
 
       }
+    }
+    &[name='erase'] {
+      margin-bottom: .4rem
     }
   }
 
