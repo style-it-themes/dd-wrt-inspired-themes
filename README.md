@@ -9,8 +9,8 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://discord.gg/EpdGSfH">
-    <img src="https://img.shields.io/badge/style--it--themes-discord%20channel-blue.svg?style=for-the-badge" alt="Style-It Themes (sit) Discord Channel">
+  <a href="https://matrix.to/#/#style_it_themes_public:matrix.org">
+    <img src="https://img.shields.io/badge/style--it--themes-matrix%20channel-blue.svg?style=for-the-badge" alt="Style-It Themes (sit) :matrix.org channel">
   </a>
   <a href="https://github.com/style-it-themes/dd-wrt-inspired-themes/releases">
     <img src="https://img.shields.io/github/tag/style-it-themes/dd-wrt-inspired-themes.svg?label=Current%20Version&style=for-the-badge" alt="Current version">
