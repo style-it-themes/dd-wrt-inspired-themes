@@ -352,6 +352,7 @@ tsh() { text-shadow: arguments }
       #help {
         background: bg1
         width: 21.333em
+        width: 21em
       }
       &.infopage {
         #main {
@@ -556,6 +557,9 @@ tsh() { text-shadow: arguments }
       &[name='add_button'][onclick*='_add'] {
         margin: 0 .5em 0
       }
+      &[name='add_button'][onclick*='add_tunnel'] {
+        margin: 0 .5em 0
+      }
     }
   }
   input {
@@ -595,10 +599,6 @@ tsh() { text-shadow: arguments }
       &[onclick*='do_show_prev'],
       &[onclick*='do_show_next'] {
         margin: .5rem .5rem 0 0
-      }
-      // add tunnel/import config tunnel buttons are too close by default
-      &[name*='import_tunnel'] {
-        margin-left: 6px
       }
       &[onclick*='add_peer'] {
         margin: 0 0 -6px -35%
@@ -730,7 +730,7 @@ tsh() { text-shadow: arguments }
   }
   #help {
     a {
-      color: fg2
+      color: fg1
       &:hover { color: fg1 }
     }
     h2 {
@@ -861,6 +861,7 @@ tsh() { text-shadow: arguments }
     }
     /#wireless_table {
       td {
+        /#ip_count,
         /[title*='Search'],
         /[title*='Monitoring'] {
           &:hover {
@@ -1033,24 +1034,19 @@ tsh() { text-shadow: arguments }
       height: 1.733rem
     }
   }
-
   // Meter
   .meter {
     background-color: bg4
     border-color: bg5
-
     .text {
-      if (dark(BG)) {
-        color: v98
-        tsh: 0 1px 0 v90
-      }
-      else {
-        color: v93
-        tsh: 0 1px 0 v90
-      }
+      color: v98
+      tsh: 0 1px 0 v90
     }
 
-    .bar { background-color: v05 }
+    .bar {
+      background: v05
+      rad: 2px
+    }
   }
 
   // DD_WRT bottom link spacing
