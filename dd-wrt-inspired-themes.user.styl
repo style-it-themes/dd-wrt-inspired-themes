@@ -35,6 +35,7 @@
 @var checkbox custom_font  'Enable  font overrides  ' 0
 @var checkbox invert_nav   'Invert navigation style ' 1
 @var checkbox hide_hsl     'Show hotspot logos      ' 1
+@var checkbox chkbx_toggle 'Enable ckeckbox toggle  ' 0
 
 @var text     f_ui         'UI font                 ' ''font_name''
 @var text     f_mono       'Monospace font          ' ''font_name''
@@ -1497,6 +1498,72 @@ tsh() { text-shadow: arguments }
     }
   }
 
+  if (chkbx_toggle) {
+    [summary="week days table"] {
+      margin-left: initial
+    }
+    // Better checkbox/radio inputs.
+    /input {
+
+      prefix  = 'data:image/svg+xml;utf8,'
+      prefix += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'
+
+      &[type='checkbox'] {
+        path = '<circle cx="256" cy="256" r="120" fill="' + to_hex($v99) + '"/>'
+        background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
+        c: 0 bg5 bg1
+        background-position: 29.2px
+        padding: 10px
+        rad: 30px i
+        bsh: none
+        &, &:hover, &:active {
+          cursor: pointer
+          background-size: cover
+          position: relative
+          height: 1.233rem i
+          width: 2.23rem i
+          vertical-align: middle
+        }
+        &:disabled, &:hover:active:disabled, &:disabled:hover {
+          c: v95 bg5 bg1
+          opacity: .5
+          cursor: default
+          bsh: none
+        }
+        &[name='internetSpeed'],
+        &[name='wifiSpeed'] {
+          height: 2.233rem i
+          width: 4rem i
+          position: absolute i
+          left: -.4rem
+          top: .2rem
+        }
+        &:checked {
+          path = '<circle cx="256" cy="256" r="120" fill="' + to_hex($v99) + '"/>'
+          background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
+          c: 0 v09 v05
+          padding: 10px i
+          background-position: 47.3px
+          rad: 30px i
+          &:focus, &:focus-within {
+            c: 0 v09 v0
+            bsh: 0 0 10px 0 v04
+            outline: 0
+          }
+          &:focus-visible {
+            c: 0 v09 v02
+            bsh: 0 0 10px 0 v04
+            outline: 0
+          }
+          &:disabled, &:hover:active:disabled, &:disabled:hover {
+            c: 0 v09 v09
+            bsh: none
+          }
+        }
+      }
+    }
+  }
+
   .row[role='controls'] { border-color: bg4 }
 
   .progress {
@@ -1751,24 +1818,30 @@ tsh() { text-shadow: arguments }
 
   // Speedchecker - checkbox tweaks dues to custom checkboxes
   input {
-    &[type='checkbox' i] {
-      &:checked { rad: 3px i }
+    &[type='checkbox'] {
       &[name='internetSpeed'],
       &[name='wifiSpeed'] {
         padding: 7px
-        position: absolute i
-        bottom: .45rem i
-
+        position: absolute
+        bottom: .2rem
         height: .88rem
         width: .88rem
         rad: 2px
+        &:checked { rad: 3px }
       }
-      // Fix speedchecker select
-      /#formSpeed,
-      /#formConnection {
-         height: inherit
-         width: 100%
-      }
+    }
+    &[type="button"][name='startTest'] {
+      height: 2.4rem
+      bottom: -.3rem
+      position: relative
+      padding: 0 1rem
+    }
+  }
+  // Fix speedchecker select
+  .form-group {
+    #formSpeed, #formConnection {
+      height: inherit
+      width: 100%
     }
   }
 
