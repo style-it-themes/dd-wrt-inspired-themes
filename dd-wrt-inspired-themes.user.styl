@@ -1432,7 +1432,7 @@ tsh() { text-shadow: arguments }
         path += 'd="M99 213l-1 89 104 102 205-201v-91L203 315 99 213z"/>'
 
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
-        c: 0 v07 v07
+        c: 0 v09 v05
         rad: 3px
       }
       &:hover {
@@ -1512,21 +1512,20 @@ tsh() { text-shadow: arguments }
         path = '<circle cx="256" cy="256" r="120" fill="' + to_hex($v99) + '"/>'
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
         c: 0 bg5 bg1
-        background-position: 29.2px
-        padding: 10px
-        rad: 30px i
-        bsh: none
+        background-position: 21px center
         &, &:hover, &:active {
           cursor: pointer
           background-size: cover
           position: relative
-          height: 1.233rem i
-          width: 2.23rem i
+          height: .95rem i
+          width: 1.61rem i
           vertical-align: middle
+          rad: 10px i
+          bsh: none
         }
         &:disabled, &:hover:active:disabled, &:disabled:hover {
           c: v95 bg5 bg1
-          opacity: .5
+          opacity: .6
           cursor: default
           bsh: none
         }
@@ -1542,11 +1541,10 @@ tsh() { text-shadow: arguments }
           path = '<circle cx="256" cy="256" r="120" fill="' + to_hex($v99) + '"/>'
           background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
           c: 0 v09 v05
-          padding: 10px i
-          background-position: 47.3px
-          rad: 30px i
+          background-position: 32.8px center
+          rad: 10px i
           &:focus, &:focus-within {
-            c: 0 v09 v0
+            c: 0 v09 v05
             bsh: 0 0 10px 0 v04
             outline: 0
           }
@@ -1556,7 +1554,7 @@ tsh() { text-shadow: arguments }
             outline: 0
           }
           &:disabled, &:hover:active:disabled, &:disabled:hover {
-            c: 0 v09 v09
+            c: 0 v09 v05
             bsh: none
           }
         }
