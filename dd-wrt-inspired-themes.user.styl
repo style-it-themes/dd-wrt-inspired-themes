@@ -314,6 +314,10 @@ tsh() { text-shadow: arguments }
     > fieldset:first-child {
       background-color: bg0
     }
+    a:link {
+      color: v98
+      &:hover { color: v09 }
+    }
     // fix filters popup
     &[onunload*="location.href='Filters.asp'"] {
       height: 180% i
@@ -865,8 +869,10 @@ tsh() { text-shadow: arguments }
         /#ip_count,
         /[title*='Search'],
         /[title*='Monitoring'] {
+          text-decoration: none i
           &:hover {
-            color: v08
+            color: v09
+            text-decoration: underline i
             transition: transition
           }
         }
