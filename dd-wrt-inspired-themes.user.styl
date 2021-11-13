@@ -362,6 +362,12 @@ tsh() { text-shadow: arguments }
         #main {
           background-color: bg1
           border: 1px solid bg4
+          #contentsInfo h2 {
+            padding-top: .3rem
+            input {
+              vertical-align: -.03rem
+            }
+          }
         }
       }
       // Main header
@@ -419,7 +425,7 @@ tsh() { text-shadow: arguments }
           }
         }
       }
-      &[name*='apply'] {
+      &[name*='apply'], &[name='changepassword'] {
         background: none repeat scroll 0 0 v42
         border-color: v43
         color: v98
@@ -521,7 +527,25 @@ tsh() { text-shadow: arguments }
     // WDS alignments
     &[name='wds'] {
       .label { margin-right: 24px }
-      select { margin-right: 6px }
+      select {
+        margin-right: .562em
+        margin-top: -.1rem
+      }
+      input[size='25'] {
+        vertical-align: 0
+      }
+    }
+    &[name='changepassword'] {
+      .warning #warning_text, p b {
+        font-size: 1rem
+        letter-spacing: 0rem
+        margin-bottom: .8rem
+      }
+    }
+    &[name='nvramrestore'] {
+      .warning p {
+        margin-bottom: 1rem
+      }
     }
   }
 
@@ -531,7 +555,6 @@ tsh() { text-shadow: arguments }
     &[style*='height:530px'], &[style*='height:413px'] {
       border: 1px solid bg4
       cursor: copy
-      rad: 4px
     }
   }
 
@@ -598,14 +621,14 @@ tsh() { text-shadow: arguments }
       }
       // Tunnels - generate key button position
       &[onclick*='gen_wg_key'] {
-        margin: 0 0 6px -32%
+        margin: 0 0 6px -31.5%
       }
       &[onclick*='do_show_prev'],
       &[onclick*='do_show_next'] {
         margin: .5rem .5rem 0 0
       }
       &[onclick*='add_peer'] {
-        margin: 0 0 -6px -35%
+        margin: 0 0 -6px -34.5%
       }
       // better padding for preview style button
       &[onclick*='previewStyle'] {
@@ -638,27 +661,20 @@ tsh() { text-shadow: arguments }
       }
     }
 
-    // Fix specific checkbox margin wifi security unmask checkbox
+    // Access restrictions - Align checkbox with filter dropdown
     &[type='checkbox'] {
-      &[onclick*='setElementMask'] {
-        margin-top: 6px
+      &[name='_filter_p2p'] {
+        vertical-align: -.45rem
       }
-      // QoS - TCP-Packet Priority / Services nvram client DB
-      &[name*='svqos_'], &[name='_dhcpd_usenvram'] {
-        margin-bottom: -1px
-        margin-left: 0
+      &[onclick*='edit_wol_host'] {
+        margin-bottom: 0
+        vertical-align: -.45rem
       }
     }
-
-    // Acess restrictions - Fix time all radio alignment
-    &[type='radio'][onclick*='timeall'][value='0'] {
-      margin-top: 4px
-    }
-    // Acess restrictions - Align checkbox with filter dropdown
-    &[name='_filter_p2p'] {
-      vertical-align: -.45rem i
-      float: left
-    }
+		&[type='button'][name='changepassword'],
+    &[type='button'][value='activate' i] {
+		  height: initial
+		}
   }
   /select {
     &[onchange*='SelRoute'] {
@@ -708,12 +724,6 @@ tsh() { text-shadow: arguments }
             span {
               background: bg1
               transition: transition
-              &:hover {
-                background: v04
-                border: 1px solid v06
-                padding-top: .3rem
-                cursor: default
-              }
             }
           }
         }
@@ -1649,7 +1659,6 @@ tsh() { text-shadow: arguments }
       background: none i
       background-color: bg0 i
       border: 1px solid bg4
-
       width: inherit
       height: @width
       option {
@@ -1664,7 +1673,6 @@ tsh() { text-shadow: arguments }
         // dont show arrow select arrow in this dialog
         background: none i
         background-color: bg0 i
-
       }
     }
     &[name='erase'] {
