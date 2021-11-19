@@ -300,8 +300,19 @@ tsh() { text-shadow: arguments }
     &barBorder {
       background: bg0
       border: 1px solid bg4
-      rad: 4px
+      rad: 2px
     }
+    &bar {
+      rad: 2px
+    }
+  }
+  // remove th styles for reset routers initial page
+  #tablePwdCheck tr th {
+    background-color: t
+    border: 0
+    color: v98
+    text-align: right
+    vertical-align: middle
   }
 
   // Body
@@ -403,7 +414,7 @@ tsh() { text-shadow: arguments }
         bsh: 0 1px 0 bg0
         color: v98
         tsh: 0 1px 0 bg0
-        height: 1.41rem
+        height: 1.433rem
         padding: 0 .462rem 0 .462rem
 
         transition: transition
@@ -537,9 +548,9 @@ tsh() { text-shadow: arguments }
     }
     &[name='changepassword'] {
       .warning #warning_text, p b {
-        font-size: 1rem
-        letter-spacing: 0rem
-        margin-bottom: .8rem
+        font-size: .8rem
+        letter-spacing: unset
+        margin-bottom: -.5rem
       }
     }
     &[name='nvramrestore'] {
@@ -671,10 +682,6 @@ tsh() { text-shadow: arguments }
         vertical-align: -.45rem
       }
     }
-		&[type='button'][name='changepassword'],
-    &[type='button'][value='activate' i] {
-		  height: initial
-		}
   }
   /select {
     &[onchange*='SelRoute'] {
@@ -1043,12 +1050,9 @@ tsh() { text-shadow: arguments }
     border: 1px solid bg4
     color: v98
     rad: 4px
-    padding-top: .362em
-    padding-bottom: .362em
     .button {
-      padding: .333rem 1rem
+      padding: 0 1rem
       margin: .362em
-      height: 1.733rem
     }
   }
   // Meter
@@ -1321,8 +1325,17 @@ tsh() { text-shadow: arguments }
 
   .overlay {
     &_dialog { c: 0 0 bg4 }
-
     &___invisible__ { background-color: bg4 i }
+    &_ddwrt {
+      c: 0 0 bg3
+      opacity: .5
+    }
+  }
+
+  // experiment
+  [id*="modal_dialog_"].dialog {
+     border: 1px solid bg3
+     rad: 4px
   }
 
   .dialog {
@@ -1357,16 +1370,16 @@ tsh() { text-shadow: arguments }
 
     &_nw, &_n, &_e, &_sw, &_ne,
     &_w, &_s, &_se, &_sizer { background: bg1 }
+
+    &_nw { rad: 4px 0 0 0 }
+    &_ne { rad: 0 4px 0 0 }
+    &_se { rad: 0 0 4px 0 }
+    &_sw { rad: 0 0 0 4px }
   }
 
   // Progress bar when e.g. reboot
   .progressbarblock {
     background-color: v09
-  }
-
-  .overlay_ddwrt {
-    background-color: bg3
-    opacity: .5
   }
 
   // Better checkbox/radio inputs.
