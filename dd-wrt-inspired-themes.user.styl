@@ -319,6 +319,7 @@ tsh() { text-shadow: arguments }
   body {
     background: bg1
     color: v97
+    font-size: 75%
 
     text-rendering: optimizeLegibility
     // syslog apparently and we darken it due to unable to style iframe
@@ -999,16 +1000,23 @@ tsh() { text-shadow: arguments }
     &.gridpoint { background-color: fg1 }
 
     &.slidingheader {
-      background-color: bg2
+      background-color: v04
       background-image: none
-      border: 1px solid bg4
+      border: 1px solid v06
+      rad: 4px
+      &:hover {
+        background-color: v07
+        background-image: none
+        border: 1px solid v07
+        color: v99
+      }
     }
     &.slidingbodyshow {
       background-color: bg2
 
-      center { border-color: bg4 }
+      center { border-color: bg5 }
     }
-    &.slidingbody { background-color: bg5 }
+    &.slidingbody { background-color: bg4 }
   }
 
   // Wi-viz client MAC bg
@@ -1053,6 +1061,7 @@ tsh() { text-shadow: arguments }
     .button {
       padding: 0 1rem
       margin: .362em
+      height: 1.533rem
     }
   }
   // Meter
@@ -1350,26 +1359,20 @@ tsh() { text-shadow: arguments }
   // Progress dialog popup when applying settings
   .ddwrt {
     &_content {
-      background: bg1
-      color: fg1
+      background: bg1 i
+      color: fg1 i
     }
 
     &_progress {
-      margin-top: 8px
       mix-blend-mode: lighten
     }
-
-    &_wired_frame { background: bg4 }
-
-    &_window {
-      background: bg0
-      border: 1px solid v16
+    &_message {
+      padding-top: 1.5rem
     }
-
-    &_title { color: v65 }
+    &_title, &_window { display: none }
 
     &_nw, &_n, &_e, &_sw, &_ne,
-    &_w, &_s, &_se, &_sizer { background: bg1 }
+    &_w, &_s, &_se, &_sizer { background: bg1 i }
 
     &_nw { rad: 4px 0 0 0 }
     &_ne { rad: 0 4px 0 0 }
@@ -1541,7 +1544,7 @@ tsh() { text-shadow: arguments }
         path = '<circle cx="256" cy="256" r="120" fill="' + to_hex($v99) + '"/>'
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
         c: 0 bg5 bg1
-        background-position: 21px center
+        background-position: 42px center
         &, &:hover, &:active {
           cursor: pointer
           background-size: cover
@@ -1570,7 +1573,7 @@ tsh() { text-shadow: arguments }
           path = '<circle cx="256" cy="256" r="120" fill="' + to_hex($v99) + '"/>'
           background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
           c: 0 v09 v05
-          background-position: 32.8px center
+          background-position: 29px center
           rad: 10px i
           &:focus, &:focus-within {
             c: 0 v09 v05
