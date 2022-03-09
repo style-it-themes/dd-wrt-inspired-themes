@@ -106,7 +106,8 @@ if you wish to view complete list click below.
 
  * Hotspot logos are updated and working with all dark styles. (upstream fixes merged for classic light styles)
  * DD-WRT logos use CSS filters to make them compatible with different backgrounds colors.
- * New bin icon
+ * New remove icon
+ * New add icon
  
  ### Tab navigation compatible
  
@@ -150,12 +151,16 @@ Equal support side by side usage with built in + this project. See below for wha
 *Compatible with* blue/yellow/red/orange/cyan/elegant light/dark styles, or the included *DD-WRT Inspired Themes*, do not enable dark styles.
 *Incompatible/Does not work well together with* styles named; Brainslayer/kromo/vikar/xirian ,many styling inconsistencies and breakages expected and unsupported at this time.
 
+Because many changes have gone into DD-WRT directly, its difficult to keep this project compatible with older versions of DD-WRT.
+From v6.0.0 previous versions of DD-WRT will show glitches and bugs that are now not supported.
+Please download and install previous version of the this project [here](https://github.com/style-it-themes/dd-wrt-inspired-themes/tags) if you use an older version of DD-WRT that shows glitches or issues.
+
 #### Router IP Setting
 
 :warning: Be aware that manual editing the style, blocks auto-updates from being pushed,
  and if you force update style any edits you made are lost and will need to be re-added.
 
-From version 4.0, a regex matching valid IPV4 blocks is used.
+From version 4.0.0, a regex matching valid IPV4 blocks is used.
 This is a better setup with 0 user edits required and also auto-updates of style are served automatically.
 
 This method introduces some quirks in some setups. Please expand relevant solution.
