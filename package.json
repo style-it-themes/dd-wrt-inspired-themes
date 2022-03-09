@@ -2,7 +2,7 @@
   "name": "dd-wrt-inspired-themes",
   "title": "DD-WRT Inspired Themes",
   "description": "An inspired configurable theme for DD-WRT routers",
-  "version": "5.1.4",
+  "version": "6.0.0",
   "author": {
     "name": "Style-it themes",
     "url": "https://github.com/style-it-themes"
@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "eclint": "^2.8.1",
-    "updates": "^12.2.2",
-    "versions": "^9.1.0"
+    "updates": "^13.0.3",
+    "versions": "^9.2.2"
   },
   "scripts": {
     "authors": "bash tools/authors.sh",
