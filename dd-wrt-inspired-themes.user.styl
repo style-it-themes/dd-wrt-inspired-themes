@@ -478,6 +478,10 @@ tsh() { text-shadow: arguments }
           border-color: v17 i
           bsh: 0 0 10px 0 v16 i
         }
+        &:disabled, &:disabled:hover {
+          background: none repeat scroll 0 0 v14 i
+          border-color: v15 i
+        }
       }
     }
     div.progressbar {
@@ -961,6 +965,14 @@ tsh() { text-shadow: arguments }
     }
 
     .bulle { border-color: bg5 }
+  }
+
+  // Nas style value_error
+  .value_error {
+    border: 1px solid v16
+    &:hover {
+      border-color: v19 i
+    }
   }
 
   .odd { background-color: bg2 }
@@ -1672,7 +1684,7 @@ tsh() { text-shadow: arguments }
         bsh: 0 0 10px 100px v06 inset i
       }
     }
-    &:focus, &:focus-within, &:focus-visible { c: 0 v08 v01; bsh: 0 0 10px 0 v04 }
+    &:focus, &:focus-within, &:focus-visible { c: 0 v08 v01; bsh: 0 0 10px 0 v04; outline: 0 }
     &:hover {
       prefix  = 'data:image/svg+xml;utf8,'
       prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_hex($v99) + '" '
@@ -1747,6 +1759,19 @@ tsh() { text-shadow: arguments }
        filter: saturate(4) contrast(2)
        border: 0
        box-shadow: none
+    }
+
+    &[disabled] {
+      phil    = 'fill="' + to_hex($v97) + '" xmlns="http://www.w3.org/2000/svg">'
+      background: s("url('%s%s</svg>') %s", rq(prefix) rq(phil), rq(path), rq(xy))
+      opacity: .5
+      border: 0
+      &:hover {
+        phil    = 'fill="' + to_hex($v97) + '" xmlns="http://www.w3.org/2000/svg">'
+        background: s("url('%s%s</svg>') %s", rq(prefix) rq(phil), rq(path), rq(xy))
+        border: 0
+        opacity: .4
+      }
     }
   }
   .add {
