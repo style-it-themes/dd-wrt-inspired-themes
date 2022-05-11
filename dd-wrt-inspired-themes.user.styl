@@ -1812,22 +1812,23 @@ tsh() { text-shadow: arguments }
     &.gui {
       background: bg0
     }
-    fieldset {
-      // Theres missing margin here add it
-      h2 { color: fg1; margin-top: .5rem }
-    }
+    fieldset h2 { color: fg1 }
     #content {
-      background: t i
       border: 1px solid bg0
       color: v98
     }
-    #main #contents { background: bg0 }
+    #main #contents { background: bg1 }
 
     // If you navigate to https://oidsearch.s.dd-wrt.com/ you will see this
     // design tweaks because it looks better in this use case.
     .warning {
       padding: 0 0 5px 0
       #warning_text { font-size: .8rem }
+    }
+    .submitFooter .button {
+      color: v99
+      border-color: v06
+      background-color: v05
     }
   }
 }
