@@ -318,7 +318,7 @@ tsh() { text-shadow: arguments }
   }
 
   // Body
-  body, .popup_bg {
+  body {
     background: bg1
     color: v97
 
@@ -542,10 +542,15 @@ tsh() { text-shadow: arguments }
     }
   }
 
+  .popup_bg, .iplookup {
+    background: bg1
+    color: v97
+  }
+
   form {
     // WDS alignments
     &[name='wds'] {
-      .label { margin-right: 24px }
+      .label { width: 19.444em }
       select {
         margin-right: .562em
         margin-top: -.1rem
