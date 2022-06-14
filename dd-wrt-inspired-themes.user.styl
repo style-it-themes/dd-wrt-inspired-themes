@@ -406,10 +406,10 @@ tsh() { text-shadow: arguments }
       &[disabled] {
         background-color: bg0 i
         border-color: bg2
-        color: v94
+        color: v96
         &:hover {
-          color: v99
           c: 0 bg2 bg0
+          color: v96
         }
       }
       &.button {
@@ -868,6 +868,9 @@ tsh() { text-shadow: arguments }
   .syslog_bd {
     background: bg1
   }
+  .dark_fs_bg {
+    background: var(--syslog-bd)
+  }
   // syslog
   .syslog_bg {
     background: var(--syslog-bd)
@@ -922,19 +925,14 @@ tsh() { text-shadow: arguments }
       td {
         /#ip_count,
         /[title*='Search'],
+        /[title*='Chain'],
         /[title*='Monitoring'] {
-          text-decoration: none i
           &:hover {
             color: v09
-            text-decoration: underline i
             transition: transition
           }
         }
       }
-    }
-    // Access restrictons - fix center align to weekdays table
-    /[summary='week days table'] {
-      margin-left: -1.3rem
     }
     td {
       /[style*='background-color: rgb(34\, 139\, 34)'] {
@@ -969,7 +967,19 @@ tsh() { text-shadow: arguments }
       }
     }
 
-    .bulle { border-color: bg5 }
+    &.bulle {
+      background-color: bg4
+      border: 1px solid bg5
+      color: v99
+      rad: 4px
+    }
+  }
+
+  td.bulle {
+    background-color: bg4
+    border: 1px solid bg5
+    color: v99
+    rad: 4px
   }
 
   // Nas style value_error
@@ -977,6 +987,10 @@ tsh() { text-shadow: arguments }
     border: 1px solid v16
     &:hover {
       border-color: v19 i
+    }
+    &:focus {
+      border-color: v19 i
+      box-shadow: 0 0 10px 0 v15 i
     }
   }
 
@@ -1029,9 +1043,11 @@ tsh() { text-shadow: arguments }
       border-color: bg4 i
       rad: 4px
     }
-    .bulle {
-      background-color: bg5
+    &.bulle {
+      background-color: bg4
+      border: 1px solid bg5
       color: v99
+      rad: 4px
     }
     // Purple note
     &.note {
@@ -1098,7 +1114,7 @@ tsh() { text-shadow: arguments }
   // Submit options button footer
   .submitFooter {
     // BG color was decided to increase contrast in NAS tab placement of submitFooter bg over bg
-    background: bg0
+    background: bg2
     border: 1px solid bg4
     color: v98
     rad: 4px
@@ -1416,14 +1432,6 @@ tsh() { text-shadow: arguments }
       padding-top: 1.5rem
     }
     &_title, &_window { display: none }
-
-    &_nw, &_n, &_e, &_sw, &_ne,
-    &_w, &_s, &_se, &_sizer { background: bg1 i }
-
-    &_nw { rad: 4px 0 0 0 }
-    &_ne { rad: 0 4px 0 0 }
-    &_se { rad: 0 0 4px 0 }
-    &_sw { rad: 0 0 0 4px }
   }
 
   // Progress bar when e.g. reboot
@@ -1519,7 +1527,6 @@ tsh() { text-shadow: arguments }
       }
     }
     &[type='number'] { } // TODO: style spinbox
-    &.num[name*='lease'][size='10'] { margin-right: 4px } // TODO: style spinbox
     // Style file browse button
     &[type='file'] {
       margin-top: -.3rem
