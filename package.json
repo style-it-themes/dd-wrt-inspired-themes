@@ -24,15 +24,15 @@
     "node": ">=14"
   },
   "devDependencies": {
-    "eclint": "^2.8.1",
-    "updates": "^13.1.0",
-    "versions": "^9.2.3"
+    "eclint": "^2.1.0",
+    "updates": "^13.1.2",
+    "versions": "^9.3.0"
   },
   "scripts": {
     "authors": "bash tools/authors.sh",
-    "patch": "versions -p -C patch dd-wrt-inspired-themes.user.styl",
-    "minor": "versions -p -C minor dd-wrt-inspired-themes.user.styl",
-    "major": "versions -p -C major dd-wrt-inspired-themes.user.styl",
+    "patch": "versions -p -C patch dd-wrt-inspired-themes.user.styl && git psh",
+    "minor": "versions -p -C minor dd-wrt-inspired-themes.user.styl && git psh",
+    "major": "versions -p -C major dd-wrt-inspired-themes.user.styl && git psh",
     "fix": "eclint fix dd-wrt-inspired-themes.user.styl && eclint fix *.md",
     "update": "updates -cuU && npm install"
   }

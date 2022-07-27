@@ -1,5 +1,5 @@
 # lockfiles
-package-lock.json
+#package-lock.json
 yarn.lock
 
 # debug files from npm/yarn
