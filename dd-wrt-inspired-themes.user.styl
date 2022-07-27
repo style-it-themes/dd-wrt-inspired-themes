@@ -365,7 +365,6 @@ tsh() { text-shadow: arguments }
       rad: 0 0 4px 4px
       #help {
         background: bg1
-        width: 21em
       }
       &.infopage {
         #main {
@@ -550,7 +549,6 @@ tsh() { text-shadow: arguments }
   form {
     // WDS alignments
     &[name='wds'] {
-      .label { width: 19.444em }
       select {
         margin-right: .562em
         margin-top: -.1rem
@@ -568,18 +566,15 @@ tsh() { text-shadow: arguments }
     }
     &[name='nvramrestore'] {
       .warning p {
-        margin-bottom: 1rem
+        margin-bottom: 1.2rem
       }
     }
   }
 
-  // Wol execution in progress box
   pre {
     background-color: bg0
-    &[style*='height:530px'], &[style*='height:413px'] {
-      border: 1px solid bg4
-      cursor: copy
-    }
+    border-color: bg4
+    cursor: copy
   }
 
   #wrapper #content { background-color: bg1 }
@@ -656,9 +651,9 @@ tsh() { text-shadow: arguments }
       }
       // better padding for preview style button
       &[onclick*='previewStyle'] {
+        padding: 0 .6rem 0 .6rem
         vertical-align: -.1rem
         height: 1.56rem
-        margin-left: .362em
       }
       //vlan add button tweaks
       &[onclick*='vlan_add'],
@@ -756,26 +751,88 @@ tsh() { text-shadow: arguments }
           }
           &.current {
             span {
-              background: bg1
+              background: bg3
               transition: transition
             }
           }
         }
       }
-    }
-    #menuSub {
-      background: bg3 i
-      border-color: bg5 i
-      outline: 0
+      #menuSub {
+        background: bg3
+        border-color: bg5
+        outline: 0
+        #menuSubList li span {
+           background: bg1
+        }
+      }
     }
   }
-
-  #menuSub {
-    background: v04
-    color: fg1
-    border-color: v06
-    tsh: 0 1px 0 bg0
-    outline: 0
+  else {
+    #menuMainList {
+      transition: transition
+      li {
+        span {
+          background: v04
+          border-color: v08
+          color: v99
+          strong { tsh: 0 1px 0 bg0 }
+          outline: 0
+          &hover, &:focus-within {
+            background: v06
+            border-color: v09
+            color: v98
+          }
+        }
+        a {
+          background: bg1
+          border-color: bg5
+          color: v98
+          tsh: 0 1px 0 bg0
+          transition: transition
+          outline: 0
+          &:hover {
+            background: bg2
+            border-color: bg5
+            color: v98
+          }
+          &:focus-within {
+            background: bg3
+            border-color: bg5
+            color: v98
+          }
+        }
+      }
+    }
+    #menuSub {
+      background: v04
+      color: v99
+      border-color: v06
+      tsh: 0 1px 0 bg0
+      outline: 0
+    }
+    #menuSubList {
+      li {
+        a {
+          background: v06
+          border-color: v08
+          color: v98
+          &:hover {
+            background: v08
+            border-color: v09
+            color: v99
+          }
+        }
+        span {
+          background: bg1
+          border-color: bg5
+          &hover, &:focus-within {
+            background: v06
+            border-color: v09
+            color: v99
+          }
+        }
+      }
+    }
   }
   #help {
     a {
@@ -791,64 +848,6 @@ tsh() { text-shadow: arguments }
     }
     dd {
       &.definition { border-bottom: .123rem dotted bg5 }
-    }
-  }
-
-  #menuSubList {
-    li {
-      a {
-        background: v06
-        border-color: v08
-        color: fg1
-        &:hover {
-          background: v08
-          border-color: v09
-          color: fg0
-        }
-      }
-      span {
-        &hover, &:focus-within {
-          background: v06
-          border-color: v09
-          color: fg1
-        }
-      }
-    }
-  }
-
-  #menuMainList {
-    transition: transition
-    li {
-      span {
-        background: v04
-        border-color: v08
-        color: v99
-        strong { tsh: 0 1px 0 bg0 }
-        outline: 0
-        &hover, &:focus-within {
-          background: v06
-          border-color: v09
-          color: v98
-        }
-      }
-      a {
-        background: bg1
-        border-color: bg5
-        color: v98
-        tsh: 0 1px 0 bg0
-        transition: transition
-        outline: 0
-        &:hover {
-          background: bg2
-          border-color: bg5
-          color: v98
-        }
-        &:focus-within {
-          background: bg3
-          border-color: bg5
-          color: v98
-        }
-      }
     }
   }
 
@@ -1073,10 +1072,14 @@ tsh() { text-shadow: arguments }
     }
     &.slidingbodyshow {
       background-color: bg2
+      border-color: bg5
 
       center { border-color: bg5 }
     }
-    &.slidingbody { background-color: bg4 }
+    &.slidingbody {
+      background-color: bg2
+      border-color: bg5
+    }
   }
 
   // Wi-viz client MAC bg
@@ -1346,6 +1349,19 @@ tsh() { text-shadow: arguments }
       }
     }
   }
+  .rightmenu .button {
+    background: v04
+    border: 1px solid v06
+    box-shadow: 0 1px 0 bg0
+    color: var(--v9-8);
+    text-shadow: 0 1px 0 bg0
+    &:hover {
+      background: v07
+      border-color: v07
+      box-shadow: 0 0 10px 0 v04
+      color: v99
+    }
+  }
 
   svg { shape-rendering: geometricPrecision }
 
@@ -1437,6 +1453,7 @@ tsh() { text-shadow: arguments }
   // Progress bar when e.g. reboot
   .progressbarblock {
     background-color: v09
+    rad: 2px
   }
 
   // Better checkbox/radio inputs.
