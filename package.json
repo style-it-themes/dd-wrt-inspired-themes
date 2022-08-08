@@ -24,8 +24,8 @@
     "node": ">=14"
   },
   "devDependencies": {
-    "eclint": "^2.1.0",
-    "updates": "^13.1.2",
+    "eclint": "^2.8.1",
+    "updates": "^13.1.4",
     "versions": "^9.3.0"
   },
   "scripts": {
