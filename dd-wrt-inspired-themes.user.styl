@@ -639,15 +639,15 @@ tsh() { text-shadow: arguments }
         margin: 0 .5rem 0 0
       }
       // Tunnels - generate key button position
-      &[onclick*='gen_wg_key'] {
-        margin: 0 0 6px -31.5%
+      &[onclick*='gen_wg_key'], &[onclick*='gen_wg_psk'] {
+        margin: 0 0 6px
       }
       &[onclick*='show_prev'],
       &[onclick*='show_next'] {
         margin: -.333rem .362rem 0 0
       }
       &[onclick*='add_peer'] {
-        margin: 0 0 -6px -34.5%
+        margin: 0 0 -8px
       }
       // better padding for preview style button
       &[onclick*='previewStyle'] {
@@ -1311,17 +1311,11 @@ tsh() { text-shadow: arguments }
 
   // Paypal logo inversion
   [type='image' i][src*='paypal'] {
-    background: t i
-    border-color: t i
     filter: invert(.9) hue-rotate(180deg)
-    margin-bottom: -.5rem
-    height: 54px
-    width: 90px
-    mix-blend-mode: lighten
+    height: initial
+    width: @height
 
     &:hover, &:focus, &:focus-within, &:focus-visible {
-      background-color: t i
-      border-color: t i
       bsh: none i
       mix-blend-mode: exclusion
     }
