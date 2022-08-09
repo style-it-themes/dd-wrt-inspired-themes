@@ -36,6 +36,7 @@
 @var checkbox invert_nav   'Invert navigation style ' 1
 @var checkbox hide_hsl     'Show hotspot logos      ' 1
 @var checkbox chkbx_toggle 'Enable ckeckbox toggle  ' 0
+@var checkbox c_scrollbars 'Use scrollbar overrides ' 0
 
 @var text     f_ui         'UI font                 ' ''font_name''
 @var text     f_mono       'Monospace font          ' ''font_name''
@@ -293,6 +294,15 @@ tsh() { text-shadow: arguments }
     // causing the Status button to be only partially clickable.
     #statusInfo {
       width: auto
+    }
+  }
+
+  if (c_scrollbars) {
+    *:not(#joker) { scrollbar-color: v04 bg2 i }
+    // Chrome
+    /::-webkit-scrollbar {
+      &-track { background: bg2 i }
+      &-thumb { background: v04 i }
     }
   }
 
@@ -611,6 +621,9 @@ tsh() { text-shadow: arguments }
   input {
     &.num {
       vertical-align: unset
+    }
+    &.num[name='wan_mtu'] {
+      vertical-align: middle
     }
     &.button {
       &[onclick*='copy'],
@@ -1692,19 +1705,17 @@ tsh() { text-shadow: arguments }
     -moz-appearance: none
     -webkit-appearance: none
     appearance: none
-    max-width: 100%
+    min-width: 5.99rem
     outline: 0
     padding-right: 1.5rem
     vertical-align: middle
     > option {
       background-color: bg0 i
       &:hover {
-        background: v04 i
-        bsh: 0 0 10px 100px v06 inset i
+        background-color: v04 i
       }
-      /[selected] {
+      [selected] {
         background-color: v06 i
-        bsh: 0 0 10px 100px v06 inset i
       }
     }
     &:focus, &:focus-within, &:focus-visible { c: 0 v08 v01; bsh: 0 0 10px 0 v04; outline: 0 }
@@ -1712,8 +1723,8 @@ tsh() { text-shadow: arguments }
       prefix  = 'data:image/svg+xml;utf8,'
       prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_hex($v99) + '" '
       prefix += 'xmlns="http://www.w3.org/2000/svg">'
-      path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6'
-      path   += ' 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
+      path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6 '
+      path   += '6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
       xy      = 'no-repeat right 3px center'
 
       background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
@@ -1723,19 +1734,13 @@ tsh() { text-shadow: arguments }
     }
 
     &[disabled] {
-      prefix  = 'data:image/svg+xml;utf8,'
-      prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_hex($v93) + '" '
-      prefix += 'xmlns="http://www.w3.org/2000/svg">'
-      path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6'
-      path   += ' 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
-      xy      = 'no-repeat right 3px center'
-
-      background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
-      c: v94 bg4 bg0
-
+      c: v96 bg4 bg0
       opacity: .5
     }
 
+    &[name='time_zone'] {
+      min-width 15.7rem
+    }
     // QoS fix service name table width due to custom select menus.
     &[name='ServiceTable'] {
       // dont show arrow select arrow in this dialog
