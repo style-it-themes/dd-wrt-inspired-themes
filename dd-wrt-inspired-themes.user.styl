@@ -13,16 +13,16 @@
 @var checkbox sdetails     'Show style details'     0
 
 @var select   cg_theme     'Preset themes toggle'   {
-
-    'Custom colors   *' :  'custom-style'  ,
-    'Dracula          ' :  'dracula'       ,
-    'Duo Cocoa        ' :  'duo-cocoa'     ,
-    'Material         ' :  'material'      ,
-    'Material Darker  ' :  'material-dkr'  ,
+    'Custom colors   *' :  'custom-style  ',
+    'Antigua          ' :  'antigua       ',
+    'Dracula          ' :  'dracula       ',
+    'Duo Cocoa        ' :  'duo-cocoa     ',
+    'Material         ' :  'material      ',
+    'Material Darker  ' :  'material-dkr  ',
     'Solarized Dark   ' :  'solarized-dark',
-    'The Matrix       ' :  'the-matrix'    ,
-    'Twilight         ' :  'twilight'      ,
-    'Ubuntu           ' :  'ubuntu'        ,
+    'The Matrix       ' :  'the-matrix    ',
+    'Twilight         ' :  'twilight      ',
+    'Ubuntu           ' :  'ubuntu        ',
 }
 
 @var color    cg_bg        'Custom background       ' #111a22
@@ -99,6 +99,7 @@ tsh() { text-shadow: arguments }
   // Generator -> Color-schemes.
   ColorSchemes = {
     'custom-style'   : { BG:   cg_bg, FG:   cg_fg, AC:   cg_ac }
+    'antigua'        : { BG: #14191f, FG: #f1f6fb, AC: #89a90a }
     'dracula'        : { BG: #282A36, FG: #f8f8f2, AC: #bd93f9 }
     'duo-cocoa'      : { BG: #28231f, FG: #ffdac2, AC: #dfb249 }
     'material'       : { BG: #263238, FG: #eeffff, AC: #82aaff }
@@ -251,7 +252,7 @@ tsh() { text-shadow: arguments }
     --rgba-bg-05: rgba(BG, .5)
     --rgba-bg-075: rgba(BG, .075)
     --rgba-ac-06: rgba(AC, .6)
-    --syslog-bd: darken(BG, 25%)
+    --syslog-bg: darken(BG, 25%)
   }
 
   // Style selection bg/fg with accent color
@@ -320,11 +321,8 @@ tsh() { text-shadow: arguments }
   }
   // remove th styles for reset routers initial page
   #tablePwdCheck tr th {
-    background-color: t
     border: 0
     color: v98
-    text-align: right
-    vertical-align: middle
   }
 
   // Body
@@ -339,14 +337,29 @@ tsh() { text-shadow: arguments }
     }
     // fix filters popup
     &[onunload*="location.href='Filters.asp'"] {
-      height: 180% i
-      background-color: bg0
+      h2 { background: bg5 }
+      tr.table_row_bg {
+        background-color: bg2
+        &:hover, &:focus-within { background-color: bg3 }
+      }
       td[width='70'] {
         input[type='checkbox'][name*='sum'] {
           margin-bottom: 0
         }
       }
-      h2 { background: bg5 }
+      td.table_bg_br_clr_on {
+        background-color: v43
+        border-color: v40
+        &:hover {
+          background-color: v45
+          border-color: v40
+        }
+      }
+      td.table_bg_br_clr_off {
+        background-color: bg2
+        border-color: bg4
+        opacity: .5
+      }
     }
     &.gui {
       background: bg0
@@ -365,6 +378,9 @@ tsh() { text-shadow: arguments }
         tsh: 0 1px 0 bg0
         // workaround main fresh-dark.css hack for brighter legends non color specific.
         filter: none
+      }
+      &[disabled] .label {
+        opacity: .5
       }
     }
     #content {
@@ -395,12 +411,6 @@ tsh() { text-shadow: arguments }
       background: bg1
       color: v97
     }
-    //#content {
-    //  border-color: bg5
-    //  border-width: 1px
-    //  border-style: none inset inset inset
-    //  rad: 0 0 4px 4px
-    //}
 
     input {
       background-color: bg0
@@ -413,12 +423,13 @@ tsh() { text-shadow: arguments }
         bsh: 0 0 5px 1px v08
       }
       &[disabled] {
-        background-color: bg0 i
+        background-color: bg0
         border-color: bg2
         color: v96
         &:hover {
           c: 0 bg2 bg0
           color: v96
+          bsh: none
         }
       }
       &.button {
@@ -427,7 +438,7 @@ tsh() { text-shadow: arguments }
         bsh: 0 1px 0 bg0
         color: v98
         tsh: 0 1px 0 bg0
-        height: 1.433rem
+        height: 1.54rem
         padding: 0 .462rem 0 .462rem
 
         transition: transition
@@ -435,7 +446,7 @@ tsh() { text-shadow: arguments }
         &:hover, &:focus-within {
           background: v07 i
           border-color: v07 i
-          bsh: 0 0 10px 0 v04 i
+          bsh: 0 0 10px 0 v04
           color: v99
         }
         &[disabled] {
@@ -444,62 +455,56 @@ tsh() { text-shadow: arguments }
           opacity: .6
           &:hover {
             c: v99 v06 v05
-            bsh: none i
+            bsh: none
             opacity: .6
           }
         }
       }
       &[name*='apply'], &[name='changepassword'] {
-        background: none repeat scroll 0 0 v42
-        border-color: v43
+        background: v42
+        border-color: v44
         color: v98
         tsh: 0 1px 0 bg0
         &:hover, &:focus-within {
-          background: none repeat scroll 0 0 v43 i
+          background: v43 i
           border-color: v43 i
           bsh: 0 0 10px 0 v43 i
           color: v99 i
         }
       }
       &[name*='reset']:not([type="radio"]) {
-        background: none repeat scroll 0 0 bg3
-        border-color: bg4
+        background: bg3
+        border-color: bg5
         color: v98
         tsh: 0 1px 0 bg0
 
         &:hover, &:focus-within {
-          background: none repeat scroll 0 0 bg5 i
+          background: bg5 i
           border-color: bg5 i
           bsh: 0 0 10px 0 bg5 i
           color: v99 i
         }
       }
-      &[name*='refresh'][style*='background'] {
-        background: v05 i
-      }
       &[name*='reboot'] {
-        background: none repeat scroll 0 0 v14
-        border-color: v15
+        background: v14
+        border-color: v16
         color: v98
         tsh: 0 1px 0 bg0
         &:hover, &:focus-within {
-          background: none repeat scroll 0 0 v16 i
+          background: v16 i
           border-color: v17 i
           bsh: 0 0 10px 0 v16 i
         }
         &:disabled, &:disabled:hover {
-          background: none repeat scroll 0 0 v14 i
+          background: v14 i
           border-color: v15 i
         }
       }
     }
-    div.progressbar {
-      background-color: bg4
-      border: 1px solid bg5
+    .progressbar {
+      background-color: bg0
+      border: 1px solid bg4
       rad: 4px
-    }
-    dd {
-      border-bottom: .123rem dotted bg5
     }
     // about page targeted styling finally !!!
     &.about-bg {
@@ -551,7 +556,7 @@ tsh() { text-shadow: arguments }
     }
   }
 
-  .popup_bg, .iplookup {
+  .popup, .popup_bg, .iplookup {
     background: bg1
     color: v97
   }
@@ -579,6 +584,16 @@ tsh() { text-shadow: arguments }
         margin-bottom: 1.2rem
       }
     }
+    &[name='wireless'] {
+      input[name*='ssid'] {
+        min-width: initial
+      }
+    }
+    tr[id*='samba_shares_row'] {
+      td[style*='width: 25px; vertical-align: middle'] {
+        vertical-align: bottom i
+      }
+    }
   }
 
   pre {
@@ -588,11 +603,6 @@ tsh() { text-shadow: arguments }
   }
 
   #wrapper #content { background-color: bg1 }
-
-  .popup {
-    background: bg1
-    color: v97
-  }
 
   hr { c: bg5 0 bg5 }
 
@@ -703,11 +713,19 @@ tsh() { text-shadow: arguments }
         vertical-align: -.45rem
       }
     }
-
   }
   /select {
     &[onchange*='SelRoute'] {
-      margin-top: -.2rem
+      margin-top: -.15rem
+    }
+    &[onchange*='SelRule'] {
+       vertical-align: -.18rem
+    }
+    &[name='router_style'] {
+       vertical-align: -.17rem
+    }
+    &[onchange*='SelFilter'] {
+      margin-top: .13rem
     }
   }
   // ForwardIP.asp checkbox to middle of num inputs
@@ -718,19 +736,6 @@ tsh() { text-shadow: arguments }
         margin-top: .4rem
       }
     }
-    /*
-    &#active_clients_table, &#dhcp_leases_table {
-      table-layout: fixed
-      td {
-        text-overflow: ellipsis
-        overflow: hidden
-      }
-      th:first-of-type::after {
-        content: '\00A0\23F6\23F7'
-        cursor: pointer
-      }
-    }
-    */
   }
 
   if (invert_nav) {
@@ -860,7 +865,7 @@ tsh() { text-shadow: arguments }
       outline: 0
     }
     dd {
-      &.definition { border-bottom: .123rem dotted bg5 }
+      &.definition { border-bottom: .0648rem dotted bg5 }
     }
   }
 
@@ -877,46 +882,44 @@ tsh() { text-shadow: arguments }
       outline: 0 i
     }
   }
-  .syslog_bd {
-    background: bg1
-  }
   .dark_fs_bg {
-    background: var(--syslog-bd)
+    background: var(--syslog-bg)
   }
   // syslog
   .syslog_bg {
-    background: var(--syslog-bd)
+    background: var(--syslog-bg)
     color: v97
     padding-top: .1rem
     tr {
-      &:not([bgcolor]):hover {
+      &:not([class]):hover {
         background: bg2
         color: v99
       }
-      &[bgcolor='#eec900'] {
+      &.syslog_bg_yellow {
         background-color: v36
         &:hover {
           background-color: v35
         }
       }
-      &[bgcolor='#ff6666'] {
+      &.syslog_bg_red {
         background-color: v19
         &:hover {
           background-color: v18
         }
       }
-      &[bgcolor='#35ee00'] {
+      &.syslog_bg_green {
         background-color: v46
         &:hover {
           background-color: v45
         }
       }
+      td.syslog_text_dark {
+        color: v90
+      }
     }
   }
   table {
-    &[bgcolor='#FFFFFF'] { background-color: bg0 }
-    &[bordercolor='#000000'] { border-color: bg4 }
-    tr:not([bgcolor]) {
+    tr:not([bgcolor]):not([class]) {
       &:hover, &:focus-within {
         background-color: t
       }
@@ -926,12 +929,6 @@ tsh() { text-shadow: arguments }
         color: fg1
         padding-bottom: 2px
       }
-    }
-    tr {
-      td[style='color:#000'] {
-        color: v90 i
-      }
-      td[bgcolor='#FFFFFF'] { background-color: bg0 }
     }
     /#wireless_table {
       td {
@@ -946,26 +943,17 @@ tsh() { text-shadow: arguments }
         }
       }
     }
-    td {
-      /[style*='background-color: rgb(34\, 139\, 34)'] {
+    /#radio_table {
+      [style*='background-color: rgb(34\, 139\, 34)'] {
         c: 0 0 v43
+        transition: transition
+        &:hover { background-color: v45 i }
       }
-      /[style*='background-color: rgb(205\, 0\, 0)'] {
+      [style*='background-color: rgb(205\, 0\, 0)'] {
         c: 0 0 v15
+        transition: transition
+        &:hover { background-color: v17 i }
       }
-      &[bgcolor='#C0C0C0'] {
-        background-color: bg2
-        &:hover { background-color: bg3 }
-      }
-    }
-    tr[bgcolor='#CCCCCC'] {
-      background-color: bg2
-      &:hover, &:focus-within { background-color: bg3 }
-    }
-    // syslog color
-    tr[bgcolor='#7CFC00'] {
-      background-color: v42
-      color: v99
     }
     // Nas - add margin before submitFooter
     /#drives { margin-bottom: 6px }
@@ -1102,12 +1090,7 @@ tsh() { text-shadow: arguments }
 
   // Setting labels
   .setting {
-    // inline style
-    span {
-      &[style*='color:#999999'] { c: v96 0 0 }
-    }
-
-    .default { color: v96 0 0 }
+    .default { color: v97 }
   }
 
   a {
@@ -1135,9 +1118,7 @@ tsh() { text-shadow: arguments }
     color: v98
     rad: 4px
     .button {
-      padding: 0 1rem
-      margin: .362em
-      height: 1.533rem
+      padding: 0 1rem .1rem
     }
   }
   // Meter
@@ -1311,7 +1292,6 @@ tsh() { text-shadow: arguments }
   // its impossible to pick .center for these without picking all unrelated .centers
   if (!(hide_hsl)) {
     /img {
-      &[src*='sputnik'],
       &[src*='hotspotsystem'],
       &[src*='wifidog'] {
         display: none
@@ -1462,7 +1442,6 @@ tsh() { text-shadow: arguments }
     background-color: v09
     rad: 2px
   }
-
   // Better checkbox/radio inputs.
   /input {
     border: 1px solid bg4
@@ -1504,6 +1483,7 @@ tsh() { text-shadow: arguments }
       }
       &:disabled, &:hover:active:disabled, &:disabled:hover {
         c: v95 bg5 bg4
+        bsh: none
 
         opacity: .7
         cursor: default
@@ -1527,8 +1507,15 @@ tsh() { text-shadow: arguments }
         background-image: s("url('%s%s</svg>') %s", rq(prefix), rq(path), i)
         c: 0 v07 v07
         padding: 7px
+        &:disabled, &:disabled:hover {
+          c: 0 v09 v07
+          bsh: none
+
+          opacity: .7
+          cursor: default
+        }
       }
-      &:hover, {
+      &:hover {
         c: 0 v08 v03
         bsh: 0 0 8px 0 v04
       }
@@ -1550,7 +1537,7 @@ tsh() { text-shadow: arguments }
         bsh: 0 0 8px 0 v04
       }
     }
-    &[type='number'] { } // TODO: style spinbox
+    // &[type='number'] { } // TODO: style spinbox
     // Style file browse button
     &[type='file'] {
       margin-top: -.3rem
@@ -1594,17 +1581,20 @@ tsh() { text-shadow: arguments }
       }
     }
     &[disabled] {
-      opacity: .6
+      opacity: .5
     }
     /.off {
       background: bg2
-      opacity: .99
+      opacity: .5
       input {
         color: v94 i
         border-color: bg4
         background-color: bg0
         opacity: .5
-        /.num.off { opacity: .5 }
+        /.num.off {
+          bsh: none
+          opacity: .5
+        }
       }
     }
   }
@@ -1733,7 +1723,15 @@ tsh() { text-shadow: arguments }
       transition: transition
     }
 
-    &[disabled] {
+    &[disabled], &[disabled]:hover {
+      prefix  = 'data:image/svg+xml;utf8,'
+      prefix += '<svg width="14" height="14" viewBox="0 0 14 12" fill="' + to_hex($v96) + '" '
+      prefix += 'xmlns="http://www.w3.org/2000/svg">'
+      path    = '<path d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6 '
+      path   += '6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"/>'
+      xy      = 'no-repeat right 3px center'
+
+      background: s("url('%s%s</svg>') %s", rq(prefix), rq(path), rq(xy) i)
       c: v96 bg4 bg0
       opacity: .5
     }
@@ -1828,6 +1826,11 @@ tsh() { text-shadow: arguments }
   // where the city/town dropdown is cut off with max entries showing
   iframe[height='250'][src*='speedchecker'] {
     height: 293px
+  }
+  #available_hosts_table, #dhcp_leases_table, #active_clients_table {
+    tr:nth-child(2n) {
+      background: bg3 i
+    }
   }
 }
 @-moz-document regexp('https?://oidsearch.s.dd-wrt?.com(/.*)?') {
