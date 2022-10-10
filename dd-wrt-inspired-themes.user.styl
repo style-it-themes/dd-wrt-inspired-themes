@@ -37,6 +37,7 @@
 @var checkbox hide_hsl     'Show hotspot logos      ' 1
 @var checkbox chkbx_toggle 'Enable ckeckbox toggle  ' 0
 @var checkbox c_scrollbars 'Use scrollbar overrides ' 0
+@var checkbox sticky_help  'Enable sticky help      ' 0
 
 @var text     f_ui         'UI font                 ' ''font_name''
 @var text     f_mono       'Monospace font          ' ''font_name''
@@ -304,6 +305,13 @@ tsh() { text-shadow: arguments }
     /::-webkit-scrollbar {
       &-track { background: bg2 i }
       &-thumb { background: v04 i }
+    }
+  }
+
+  if (sticky_help) {
+    #helpContainer {
+      position: sticky
+      top: 0
     }
   }
 
@@ -654,10 +662,6 @@ tsh() { text-shadow: arguments }
       &[onclick*='gen_wg_key'], &[onclick*='gen_wg_psk'] {
         margin: 0 0 6px
       }
-      &[onclick*='show_prev'],
-      &[onclick*='show_next'] {
-        margin: -.333rem .362rem 0 0
-      }
       &[onclick*='add_peer'] {
         margin: 0 0 -8px
       }
@@ -870,7 +874,6 @@ tsh() { text-shadow: arguments }
   .syslog_bg {
     background: var(--syslog-bg)
     color: v97
-    padding-top: .1rem
     tr {
       &:hover {
         background: bg2
