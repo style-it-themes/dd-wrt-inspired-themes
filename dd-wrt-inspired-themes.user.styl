@@ -537,9 +537,6 @@ tsh() { text-shadow: arguments }
     }
   }
 
-  #logout {
-    margin-top: -4px i
-  }
   .logout {
     fill: v99
     &:hover {
@@ -1512,9 +1509,16 @@ tsh() { text-shadow: arguments }
     // style spinbox
     &[type='number'] { }
     // Style file browse button
+   /#firmware input[type='file'] {
+     margin: -8px 0 -6px
+   }
     &[type='file'] {
       height: initial
       max-height: @height
+      margin: -8px 0 -6px
+      &#wgimportfile {
+        margin-bottom: 1px
+      }
       &::file-selector-button {
         background-color: bg5
         border: 2px solid bg5
@@ -1703,8 +1707,9 @@ tsh() { text-shadow: arguments }
       &:hover {
         background-color: v04 i
       }
-      [selected] {
+      &[selected] {
         background-color: v06 i
+        font-weight: 900
       }
     }
     &:focus, &:focus-within, &:focus-visible { c: 0 v08 v01; bsh: 0 0 10px 0 v04; outline: 0 }
