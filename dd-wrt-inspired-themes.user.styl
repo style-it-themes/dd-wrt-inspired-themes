@@ -537,13 +537,6 @@ tsh() { text-shadow: arguments }
     }
   }
 
-  .logout {
-    fill: v99
-    &:hover {
-      fill: v09
-    }
-  }
-
   .popup, .popup_bg, .iplookup {
     background: bg1
     color: v97
@@ -552,10 +545,6 @@ tsh() { text-shadow: arguments }
   form {
     // WDS alignments
     &[name='wds'] {
-      select {
-        margin-right: .562em
-        margin-top: -.1rem
-      }
       input[size='25'] {
         vertical-align: 0
       }
@@ -724,22 +713,21 @@ tsh() { text-shadow: arguments }
 
   if (invert_nav) {
     #menu {
-      #menuMainList {
+      /#menuMainList {
         li {
           span {
             background: bg1
             border-color: bg5
             outline: 0
-            strong {
-              color: v99
-              tsh: 0 1px 0 bg0
-            }
+            color: v99
           }
           a {
             background: v04
             border-color: v06
             color: v98
             outline: 0
+            tsh: 0 1px 0 bg0
+            transition: transition
             &:hover {
               background: v07
               border-color: v07
@@ -754,7 +742,6 @@ tsh() { text-shadow: arguments }
           &.current {
             span {
               background: bg3
-              transition: transition
             }
           }
         }
@@ -768,32 +755,43 @@ tsh() { text-shadow: arguments }
         }
       }
     }
+    .logout {
+      fill: v99
+      &:hover {
+        fill: v09
+      }
+    }
   }
   else {
     #menuMainList {
-      transition: transition
       li {
         span {
           background: v04
           border-color: v08
           color: v99
-          strong { tsh: 0 1px 0 bg0 }
           outline: 0
-          &hover, &:focus-within {
+          &:hover, &:focus-within {
             background: v06
             border-color: v09
             color: v98
           }
         }
+        &.current {
+          span:hover {
+            background: v04
+            border-color: v09
+            color: v99
+          }
+        }
         a {
-          background: bg1
-          border-color: bg5
+          background: bg2
+          border-color: bg4
           color: v98
           tsh: 0 1px 0 bg0
           transition: transition
           outline: 0
           &:hover {
-            background: bg2
+            background: bg4
             border-color: bg5
             color: v98
           }
@@ -818,7 +816,7 @@ tsh() { text-shadow: arguments }
           background: v06
           border-color: v08
           color: v98
-          &:hover {
+          &:hover, &:focus-within {
             background: v08
             border-color: v09
             color: v99
@@ -827,12 +825,18 @@ tsh() { text-shadow: arguments }
         span {
           background: bg1
           border-color: bg5
-          &hover, &:focus-within {
-            background: v06
-            border-color: v09
+          &:hover, &:focus-within {
+            background: bg1 i
+            border-color: bg5 i
             color: v99
           }
         }
+      }
+    }
+    .logout {
+      fill: v99
+      &:hover {
+        fill: bg0
       }
     }
   }
@@ -848,7 +852,7 @@ tsh() { text-shadow: arguments }
       tsh: 0 1px 0 bg0
       outline: 0
     }
-    dd.definition { border-bottom: .0648rem dotted fg5 }
+    dd.definition { border-bottom: .0648rem dotted v96 }
   }
 
   textarea {
