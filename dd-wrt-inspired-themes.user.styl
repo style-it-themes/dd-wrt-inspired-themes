@@ -757,6 +757,7 @@ tsh() { text-shadow: arguments }
     }
     .logout {
       fill: v99
+      outline: 0
       &:hover {
         fill: v09
       }
@@ -835,6 +836,7 @@ tsh() { text-shadow: arguments }
     }
     .logout {
       fill: v99
+      outline: 0
       &:hover {
         fill: bg0
       }
@@ -843,7 +845,8 @@ tsh() { text-shadow: arguments }
   #help {
     a {
       color: fg1
-      &:hover { color: fg1 }
+      outline: 0
+      &:hover, &:focus-visible { color: fg1; text-decoration: underline }
     }
     h2 {
       background: v04
@@ -1578,7 +1581,7 @@ tsh() { text-shadow: arguments }
     // Better checkbox/radio inputs.
     input {
       &[type='checkbox'] {
-         &:hover::before {
+        &:hover::before {
           background: lighten(convert($bg5), 40%)
         }
         c: 0 bg5 bg5
@@ -1609,6 +1612,9 @@ tsh() { text-shadow: arguments }
           opacity: .6
           cursor: default
           bsh: none
+        }
+        &:disabled::before {
+          c: 0 bg5 bg5
         }
         &:checked {
           background-image: none i
